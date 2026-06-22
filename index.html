@@ -87,7 +87,7 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
 .week-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:14px;}
 .week-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
 .week-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--text3);}
-.week-number{font-size:1.6rem;font-weight:700;color:var(--accent);}
+.week-number{font-size:1.1rem;font-weight:700;color:var(--accent);}
 .cook-day-badge{background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent);border-radius:20px;padding:4px 12px;font-size:0.78rem;font-weight:600;}
 .cook-day-badge.cook-today{background:var(--accent);color:white;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.75;}}
@@ -116,9 +116,14 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
 .meals-search{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;color:var(--text);font-size:0.95rem;outline:none;margin-bottom:12px;transition:border-color 0.15s;}
 .meals-search:focus{border-color:var(--accent);}
 .meals-search::placeholder{color:var(--text3);}
-.tag-filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
-.tag-filter{padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:var(--surface2);color:var(--text2);cursor:pointer;font-size:0.75rem;transition:all 0.15s;}
+.tag-filters{display:flex;gap:6px;overflow-x:auto;margin-bottom:12px;padding-bottom:4px;scrollbar-width:none;}
+.tag-filters::-webkit-scrollbar{display:none;}
+.tag-filter{padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:var(--surface2);color:var(--text2);cursor:pointer;font-size:0.75rem;transition:all 0.15s;flex-shrink:0;white-space:nowrap;}
 .tag-filter.active{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600;}
+.picker-tag-filters{display:flex;gap:6px;overflow-x:auto;margin-bottom:10px;padding-bottom:4px;scrollbar-width:none;}
+.picker-tag-filters::-webkit-scrollbar{display:none;}
+.picker-tag-filter{padding:4px 10px;border-radius:20px;border:1px solid var(--border);background:var(--surface2);color:var(--text2);cursor:pointer;font-size:0.72rem;transition:all 0.15s;flex-shrink:0;white-space:nowrap;}
+.picker-tag-filter.active{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600;}
 .meals-grid{display:flex;flex-direction:column;gap:8px;}
 .meal-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:13px;}
 .meal-card:hover{border-color:var(--accent);background:var(--surface2);}
@@ -229,6 +234,60 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
 .cook-modal-name{font-size:0.82rem;font-weight:600;margin-bottom:10px;}
 .cook-servings-ctrl{display:flex;align-items:center;justify-content:center;gap:10px;}
 
+/* MEAL PICKER */
+.schedule-week-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:all 0.15s;}
+.schedule-week-card:hover{border-color:var(--accent);}
+.schedule-week-card.current{border-color:var(--accent);background:var(--accent-soft);}
+.schedule-week-card.planned{border-left:3px solid #27ae60;}
+.schedule-week-card.unplanned{border-left:3px solid var(--border);border-style:dashed;}
+.schedule-week-card.past{opacity:0.45;cursor:default;border-style:solid;}
+.schedule-week-card.past:hover{border-color:var(--border);}
+.schedule-week-header{display:flex;align-items:center;gap:10px;}
+.schedule-week-label{min-width:80px;flex-shrink:0;}
+.schedule-week-primary{font-size:0.875rem;font-weight:700;color:var(--text);}
+.schedule-week-primary.past-text{color:var(--text3);}
+.schedule-week-secondary{font-size:0.7rem;color:var(--text3);margin-top:2px;}
+.schedule-week-meals{flex:1;}
+.schedule-week-meal-names{font-size:0.82rem;font-weight:600;}
+.schedule-week-meal-names.past-text{color:var(--text3);}
+.schedule-week-meal-jp{font-size:0.7rem;color:var(--text2);margin-top:2px;}
+.schedule-week-status{font-size:0.7rem;padding:3px 9px;border-radius:20px;white-space:nowrap;flex-shrink:0;}
+.schedule-week-status.planned{background:#27ae60;color:white;}
+.schedule-week-status.current{background:var(--accent);color:white;}
+.schedule-week-status.unplanned{background:var(--surface3);color:var(--text3);border:1px solid var(--border);}
+.schedule-week-status.past{background:var(--surface3);color:var(--text3);}
+.schedule-week-card.locked{opacity:0.75;cursor:default;}
+.schedule-week-card.locked:hover{border-color:var(--border);}
+.picker-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:300;padding:16px;overflow-y:auto;}
+.picker-overlay.open{display:flex;align-items:flex-start;justify-content:center;padding-top:54px;}
+.picker-modal{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);width:100%;max-width:520px;}
+.picker-header{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+.picker-header-title{font-size:1rem;font-weight:700;flex:1;}
+.picker-close{background:var(--surface3);border:none;color:var(--text2);width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:0.9rem;}
+.picker-tabs{display:flex;border-bottom:1px solid var(--border);}
+.picker-tab{flex:1;padding:10px;font-size:0.82rem;cursor:pointer;border-bottom:2px solid transparent;color:var(--text2);transition:all 0.15s;text-align:center;}
+.picker-tab.active{border-bottom-color:var(--accent);color:var(--accent);font-weight:600;}
+.picker-body{padding:14px;}
+.picker-search{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:9px 12px;color:var(--text);font-size:0.875rem;outline:none;margin-bottom:10px;}
+.picker-search:focus{border-color:var(--accent);}
+.picker-selected{background:var(--accent-soft);border:1px solid var(--accent);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:10px;display:none;}
+.picker-selected.show{display:flex;align-items:center;gap:8px;}
+.picker-selected-jp{font-size:1rem;color:var(--accent);}
+.picker-selected-name{font-size:0.875rem;font-weight:600;flex:1;}
+.picker-selected-clear{background:none;border:none;color:var(--text3);cursor:pointer;font-size:0.9rem;}
+.picker-list{display:flex;flex-direction:column;gap:6px;max-height:340px;overflow-y:auto;}
+.picker-item{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:11px 13px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:10px;}
+.picker-item:hover{border-color:var(--accent);background:var(--surface3);}
+.picker-item.selected{border-color:var(--accent);background:var(--accent-soft);}
+.picker-item.top-pick::after{content:'Best match';font-size:0.65rem;padding:2px 7px;border-radius:20px;background:#27ae60;color:white;margin-left:auto;white-space:nowrap;}
+.picker-item-jp{font-size:1rem;color:var(--accent);flex-shrink:0;}
+.picker-item-info{flex:1;}
+.picker-item-name{font-size:0.875rem;font-weight:600;}
+.picker-item-meta{font-size:0.72rem;color:var(--text2);margin-top:2px;}
+.picker-item-recent{font-size:0.65rem;color:var(--text3);margin-top:2px;}
+.picker-footer{padding:14px;border-top:1px solid var(--border);}
+.picker-confirm-btn{width:100%;padding:13px;border-radius:var(--radius);border:none;background:var(--accent);color:white;font-size:0.95rem;font-weight:700;cursor:pointer;}
+.picker-confirm-btn:disabled{background:var(--surface3);color:var(--text3);cursor:not-allowed;}
 /* GROCERY WARNING */
 .grocery-warning{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;}
 .grocery-warning.has-missing{border-color:#c0392b;}
@@ -364,8 +423,8 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
     <div class="nav-tabs">
       <button class="nav-tab active" id="tab-home" onclick="showView('home')">Home</button>
       <button class="nav-tab" id="tab-meals" onclick="showView('meals')">Meals</button>
-      <button class="nav-tab" id="tab-schedule" onclick="showView('schedule')">Schedule</button>
       <button class="nav-tab" id="tab-grocery" onclick="showView('grocery')">Grocery</button>
+      <button class="nav-tab" id="tab-schedule" onclick="showView('schedule')">Schedule</button>
     </div>
   </nav>
   <div class="sync-bar" id="sync-bar"></div>
@@ -384,7 +443,39 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
 
   <!-- SCHEDULE -->
   <div id="view-schedule" class="view">
-    <div class="schedule-list" id="schedule-list"></div>
+    <div id="schedule-list"></div>
+  </div>
+
+  <!-- MEAL PICKER MODAL -->
+  <div class="picker-overlay" id="picker-overlay" onclick="closePickerModal(event)">
+    <div class="picker-modal" id="picker-modal-inner">
+      <div class="picker-header">
+        <div class="picker-header-title" id="picker-title">Plan Week</div>
+        <button class="picker-close" onclick="closePickerModalBtn()">✕</button>
+      </div>
+      <div class="picker-tabs">
+        <div class="picker-tab active" id="picker-tab-a" onclick="setPickerTab('a')">Meal A</div>
+        <div class="picker-tab" id="picker-tab-b" onclick="setPickerTab('b')">Meal B</div>
+      </div>
+      <div class="picker-body">
+        <div class="picker-selected" id="picker-selected-a">
+          <div class="picker-selected-jp" id="picker-sel-a-jp"></div>
+          <div class="picker-selected-name" id="picker-sel-a-name"></div>
+          <button class="picker-selected-clear" onclick="clearPickerMeal('a')">✕</button>
+        </div>
+        <div class="picker-selected" id="picker-selected-b">
+          <div class="picker-selected-jp" id="picker-sel-b-jp"></div>
+          <div class="picker-selected-name" id="picker-sel-b-name"></div>
+          <button class="picker-selected-clear" onclick="clearPickerMeal('b')">✕</button>
+        </div>
+        <div class="picker-tag-filters" id="picker-tag-filters"></div>
+        <input class="picker-search" id="picker-search" placeholder="Search meals…" oninput="renderPickerList()">
+        <div class="picker-list" id="picker-list"></div>
+      </div>
+      <div class="picker-footer">
+        <button class="picker-confirm-btn" id="picker-confirm-btn" onclick="confirmPairing()" disabled>Select Meal A first</button>
+      </div>
+    </div>
   </div>
 
   <!-- GROCERY -->
@@ -685,13 +776,14 @@ async function launchApp() {
   loadPrefs();
   updateNavUser();
   showSync('Loading…', 'syncing');
-  await Promise.all([loadData(), loadUserSchedule(), loadGroceryState()]);
+  await Promise.all([loadData(), loadUserSchedule(), loadGroceryState(), loadUserPairings()]);
   showSync('', '');
   initGroceryWeekSel();
   renderHome();
   renderGroceryWarning();
   renderMeals();
   renderSchedule();
+  refreshGroceryWeekSel(true);
   renderTagFilters();
   loadCookSession();
 }
@@ -762,8 +854,8 @@ function showView(v) {
 // ── HOME ──
 function renderHome() {
   const pairing = getPairing(userSchedule.current_week);
-  const mealA = recipes.find(r => r.id === pairing.meal_a);
-  const mealB = recipes.find(r => r.id === pairing.meal_b);
+  const mealA = recipes.find(r => r.id === pairing?.meal_a_id);
+  const mealB = recipes.find(r => r.id === pairing?.meal_b_id);
   const cookDayInfo = getNextCookDay();
   const macrosA = mealA ? calcMacros(mealA) : {protein:0, fat:0, carbs:0, calories:0};
   const macrosB = mealB ? calcMacros(mealB) : {protein:0, fat:0, carbs:0, calories:0};
@@ -777,15 +869,22 @@ function renderHome() {
     <div class="week-card">
       <div class="week-card-header">
         <div>
-          <div class="week-label">Week</div>
-          <div class="week-number">${userSchedule.current_week}</div>
+          <div class="week-label">${getWeekLabel(userSchedule.current_week).secondary}</div>
+          <div class="week-number">This week</div>
         </div>
         <div class="cook-day-badge ${cookDayInfo.status === 'today' ? 'cook-today' : ''}">${cookDayInfo.label}</div>
       </div>
+      ${!pairing ? `
+        <div style="text-align:center;padding:20px;color:var(--text2);font-size:0.875rem;">
+          <div style="font-size:1.5rem;margin-bottom:8px;">📅</div>
+          <div style="font-weight:600;margin-bottom:4px;">No meals planned for this week</div>
+          <div style="font-size:0.78rem;">Go to Schedule to pick your meals</div>
+          <button onclick="showView('schedule')" style="margin-top:12px;padding:9px 18px;border-radius:var(--radius-sm);border:none;background:var(--accent);color:white;font-size:0.82rem;font-weight:600;cursor:pointer;">Plan this week →</button>
+        </div>` : `
       <div class="meal-pair">
         ${renderMealPairCard(mealA)}
         ${renderMealPairCard(mealB)}
-      </div>
+      </div>`}
       <div class="macro-row">
         <div class="macro-pill"><div class="val">${Math.round(totalProtein)}g</div><div class="lbl">Protein / meal</div></div>
         <div class="macro-pill"><div class="val">${Math.round(totalFat)}g</div><div class="lbl">Fat / meal</div></div>
@@ -837,28 +936,42 @@ function getNextCookDay() {
   return { label: `🗓️ Next cook day: ${DAYS[cd]} (${diff} days away)`, status: 'away', diff };
 }
 
-function getPairing(week) {
-  const idx = ((week - 1) % pairings.length);
-  return pairings[idx] || pairings[0];
-}
+
 
 async function advanceWeek() {
-  const pairing = getPairing(userSchedule.current_week);
-  const nextPairing = getPairing(userSchedule.current_week + 1);
-  const mealA = recipes.find(r => r.id === nextPairing.meal_a);
-  const mealB = recipes.find(r => r.id === nextPairing.meal_b);
-  showConfirm(
-    'Advance to next week?',
-    `Next up: ${mealA?.title} & ${mealB?.title}`,
-    async () => {
-      const newWeek = userSchedule.current_week + 1;
-      await saveScheduleField({ current_week: newWeek });
-      renderHome();
-      renderSchedule();
-      showSync('Advanced to week ' + newWeek, 'success');
-      setTimeout(() => showSync('',''), 2000);
-    }
-  );
+  const nextWeek = userSchedule.current_week + 1;
+  const nextPairing = getPairing(nextWeek);
+  if (nextPairing) {
+    const mealA = recipes.find(r => r.id === nextPairing.meal_a_id);
+    const mealB = recipes.find(r => r.id === nextPairing.meal_b_id);
+    const nextLabel = getWeekLabel(nextWeek);
+    showConfirm(
+      `Advance to ${nextLabel.primary}?`,
+      `${nextLabel.secondary} — ${mealA?.title} & ${mealB?.title}`,
+      async () => {
+        await saveScheduleField({ current_week: nextWeek });
+        renderHome();
+        renderGroceryWarning();
+        renderSchedule();
+        showSync(`Advanced to ${getWeekLabel(nextWeek).primary}`, 'success');
+        setTimeout(() => showSync('',''), 2000);
+      }
+    );
+  } else {
+    const nextLabel = getWeekLabel(nextWeek);
+    showConfirm(
+      `Advance to ${nextLabel.primary}?`,
+      `${nextLabel.secondary} — you haven't picked meals yet. You'll be taken to the schedule to plan them.`,
+      async () => {
+        await saveScheduleField({ current_week: nextWeek });
+        refreshGroceryWeekSel(true);
+        showView('schedule');
+        openMealPicker(nextWeek, true);
+        showSync(`Advanced to ${getWeekLabel(nextWeek).primary}`, 'success');
+        setTimeout(() => showSync('',''), 2000);
+      }
+    );
+  }
 }
 
 // ── MEALS ──
@@ -867,6 +980,7 @@ function renderTagFilters() {
   document.getElementById('tag-filters').innerHTML =
     `<div class="tag-filter${!activeTag?' active':''}" onclick="setTag('')">All</div>` +
     tags.map(t => `<div class="tag-filter${activeTag===t?' active':''}" onclick="setTag('${t}')">${t}</div>`).join('');
+  enableDragScroll(document.getElementById('tag-filters'));
 }
 
 function setTag(t) {
@@ -904,32 +1018,249 @@ function renderMeals() {
 // ── SCHEDULE ──
 function renderSchedule() {
   const list = document.getElementById('schedule-list');
-  list.innerHTML = pairings.map(p => {
-    const a = recipes.find(r => r.id === p.meal_a);
-    const b = recipes.find(r => r.id === p.meal_b);
-    const isCurrent = p.week === (((userSchedule.current_week - 1) % pairings.length) + 1);
-    return `<div class="schedule-row${isCurrent?' current':''}" onclick="showView('grocery');setGroceryWeek(${p.week})">
-      <div class="schedule-week-num">${p.week}</div>
-      <div class="schedule-meals">
-        <div class="schedule-meal-names">${a?.title || '—'} &amp; ${b?.title || '—'}</div>
-        <div class="schedule-meal-jp">${a?.title_jp || ''} · ${b?.title_jp || ''}</div>
+  const current = userSchedule.current_week;
+  // 4 past weeks + current + 8 future
+  const weeks = [];
+  for (let w = Math.max(1, current - 4); w <= current + 8; w++) weeks.push(w);
+
+  list.innerHTML = weeks.map(w => {
+    const p = userPairings[w];
+    const isCurrent = w === current;
+    const isPast = w < current;
+    const mealA = p ? recipes.find(r => r.id === p.meal_a_id) : null;
+    const mealB = p ? recipes.find(r => r.id === p.meal_b_id) : null;
+    const isLocked = isCurrent && isCurrentWeekLocked();
+    const label = getWeekLabel(w);
+    const clickable = !isPast && !isLocked;
+
+    let statusLabel, statusClass;
+    if (isPast) { statusClass = 'past'; statusLabel = label.secondary; }
+    else if (isLocked) { statusClass = 'current'; statusLabel = '🔒 Locked'; }
+    else if (isCurrent) { statusClass = 'current'; statusLabel = 'This week'; }
+    else if (p) { statusClass = 'planned'; statusLabel = 'Planned'; }
+    else { statusClass = 'unplanned'; statusLabel = 'Not planned'; }
+
+    return `<div class="schedule-week-card ${isPast ? 'past' : statusClass}${isLocked ? ' locked' : ''}"
+      onclick="${clickable ? `openMealPicker(${w})` : isLocked ? 'showLockedMsg()' : ''}">
+      <div class="schedule-week-header">
+        <div class="schedule-week-label">
+          <div class="schedule-week-primary${isPast ? ' past-text' : ''}">${label.primary}</div>
+          <div class="schedule-week-secondary">${label.secondary}</div>
+        </div>
+        <div class="schedule-week-meals">
+          ${isPast
+            ? `<div class="schedule-week-meal-names past-text">${mealA ? `${mealA.title} &amp; ${mealB?.title || '—'}` : '—'}</div>`
+            : `<div class="schedule-week-meal-names">${mealA ? `${mealA.title} &amp; ${mealB?.title}` : 'Tap to plan meals'}</div>
+               ${mealA ? `<div class="schedule-week-meal-jp">${mealA.title_jp} · ${mealB?.title_jp}</div>` : ''}`
+          }
+        </div>
+        <div class="schedule-week-status ${statusClass}">${statusLabel}</div>
       </div>
-      ${isCurrent ? '<div class="schedule-badge">This week</div>' : ''}
     </div>`;
   }).join('');
 }
 
+// ── MEAL PICKER ──
+let pickerWeek = null;
+let pickerMealA = null;
+let pickerMealB = null;
+let pickerActiveTab = 'a';
+let pickerAdvanceAfter = false;
+let pickerActiveTag = '';
+
+function renderPickerTags() {
+  const tags = [...new Set(recipes.flatMap(r => r.tags || []))].sort();
+  document.getElementById('picker-tag-filters').innerHTML =
+    `<div class="picker-tag-filter${!pickerActiveTag ? ' active' : ''}" onclick="setPickerTag('')">All</div>` +
+    tags.map(t => `<div class="picker-tag-filter${pickerActiveTag === t ? ' active' : ''}" onclick="setPickerTag('${t}')">${t}</div>`).join('');
+  enableDragScroll(document.getElementById('picker-tag-filters'));
+}
+
+function setPickerTag(t) {
+  pickerActiveTag = t;
+  renderPickerTags();
+  renderPickerList();
+}
+
+function openMealPicker(week, advanceAfter) {
+  pickerWeek = week;
+  pickerAdvanceAfter = advanceAfter || false;
+  pickerActiveTag = '';
+  const existing = userPairings[week];
+  pickerMealA = existing ? recipes.find(r => r.id === existing.meal_a_id) : null;
+  pickerMealB = existing ? recipes.find(r => r.id === existing.meal_b_id) : null;
+  const wLabel = getWeekLabel(week);
+  document.getElementById('picker-title').textContent = `Plan ${wLabel.primary} · ${wLabel.secondary}`;
+  document.getElementById('picker-search').value = '';
+  setPickerTab('a');
+  renderPickerTags();
+  updatePickerSelected();
+  renderPickerList();
+  updatePickerConfirm();
+  document.getElementById('picker-overlay').classList.add('open');
+}
+
+function closePickerModal(e) { if (e.target === document.getElementById('picker-overlay')) closePickerModalBtn(); }
+function closePickerModalBtn() { document.getElementById('picker-overlay').classList.remove('open'); }
+
+function showLockedMsg() {
+  showSync('This week is locked — grocery shopping has started or a cook session is in progress', 'error');
+  setTimeout(() => showSync('', ''), 3000);
+}
+
+function setPickerTab(tab) {
+  pickerActiveTab = tab;
+  pickerActiveTag = '';
+  document.getElementById('picker-tab-a').classList.toggle('active', tab === 'a');
+  document.getElementById('picker-tab-b').classList.toggle('active', tab === 'b');
+  document.getElementById('picker-search').value = '';
+  document.getElementById('picker-search').placeholder = tab === 'a' ? 'Search meals…' : pickerMealA ? 'Search compatible meals…' : 'Pick Meal A first';
+  renderPickerTags();
+  renderPickerList();
+}
+
+function updatePickerSelected() {
+  const elA = document.getElementById('picker-selected-a');
+  const elB = document.getElementById('picker-selected-b');
+  if (pickerMealA) {
+    elA.classList.add('show');
+    document.getElementById('picker-sel-a-jp').textContent = pickerMealA.title_jp;
+    document.getElementById('picker-sel-a-name').textContent = pickerMealA.title;
+  } else { elA.classList.remove('show'); }
+  if (pickerMealB) {
+    elB.classList.add('show');
+    document.getElementById('picker-sel-b-jp').textContent = pickerMealB.title_jp;
+    document.getElementById('picker-sel-b-name').textContent = pickerMealB.title;
+  } else { elB.classList.remove('show'); }
+}
+
+function clearPickerMeal(which) {
+  if (which === 'a') { pickerMealA = null; pickerMealB = null; }
+  else { pickerMealB = null; }
+  updatePickerSelected();
+  renderPickerList();
+  updatePickerConfirm();
+}
+
+function renderPickerList() {
+  const q = (document.getElementById('picker-search')?.value || '').toLowerCase();
+  const recentIds = getRecentMealIds(pickerWeek, 4);
+  let pool;
+  if (pickerActiveTab === 'a') {
+    pool = recipes.filter(r => {
+      const matchQ = !q || r.title.toLowerCase().includes(q) || r.title_jp.includes(q);
+      const matchTag = !pickerActiveTag || (r.tags || []).includes(pickerActiveTag);
+      return matchQ && matchTag;
+    });
+  } else {
+    if (!pickerMealA) {
+      document.getElementById('picker-list').innerHTML = '<div style="text-align:center;padding:20px;color:var(--text2);font-size:0.82rem;">Pick Meal A first</div>';
+      return;
+    }
+    const ranked = rankCompatibleMeals(pickerMealA, pickerWeek);
+    pool = ranked.filter(r => {
+      const matchQ = !q || r.title.toLowerCase().includes(q) || r.title_jp.includes(q);
+      const matchTag = !pickerActiveTag || (r.tags || []).includes(pickerActiveTag);
+      return matchQ && matchTag;
+    });
+  }
+
+  if (pool.length === 0) {
+    document.getElementById('picker-list').innerHTML = '<div style="text-align:center;padding:20px;color:var(--text2);font-size:0.82rem;">No meals match this filter</div>';
+    return;
+  }
+
+  document.getElementById('picker-list').innerHTML = pool.map((r, i) => {
+    const isSelected = (pickerActiveTab === 'a' && pickerMealA?.id === r.id) || (pickerActiveTab === 'b' && pickerMealB?.id === r.id);
+    const isTopPick = pickerActiveTab === 'b' && i === 0 && !q;
+    const isRecent = recentIds.includes(r.id);
+    const macros = calcMacros(r);
+    return `<div class="picker-item${isSelected ? ' selected' : ''}${isTopPick ? ' top-pick' : ''}" onclick="selectPickerMeal('${r.id}')">
+      <div class="picker-item-jp">${r.title_jp}</div>
+      <div class="picker-item-info">
+        <div class="picker-item-name">${r.title}</div>
+        <div class="picker-item-meta">${macros.protein}g protein · ${macros.fat}g fat · ${r.cook_time_mins} min</div>
+        ${isRecent ? '<div class="picker-item-recent">⏱ Cooked recently</div>' : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function selectPickerMeal(id) {
+  const meal = recipes.find(r => r.id === id);
+  if (pickerActiveTab === 'a') {
+    pickerMealA = meal;
+    pickerMealB = null; // reset B when A changes
+    // Auto-suggest best B
+    const ranked = rankCompatibleMeals(meal, pickerWeek);
+    if (ranked.length) pickerMealB = ranked[0];
+    updatePickerSelected();
+    updatePickerConfirm();
+    // Switch to B tab to let user review/change suggestion
+    setPickerTab('b');
+  } else {
+    pickerMealB = meal;
+    updatePickerSelected();
+    updatePickerConfirm();
+  }
+}
+
+function updatePickerConfirm() {
+  const btn = document.getElementById('picker-confirm-btn');
+  if (!pickerMealA) { btn.disabled = true; btn.textContent = 'Select Meal A first'; }
+  else if (!pickerMealB) { btn.disabled = true; btn.textContent = 'Select Meal B'; }
+  else { btn.disabled = false; btn.textContent = `Save — ${pickerMealA.title} & ${pickerMealB.title}`; }
+}
+
+async function confirmPairing() {
+  if (!pickerMealA || !pickerMealB || !pickerWeek) return;
+  await saveUserPairing(pickerWeek, pickerMealA.id, pickerMealB.id);
+  closePickerModalBtn();
+  renderSchedule();
+  renderHome();
+  renderGroceryWarning();
+  refreshGroceryWeekSel();
+  // If this was triggered by advanceWeek, advance now
+  if (pickerAdvanceAfter) {
+    pickerAdvanceAfter = false;
+    showSync(`${getWeekLabel(pickerWeek).primary} planned`, 'success');
+    setTimeout(() => showSync('',''), 2000);
+  } else {
+    showSync(`${getWeekLabel(pickerWeek).primary} planned`, 'success');
+    setTimeout(() => showSync('',''), 2000);
+  }
+}
+
 // ── GROCERY ──
 function initGroceryWeekSel() {
+  refreshGroceryWeekSel();
+}
+
+function refreshGroceryWeekSel(forceCurrentWeek) {
   const sel = document.getElementById('grocery-week-sel');
-  pairings.forEach(p => {
-    const a = recipes.find(r => r.id === p.meal_a);
-    const b = recipes.find(r => r.id === p.meal_b);
+  const currentVal = forceCurrentWeek ? null : sel.value;
+  // Keep only the placeholder option
+  while (sel.options.length > 1) sel.remove(1);
+  const current = userSchedule.current_week;
+  // Only show current week and future planned weeks — no past weeks
+  for (let w = current; w <= current + 8; w++) {
+    const p = userPairings[w];
+    if (!p) continue;
+    const a = recipes.find(r => r.id === p.meal_a_id);
+    const b = recipes.find(r => r.id === p.meal_b_id);
     const opt = document.createElement('option');
-    opt.value = p.week;
-    opt.textContent = `Week ${p.week} — ${a?.title||'?'} & ${b?.title||'?'}`;
+    opt.value = w;
+    const wl = getWeekLabel(w);
+    opt.textContent = `${wl.primary} · ${wl.secondary} — ${a?.title||'?'} & ${b?.title||'?'}`;
     sel.appendChild(opt);
-  });
+  }
+  // Default to current week if forced or no valid previous selection
+  if (forceCurrentWeek || !currentVal || parseInt(currentVal) < current) {
+    sel.value = current;
+    renderGrocery();
+  } else {
+    sel.value = currentVal;
+  }
 }
 
 function setGroceryWeek(w) {
@@ -940,22 +1271,22 @@ function setGroceryWeek(w) {
 function renderGrocery() {
   const weekNum = parseInt(document.getElementById('grocery-week-sel').value);
   if (!weekNum) { document.getElementById('grocery-list').innerHTML = ''; document.getElementById('servings-row').style.display='none'; return; }
-  const pairing = pairings.find(p => p.week === weekNum);
+  const pairing = getPairing(weekNum);
   if (!pairing) return;
-  const mealA = recipes.find(r => r.id === pairing.meal_a);
-  const mealB = recipes.find(r => r.id === pairing.meal_b);
-  if (!groceryServings[pairing.meal_a]) groceryServings[pairing.meal_a] = 7;
-  if (!groceryServings[pairing.meal_b]) groceryServings[pairing.meal_b] = 7;
-  const sA = groceryServings[pairing.meal_a];
-  const sB = groceryServings[pairing.meal_b];
+  const mealA = recipes.find(r => r.id === pairing?.meal_a_id);
+  const mealB = recipes.find(r => r.id === pairing?.meal_b_id);
+  if (!groceryServings[pairing?.meal_a_id]) groceryServings[pairing?.meal_a_id] = 7;
+  if (!groceryServings[pairing?.meal_b_id]) groceryServings[pairing?.meal_b_id] = 7;
+  const sA = groceryServings[pairing?.meal_a_id];
+  const sB = groceryServings[pairing?.meal_b_id];
 
   document.getElementById('servings-row').style.display = 'grid';
-  document.getElementById('servings-row').innerHTML = [mealA, mealB].map(m => `
+  document.getElementById('servings-row').innerHTML = [mealA, mealB].filter(Boolean).map(m => `
     <div class="servings-card">
       <div class="servings-meal-name">${m.title}</div>
       <div class="servings-control">
         <button class="servings-btn" onclick="adjGroceryServings('${m.id}',-1)">−</button>
-        <span class="servings-num" id="gs-${m.id}">${groceryServings[m.id]}</span>
+        <span class="servings-num" id="gs-${m.id}">${groceryServings[m.id] || 7}</span>
         <button class="servings-btn" onclick="adjGroceryServings('${m.id}',1)">+</button>
       </div>
     </div>`).join('');
@@ -1013,6 +1344,7 @@ function adjGroceryServings(mealId, delta) {
   document.getElementById('gs-' + mealId).textContent = groceryServings[mealId];
   renderGrocery();
   saveGroceryState();
+  renderGroceryWarning();
 }
 
 function toggleGroceryItem(key) {
@@ -1020,6 +1352,7 @@ function toggleGroceryItem(key) {
   renderGrocery();
   saveGroceryState();
   renderGroceryWarning();
+  renderSchedule();
 }
 
 function formatAmount(n) {
@@ -1139,13 +1472,70 @@ function closeRecipeModal(e) { if (e.target === document.getElementById('recipe-
 function closeRecipeModalBtn() { document.getElementById('recipe-modal').classList.remove('open'); }
 
 // ── COOK SESSION ──
+// ── DATE HELPERS ──
+function getWeekCookDate(weekNum) {
+  // Calculate the actual date of cook day for a given week number
+  // Week 1 = the first upcoming cook day from today (or today if it's cook day)
+  const today = new Date();
+  const cd = userSchedule.cook_day;
+  // Find the date of the current week's cook day
+  let diff = cd - today.getDay();
+  if (diff < 0) diff += 7;
+  const currentCookDate = new Date(today);
+  currentCookDate.setDate(today.getDate() + diff);
+  currentCookDate.setHours(0, 0, 0, 0);
+  // Add (weekNum - currentWeek) * 7 days
+  const targetDate = new Date(currentCookDate);
+  targetDate.setDate(currentCookDate.getDate() + (weekNum - userSchedule.current_week) * 7);
+  return targetDate;
+}
+
+function formatWeekDate(date) {
+  return date.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
+}
+
+function getWeekLabel(weekNum) {
+  const diff = weekNum - userSchedule.current_week;
+  const date = getWeekCookDate(weekNum);
+  const dateStr = formatWeekDate(date);
+  if (diff === 0) return { primary: 'This week', secondary: `Cook ${dateStr}` };
+  if (diff === 1) return { primary: 'Next week', secondary: `Cook ${dateStr}` };
+  if (diff === -1) return { primary: 'Last week', secondary: dateStr };
+  if (diff < 0) return { primary: `${Math.abs(diff)} weeks ago`, secondary: dateStr };
+  return { primary: `In ${diff} weeks`, secondary: `Cook ${dateStr}` };
+}
+
+// ── WEEK LOCK ──
+function isCurrentWeekLocked() {
+  const current = userSchedule.current_week;
+  const pairing = getPairing(current);
+  if (!pairing) return false;
+  // Locked if any grocery items checked for current week's meals
+  const mealA = recipes.find(r => r.id === pairing.meal_a_id);
+  const mealB = recipes.find(r => r.id === pairing.meal_b_id);
+  const meals = [mealA, mealB].filter(Boolean);
+  for (const meal of meals) {
+    for (const ing of meal.ingredients) {
+      const stores = ['woolworths', 'woolworths-asian', 'genki', 'fishmonger'];
+      for (const store of stores) {
+        const key = store + '_' + ing.name;
+        if (checkedItems[key]) return true;
+      }
+    }
+  }
+  // Also locked if cook session exists for current week
+  // (cook session is checked via cook_session table — we use cookSessionActive flag)
+  if (cookSessionActive) return true;
+  return false;
+}
+
 // ── GROCERY STATUS ──
 function getGroceryStatus() {
   const pairing = getPairing(userSchedule.current_week);
-  const mealA = recipes.find(r => r.id === pairing.meal_a);
-  const mealB = recipes.find(r => r.id === pairing.meal_b);
-  const sA = groceryServings[pairing.meal_a] || 7;
-  const sB = groceryServings[pairing.meal_b] || 7;
+  const mealA = recipes.find(r => r.id === pairing?.meal_a_id);
+  const mealB = recipes.find(r => r.id === pairing?.meal_b_id);
+  const sA = groceryServings[pairing?.meal_a_id] || 7;
+  const sB = groceryServings[pairing?.meal_b_id] || 7;
 
   // Aggregate all items by store (same logic as renderGrocery)
   const byStore = {};
@@ -1250,8 +1640,8 @@ function toggleGroceryWarning() {
 
 function markAllWoolworthsDone() {
   const pairing = getPairing(userSchedule.current_week);
-  const mealA = recipes.find(r => r.id === pairing.meal_a);
-  const mealB = recipes.find(r => r.id === pairing.meal_b);
+  const mealA = recipes.find(r => r.id === pairing?.meal_a_id);
+  const mealB = recipes.find(r => r.id === pairing?.meal_b_id);
   [mealA, mealB].forEach(meal => {
     if (!meal) return;
     meal.ingredients.forEach(ing => {
@@ -1262,10 +1652,12 @@ function markAllWoolworthsDone() {
     });
   });
   saveGroceryState();
+  renderGrocery();
   renderGroceryWarning();
 }
 
 // ── COOK MODE ──
+let userPairings = {}; // week_number -> { meal_a_id, meal_b_id }
 let cookSteps = [];
 let cookCurrentStep = 0;
 let cookPhase = 'prep';
@@ -1288,8 +1680,8 @@ function checkAndStartCook() {
 
 function openCookSession() {
   const pairing = getPairing(userSchedule.current_week);
-  const mealA = recipes.find(r => r.id === pairing.meal_a);
-  const mealB = recipes.find(r => r.id === pairing.meal_b);
+  const mealA = recipes.find(r => r.id === pairing?.meal_a_id);
+  const mealB = recipes.find(r => r.id === pairing?.meal_b_id);
   // Show meal order selector first
   showCookMealSelector(mealA, mealB);
 }
@@ -1319,8 +1711,8 @@ function showCookMealSelector(mealA, mealB) {
 
 function selectCookOrder(which) {
   const pairing = getPairing(userSchedule.current_week);
-  const mealA = recipes.find(r => r.id === pairing.meal_a);
-  const mealB = recipes.find(r => r.id === pairing.meal_b);
+  const mealA = recipes.find(r => r.id === pairing?.meal_a_id);
+  const mealB = recipes.find(r => r.id === pairing?.meal_b_id);
   if (which === 'a') { cookMeal1 = mealA; cookMeal2 = mealB; }
   else { cookMeal1 = mealB; cookMeal2 = mealA; }
   document.getElementById('sel-a').classList.toggle('selected', which === 'a');
@@ -1331,9 +1723,11 @@ function startCookSession() {
   buildCookSteps();
   cookCurrentStep = 0;
   cookTimers = {};
+  cookSessionActive = true;
   document.getElementById('cook-footer').style.display = '';
   renderCookMode();
   saveCookSession();
+  renderSchedule();
 }
 
 function getPhaseForStep(stepIdx) {
@@ -1489,6 +1883,60 @@ function closeCookMode() {
   Object.values(cookTimers).forEach(t => { if (t.interval) clearInterval(t.interval); });
   cookTimers = {};
   document.getElementById('cook-overlay').classList.remove('open');
+}
+
+// ── USER PAIRINGS ──
+async function loadUserPairings() {
+  const { data } = await sb.from('user_pairings').select('*').eq('user_id', currentUser.id);
+  if (data) data.forEach(p => { userPairings[p.week_number] = { meal_a_id: p.meal_a_id, meal_b_id: p.meal_b_id }; });
+}
+
+async function saveUserPairing(weekNum, mealAId, mealBId) {
+  await sb.from('user_pairings').upsert({
+    user_id: currentUser.id, week_number: weekNum,
+    meal_a_id: mealAId, meal_b_id: mealBId
+  }, { onConflict: 'user_id,week_number' });
+  userPairings[weekNum] = { meal_a_id: mealAId, meal_b_id: mealBId };
+}
+
+function getPairing(week) {
+  const p = userPairings[week];
+  if (p) return p;
+  return null;
+}
+
+function getRecentMealIds(beforeWeek, limit) {
+  // Get meal ids used in recent weeks for ranking
+  const recent = [];
+  for (let w = beforeWeek - 1; w >= Math.max(1, beforeWeek - limit); w--) {
+    const p = userPairings[w];
+    if (p) { recent.push(p.meal_a_id, p.meal_b_id); }
+  }
+  return recent;
+}
+
+function rankCompatibleMeals(mealA, forWeek) {
+  const tc = mealA.tags_compat || {};
+  const recentIds = getRecentMealIds(forWeek, 4);
+  return recipes
+    .filter(r => r.id !== mealA.id)
+    .map(r => {
+      const rc = r.tags_compat || {};
+      let score = 100;
+      // Penalise same protein source
+      if (rc.protein_source === tc.protein_source) score -= 40;
+      // Reward fat balance — if mealA is low fat, prefer high fat and vice versa
+      if (tc.fat_level === 'low' && rc.fat_level === 'high') score += 20;
+      if (tc.fat_level === 'high' && rc.fat_level === 'low') score += 20;
+      if (tc.fat_level === rc.fat_level) score -= 10;
+      // Penalise both carb heavy
+      if (tc.carb_heavy && rc.carb_heavy) score -= 20;
+      // Penalise recently cooked
+      if (recentIds.includes(r.id)) score -= 30;
+      return { recipe: r, score };
+    })
+    .sort((a, b) => b.score - a.score)
+    .map(x => x.recipe);
 }
 
 async function saveCookSession() {
@@ -1708,6 +2156,26 @@ function showSync(msg, type) {
   const bar = document.getElementById('sync-bar');
   bar.textContent = msg;
   bar.className = 'sync-bar' + (msg ? ' show' : '') + (type ? ' ' + type : '');
+}
+
+// ── DRAG SCROLL ──
+function enableDragScroll(el) {
+  if (!el) return;
+  let isDown = false, startX, scrollLeft;
+  el.addEventListener('mousedown', e => {
+    isDown = true;
+    el.style.cursor = 'grabbing';
+    startX = e.pageX - el.offsetLeft;
+    scrollLeft = el.scrollLeft;
+  });
+  el.addEventListener('mouseleave', () => { isDown = false; el.style.cursor = ''; });
+  el.addEventListener('mouseup', () => { isDown = false; el.style.cursor = ''; });
+  el.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - el.offsetLeft;
+    el.scrollLeft = scrollLeft - (x - startX) * 1.5;
+  });
 }
 
 // ── BOOT ──
