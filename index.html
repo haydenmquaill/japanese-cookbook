@@ -363,6 +363,9 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
 .confirm-btn-cancel{flex:1;padding:11px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface3);color:var(--text);font-size:0.875rem;font-weight:600;cursor:pointer;}
 .confirm-btn-ok{flex:1;padding:11px;border-radius:var(--radius);border:none;background:var(--accent);color:white;font-size:0.875rem;font-weight:600;cursor:pointer;}
 .confirm-btn-ok:hover{background:var(--accent2);}
+/* PROTEIN TIP */
+.protein-tip{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 13px;font-size:0.78rem;color:var(--text2);margin-top:10px;line-height:1.5;}
+.protein-tip strong{color:var(--text);}
 /* MACRO ROW INLINE */
 .meal-macro-row-inline{display:flex;align-items:center;gap:4px;font-size:0.72rem;color:var(--text2);margin-top:4px;flex-wrap:nowrap;}
 .meal-macro-row-inline span{white-space:nowrap;}
@@ -476,6 +479,7 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
         </div>
         <div class="picker-tag-filters" id="picker-tag-filters"></div>
         <input class="picker-search" id="picker-search" placeholder="Search meals…" oninput="renderPickerList()">
+        <div id="picker-exclusion-note" style="font-size:0.72rem;color:var(--text3);margin-bottom:8px;"></div>
         <div class="picker-list" id="picker-list"></div>
       </div>
       <div class="picker-footer">
@@ -808,12 +812,14 @@ async function launchApp() {
   showSync('', '');
   initGroceryWeekSel();
   renderHome();
+  renderProteinTip();
   renderGroceryWarning();
   renderMeals();
   renderSchedule();
   refreshGroceryWeekSel(true);
   renderTagFilters();
   loadCookSession();
+  await autoFillSchedule();
 }
 
 function updateNavUser() {
@@ -875,7 +881,7 @@ function showView(v) {
   const tab = document.getElementById('tab-' + v);
   if (tab) tab.classList.add('active');
   if (v === 'settings') populateSettings();
-  if (v === 'home') { renderHome(); renderGroceryWarning(); }
+  if (v === 'home') { renderHome(); renderProteinTip(); renderGroceryWarning(); }
   toggleNavMenu(true);
 }
 
@@ -918,6 +924,7 @@ function renderHome() {
         <div class="macro-pill"><div class="val">${Math.round(totalFat)}g</div><div class="lbl">Fat</div></div>
         <div class="macro-pill"><div class="val">${Math.round(totalCarbs)}g</div><div class="lbl">Carbs</div></div>
       </div>
+      ${totalProtein < 85 ? `<div class="protein-tip" id="protein-tip"></div>` : ''}
     </div>
     <div class="section-title">Actions</div>
     <div class="quick-actions">
@@ -1174,7 +1181,11 @@ function renderPickerList() {
   const recentIds = getRecentMealIds(pickerWeek, 4);
   let pool;
   if (pickerActiveTab === 'a') {
-    pool = recipes.filter(r => {
+    // Pool excludes: ±4 weeks, adjacent protein sources, same source as current Meal B
+    const basePool = getMealAPool(pickerWeek);
+    const mealBSource = pickerMealB?.tags_compat?.protein_source;
+    pool = basePool.filter(r => {
+      if (mealBSource && r.tags_compat?.protein_source === mealBSource) return false;
       const matchQ = !q || r.title.toLowerCase().includes(q) || r.title_jp.includes(q);
       const matchTag = !pickerActiveTag || (r.tags || []).includes(pickerActiveTag);
       return matchQ && matchTag;
@@ -1184,7 +1195,7 @@ function renderPickerList() {
       document.getElementById('picker-list').innerHTML = '<div style="text-align:center;padding:20px;color:var(--text2);font-size:0.82rem;">Pick Meal A first</div>';
       return;
     }
-    const ranked = rankCompatibleMeals(pickerMealA, pickerWeek);
+    const ranked = getMealBPool(pickerWeek, pickerMealA);
     pool = ranked.filter(r => {
       const matchQ = !q || r.title.toLowerCase().includes(q) || r.title_jp.includes(q);
       const matchTag = !pickerActiveTag || (r.tags || []).includes(pickerActiveTag);
@@ -1193,20 +1204,42 @@ function renderPickerList() {
   }
 
   if (pool.length === 0) {
-    document.getElementById('picker-list').innerHTML = '<div style="text-align:center;padding:20px;color:var(--text2);font-size:0.82rem;">No meals match this filter</div>';
+    const reason = pickerActiveTag
+      ? 'No meals match this filter within the available pool'
+      : pickerActiveTab === 'b' && pickerMealA
+      ? `No compatible meals available — try a different Meal A`
+      : 'No meals available for this week';
+    document.getElementById('picker-list').innerHTML = `<div style="text-align:center;padding:20px;color:var(--text2);font-size:0.82rem;">${reason}</div>`;
     return;
+  }
+  // Show exclusion note
+  const excluded = getExcludedIds(pickerWeek);
+  const totalExcluded = recipes.length - pool.length - (pickerActiveTag ? 0 : 0);
+  const noteEl = document.getElementById('picker-exclusion-note');
+  if (noteEl) {
+    const mealBSource = pickerActiveTab === 'a' ? pickerMealB?.tags_compat?.protein_source : null;
+    const mealASource = pickerActiveTab === 'b' ? pickerMealA?.tags_compat?.protein_source : null;
+    const sourceNote = mealASource ? ` · Excluding ${mealASource}` : mealBSource ? ` · Excluding ${mealBSource}` : '';
+    noteEl.textContent = `${pool.length} of ${recipes.length} meals available${sourceNote}`;
   }
 
   document.getElementById('picker-list').innerHTML = pool.map((r, i) => {
     const isSelected = (pickerActiveTab === 'a' && pickerMealA?.id === r.id) || (pickerActiveTab === 'b' && pickerMealB?.id === r.id);
-    const isTopPick = pickerActiveTab === 'b' && i === 0 && !q;
+    const isTopPick = pickerActiveTab === 'b' && i === 0 && !q && !pickerActiveTag;
     const isRecent = recentIds.includes(r.id);
     const macros = calcMacros(r);
+    // For Meal B show combined protein
+    const combinedProtein = pickerActiveTab === 'b' && pickerMealA
+      ? Math.round(macros.protein + (pickerMealA.protein_per_serving || 0))
+      : null;
+    const proteinNote = combinedProtein
+      ? `· <span style="color:${combinedProtein >= 90 && combinedProtein <= 115 ? '#27ae60' : combinedProtein < 80 ? 'var(--accent)' : 'var(--text2)'}">${combinedProtein}g combined P</span>`
+      : '';
     return `<div class="picker-item${isSelected ? ' selected' : ''}${isTopPick ? ' top-pick' : ''}" onclick="selectPickerMeal('${r.id}')">
       <div class="picker-item-jp">${r.title_jp}</div>
       <div class="picker-item-info">
         <div class="picker-item-name">${r.title}</div>
-        <div class="picker-item-meta">${macros.protein}g P · ${macros.fat}g F · ${macros.carbs}g C · ${macros.calories}kcal · ${r.cook_time_mins}min</div>
+        <div class="picker-item-meta">${macros.protein}g P · ${macros.fat}g F · ${macros.carbs}g C · ${macros.calories}kcal · ${r.cook_time_mins}min ${proteinNote}</div>
         ${isRecent ? '<div class="picker-item-recent">⏱ Cooked recently</div>' : ''}
       </div>
     </div>`;
@@ -1217,16 +1250,25 @@ function selectPickerMeal(id) {
   const meal = recipes.find(r => r.id === id);
   if (pickerActiveTab === 'a') {
     pickerMealA = meal;
-    pickerMealB = null; // reset B when A changes
-    // Auto-suggest best B
-    const ranked = rankCompatibleMeals(meal, pickerWeek);
-    if (ranked.length) pickerMealB = ranked[0];
+    // Clear Meal B if it now violates rules (same protein source as new A)
+    if (pickerMealB && pickerMealB.tags_compat?.protein_source === meal.tags_compat?.protein_source) {
+      pickerMealB = null;
+    }
+    // Auto-suggest best B from updated pool
+    if (!pickerMealB) {
+      const poolB = getMealBPool(pickerWeek, meal);
+      if (poolB.length) pickerMealB = poolB[0];
+    }
     updatePickerSelected();
     updatePickerConfirm();
-    // Switch to B tab to let user review/change suggestion
     setPickerTab('b');
   } else {
     pickerMealB = meal;
+    // Clear Meal A if it now violates rules (same protein source as new B)
+    if (pickerMealA && pickerMealA.tags_compat?.protein_source === meal.tags_compat?.protein_source) {
+      pickerMealA = null;
+      pickerMealB = meal; // keep B, reset A
+    }
     updatePickerSelected();
     updatePickerConfirm();
   }
@@ -1245,8 +1287,10 @@ async function confirmPairing() {
   closePickerModalBtn();
   renderSchedule();
   renderHome();
+  renderProteinTip();
   renderGroceryWarning();
   refreshGroceryWeekSel();
+  autoFillSchedule();
   // If this was triggered by advanceWeek, advance now
   if (pickerAdvanceAfter) {
     pickerAdvanceAfter = false;
@@ -1512,6 +1556,30 @@ function closeRecipeModal(e) { if (e.target === document.getElementById('recipe-
 function closeRecipeModalBtn() { document.getElementById('recipe-modal').classList.remove('open'); }
 
 // ── COOK SESSION ──
+// ── PROTEIN TIPS ──
+const PROTEIN_TIPS = [
+  "💡 <strong>Lower protein week</strong> — add a boiled egg to breakfast each morning for an easy +13g.",
+  "💡 <strong>Light protein week</strong> — a handful of edamame as an afternoon snack adds ~11g with minimal effort.",
+  "💡 <strong>Protein top-up</strong> — your morning shake already has ~35g. Consider adding an extra scoop of Greek yoghurt.",
+  "💡 <strong>Lower protein week</strong> — a small tin of tuna or salmon at lunch is an easy +25g with no cooking.",
+  "💡 <strong>Light protein week</strong> — your pre-gym peanut butter banana is great. A second tablespoon of PB adds another 8g.",
+  "💡 <strong>Protein top-up</strong> — cottage cheese on rice crackers makes a quick high-protein snack between meals.",
+  "💡 <strong>Lower protein week</strong> — edamame in the pod as a snack is one of the most protein-dense plant options available.",
+  "💡 <strong>Light protein week</strong> — consider upsizing your meal portions slightly this week to compensate.",
+  "💡 <strong>Protein top-up</strong> — a second egg with breakfast is the easiest daily top-up with almost no prep.",
+  "💡 <strong>Lower protein week</strong> — Japanese convenience stores sell individual boiled eggs cheaply — a habit worth starting now.",
+];
+
+function getProteinTip() {
+  const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
+  return PROTEIN_TIPS[dayOfYear % PROTEIN_TIPS.length];
+}
+
+function renderProteinTip() {
+  const el = document.getElementById('protein-tip');
+  if (el) el.innerHTML = getProteinTip();
+}
+
 // ── DATE HELPERS ──
 function getWeekCookDate(weekNum) {
   // Calculate the actual date of cook day for a given week number
@@ -1956,28 +2024,229 @@ function getRecentMealIds(beforeWeek, limit) {
   return recent;
 }
 
-function rankCompatibleMeals(mealA, forWeek) {
-  const tc = mealA.tags_compat || {};
+// ── SCHEDULING MATRIX ──
+
+// Protein sources with few recipes get a smaller exclusion window
+// Sources with few recipes get smaller exclusion window
+// tofu=7 — now large enough for ±4 week window
+// lamb=1, mixed=3, seafood=3 — still scarce, keep ±2
+const SCARCE_SOURCES = new Set(['lamb', 'mixed', 'seafood']);
+
+function getExclusionWindow(recipe) {
+  const source = recipe?.tags_compat?.protein_source;
+  return SCARCE_SOURCES.has(source) ? 2 : 4;
+}
+
+function getExcludedIds(forWeek, excludeSelf) {
+  // Each recipe is excluded based on its own source's window size
+  const excluded = new Set();
+  for (let w = forWeek - 4; w <= forWeek + 4; w++) {
+    if (w === forWeek) continue;
+    const p = userPairings[w];
+    if (!p) continue;
+    const mA = recipes.find(r => r.id === p.meal_a_id);
+    const mB = recipes.find(r => r.id === p.meal_b_id);
+    const distA = Math.abs(w - forWeek);
+    const distB = Math.abs(w - forWeek);
+    if (mA && distA <= getExclusionWindow(mA)) excluded.add(p.meal_a_id);
+    if (mB && distB <= getExclusionWindow(mB)) excluded.add(p.meal_b_id);
+  }
+  if (excludeSelf) excluded.add(excludeSelf);
+  return excluded;
+}
+
+function getAdjacentProteinSources(forWeek) {
+  // Get protein sources from the week before and after
+  const sources = new Set();
+  [-1, 1].forEach(offset => {
+    const p = userPairings[forWeek + offset];
+    if (p) {
+      const mA = recipes.find(r => r.id === p.meal_a_id);
+      const mB = recipes.find(r => r.id === p.meal_b_id);
+      if (mA?.tags_compat?.protein_source) sources.add(mA.tags_compat.protein_source);
+      if (mB?.tags_compat?.protein_source) sources.add(mB.tags_compat.protein_source);
+    }
+  });
+  return sources;
+}
+
+function getMealAPool(forWeek) {
+  const excluded = getExcludedIds(forWeek);
+  const adjacentSources = getAdjacentProteinSources(forWeek);
   const recentIds = getRecentMealIds(forWeek, 4);
   return recipes
-    .filter(r => r.id !== mealA.id)
+    .filter(r => {
+      if (excluded.has(r.id)) return false;
+      if (adjacentSources.has(r.tags_compat?.protein_source)) return false;
+      return true;
+    })
     .map(r => {
-      const rc = r.tags_compat || {};
-      let score = 100;
-      // Penalise same protein source
-      if (rc.protein_source === tc.protein_source) score -= 40;
-      // Reward fat balance — if mealA is low fat, prefer high fat and vice versa
-      if (tc.fat_level === 'low' && rc.fat_level === 'high') score += 20;
-      if (tc.fat_level === 'high' && rc.fat_level === 'low') score += 20;
-      if (tc.fat_level === rc.fat_level) score -= 10;
-      // Penalise both carb heavy
-      if (tc.carb_heavy && rc.carb_heavy) score -= 20;
-      // Penalise recently cooked
-      if (recentIds.includes(r.id)) score -= 30;
+      const isRecent = recentIds.includes(r.id);
+      const score = (isRecent ? -50 : 0) + (Math.random() * 10);
       return { recipe: r, score };
     })
     .sort((a, b) => b.score - a.score)
     .map(x => x.recipe);
+}
+
+function getMealBPool(forWeek, mealA) {
+  const excluded = getExcludedIds(forWeek, mealA?.id);
+  const adjacentSources = getAdjacentProteinSources(forWeek);
+  const recentIds = getRecentMealIds(forWeek, 4);
+  const mealASource = mealA?.tags_compat?.protein_source;
+  const mealAProtein = mealA?.protein_per_serving || 0;
+  const mealAFat = mealA?.tags_compat?.fat_level;
+  const mealACarb = mealA?.tags_compat?.carb_heavy;
+  const mealAIsLowProtein = mealAProtein < 35;
+
+  return recipes
+    .filter(r => {
+      if (excluded.has(r.id)) return false;
+      // Must not share protein source with Meal A
+      if (r.tags_compat?.protein_source === mealASource) return false;
+      // Must not share protein source with adjacent weeks
+      if (adjacentSources.has(r.tags_compat?.protein_source)) return false;
+      return true;
+    })
+    .map(r => {
+      const rc = r.tags_compat || {};
+      let score = 100;
+      // Protein balance — this is the most important factor, weighted highest
+      const combined = mealAProtein + (r.protein_per_serving || 0);
+      const mealBProtein = r.protein_per_serving || 0;
+      if (!mealAIsLowProtein) {
+        // Normal weeks — hard scoring around the 90-115g target
+        if (combined >= 90 && combined <= 115) score += 40;
+        else if (combined >= 80 && combined < 90) score += 20;
+        else if (combined > 115) score -= 10;
+        else if (combined < 80) score -= 30;
+        else if (combined < 70) score -= 60; // hard floor
+      } else {
+        // Meal A is low protein (tofu/egg) — strongly prefer high protein Meal B
+        // Every point of protein above 40g gets rewarded
+        score += Math.min(40, Math.max(0, mealBProtein - 35) * 2);
+        // Extra penalty if combined is still very low
+        if (combined < 70) score -= 40;
+        else if (combined < 80) score -= 20;
+      }
+      // Fat balance — secondary factor, reduced weight
+      if (mealAFat === 'low' && rc.fat_level === 'high') score += 10;
+      if (mealAFat === 'high' && rc.fat_level === 'low') score += 10;
+      if (mealAFat === rc.fat_level) score -= 5;
+      // Carb heavy penalty
+      if (mealACarb && rc.carb_heavy) score -= 20;
+      // Recency penalty
+      if (recentIds.includes(r.id)) score -= 30;
+      // Pairing combination memory — penalise if this exact pair appeared in nearby weeks
+      const pairKey = [mealA.id, r.id].sort().join('|');
+      for (let w = forWeek - 8; w <= forWeek + 8; w++) {
+        if (w === forWeek) continue;
+        const p = userPairings[w];
+        if (p) {
+          const otherKey = [p.meal_a_id, p.meal_b_id].sort().join('|');
+          if (otherKey === pairKey) { score -= 50; break; }
+        }
+      }
+      // Random jitter — increased to break ties more effectively
+      score += (Math.random() * 16) - 8;
+      return { recipe: r, score };
+    })
+    .sort((a, b) => b.score - a.score)
+    .map(x => x.recipe);
+}
+
+function scoreRecipe(recipe, forWeek, partnerMeal) {
+  // Used by auto-fill to score a candidate recipe
+  const excluded = getExcludedIds(forWeek);
+  const adjacentSources = getAdjacentProteinSources(forWeek);
+  const recentIds = getRecentMealIds(forWeek, 4);
+  if (excluded.has(recipe.id)) return -999;
+  if (adjacentSources.has(recipe.tags_compat?.protein_source)) return -999;
+  if (partnerMeal && recipe.tags_compat?.protein_source === partnerMeal.tags_compat?.protein_source) return -999;
+  let score = 100;
+  if (recentIds.includes(recipe.id)) score -= 30;
+  return score;
+}
+
+function autoFillWeek(weekNum, forceTofuVeg) {
+  const poolA = getMealAPool(weekNum);
+  if (!poolA.length) return null;
+
+  let mealA;
+  if (forceTofuVeg) {
+    // Try to place tofu/veg as one of the meals
+    const tofuOption = poolA.find(r => r.tags_compat?.protein_source === 'tofu');
+    if (tofuOption) {
+      mealA = tofuOption;
+    } else {
+      mealA = poolA[0];
+    }
+  } else {
+    mealA = poolA[0];
+  }
+
+  let poolB = getMealBPool(weekNum, mealA);
+
+  // If forcing tofu and mealA isn't tofu, try to put tofu in mealB
+  if (forceTofuVeg && mealA.tags_compat?.protein_source !== 'tofu') {
+    const tofuB = poolB.find(r => r.tags_compat?.protein_source === 'tofu');
+    if (tofuB) return { meal_a_id: mealA.id, meal_b_id: tofuB.id };
+  }
+
+  if (!poolB.length) return null;
+  const mealB = poolB[0];
+  return { meal_a_id: mealA.id, meal_b_id: mealB.id };
+}
+
+async function autoFillSchedule() {
+  const current = userSchedule.current_week;
+  let filled = 0;
+
+  // Check if tofu/veg is represented in the upcoming 8 weeks
+  const upcomingWeeks = [];
+  for (let w = current; w <= current + 8; w++) upcomingWeeks.push(w);
+
+  const hasTofu = upcomingWeeks.some(w => {
+    const p = userPairings[w];
+    if (!p) return false;
+    const mA = recipes.find(r => r.id === p.meal_a_id);
+    const mB = recipes.find(r => r.id === p.meal_b_id);
+    return mA?.tags_compat?.protein_source === 'tofu' ||
+           mB?.tags_compat?.protein_source === 'tofu';
+  });
+
+  // Find the best week to place tofu if missing
+  let tofuWeek = null;
+  if (!hasTofu) {
+    // Pick a week roughly in the middle of the unplanned block
+    const unplanned = upcomingWeeks.filter(w => !userPairings[w]);
+    tofuWeek = unplanned[Math.floor(unplanned.length / 2)] || unplanned[0] || null;
+  }
+
+  for (let w = current; w <= current + 8; w++) {
+    if (userPairings[w]) continue;
+    const pairing = autoFillWeek(w, w === tofuWeek);
+    if (pairing) {
+      await saveUserPairing(w, pairing.meal_a_id, pairing.meal_b_id);
+      filled++;
+      // Check if tofu was actually placed
+      if (w === tofuWeek) {
+        const mA = recipes.find(r => r.id === pairing.meal_a_id);
+        const mB = recipes.find(r => r.id === pairing.meal_b_id);
+        if (mA?.tags_compat?.protein_source === 'tofu' ||
+            mB?.tags_compat?.protein_source === 'tofu') {
+          tofuWeek = null; // satisfied
+        }
+      }
+    }
+  }
+
+  if (filled > 0) {
+    renderSchedule();
+    renderHome();
+    renderGroceryWarning();
+    refreshGroceryWeekSel();
+  }
 }
 
 async function saveCookSession() {
