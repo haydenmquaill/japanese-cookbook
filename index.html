@@ -150,8 +150,8 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
 .schedule-badge{font-size:0.7rem;padding:3px 9px;border-radius:20px;background:var(--accent);color:white;font-weight:600;white-space:nowrap;}
 
 /* GROCERY VIEW */
-.grocery-week-sel{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-.grocery-week-sel select{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:9px 12px;color:var(--text);font-size:0.875rem;outline:none;}
+.grocery-week-sel{display:flex;align-items:center;gap:10px;margin-bottom:14px;min-width:0;}
+.grocery-week-sel select{flex:1;min-width:0;width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:9px 12px;color:var(--text);font-size:0.875rem;outline:none;overflow:hidden;text-overflow:ellipsis;}
 .grocery-week-sel select:focus{border-color:var(--accent);}
 .servings-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
 .servings-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:13px;}
