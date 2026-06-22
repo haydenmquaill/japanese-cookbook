@@ -363,6 +363,12 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
 .confirm-btn-cancel{flex:1;padding:11px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface3);color:var(--text);font-size:0.875rem;font-weight:600;cursor:pointer;}
 .confirm-btn-ok{flex:1;padding:11px;border-radius:var(--radius);border:none;background:var(--accent);color:white;font-size:0.875rem;font-weight:600;cursor:pointer;}
 .confirm-btn-ok:hover{background:var(--accent2);}
+/* MACRO ROW INLINE */
+.meal-macro-row-inline{display:flex;align-items:center;gap:4px;font-size:0.72rem;color:var(--text2);margin-top:4px;flex-wrap:nowrap;}
+.meal-macro-row-inline span{white-space:nowrap;}
+.macro-dot{color:var(--text3);}
+.meal-macro-val{font-size:0.9rem;font-weight:700;}
+.meal-macro-unit{font-size:0.65rem;color:var(--text3);margin-left:1px;font-weight:400;}
 /* UTILITY */
 ::-webkit-scrollbar{width:5px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
@@ -555,6 +561,7 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
       <div class="modal-jp" id="rm-jp"></div>
       <div class="modal-title" id="rm-title"></div>
       <div class="modal-desc" id="rm-desc"></div>
+      <div id="rm-fresh-note" style="display:none;background:var(--accent-soft);border:1px solid var(--accent);border-radius:var(--radius-sm);padding:8px 12px;font-size:0.78rem;color:var(--accent);margin-bottom:10px;">🌿 Fresh only — this meal is not freezer friendly. Prepare and eat within 2 days.</div>
       <div class="modal-macro-row">
         <div class="modal-macro"><div class="val" id="rm-protein"></div><div class="lbl">Protein</div></div>
         <div class="modal-macro"><div class="val" id="rm-fat"></div><div class="lbl">Fat</div></div>
@@ -625,10 +632,30 @@ let groceryServings = {};
 const BASE_SERVINGS = 7;
 const UNIT_TO_G = { g: 1, ml: 1, l: 1000, tbsp: 15, tsp: 5 };
 
+function resolveIngredient(ing) {
+  // Merge recipe ingredient ref with master ingredient data
+  const master = ingredientMap[ing.ingredient_id] || {};
+  return {
+    ...master,
+    amount: ing.amount,
+    unit: ing.unit,
+    scale_factor: ing.scale_factor,
+    is_batch: ing.is_batch,
+    // master fields
+    name: master.name || ing.ingredient_id,
+    store: master.store || 'woolworths',
+    unit_g: master.unit_g || null,
+    protein_per_100g: master.protein_per_100g || 0,
+    fat_per_100g: master.fat_per_100g || 0,
+    carbs_per_100g: master.carbs_per_100g || 0,
+  };
+}
+
 function calcMacros(recipe, servings) {
   servings = servings || BASE_SERVINGS;
   let p = 0, f = 0, c = 0;
-  for (const ing of recipe.ingredients) {
+  for (const rawIng of recipe.ingredients) {
+    const ing = resolveIngredient(rawIng);
     const unit = (ing.unit || '').toLowerCase();
     const ug = ing.unit_g || 0;
     let gBatch;
@@ -639,15 +666,14 @@ function calcMacros(recipe, servings) {
     } else {
       gBatch = ing.amount * (ug || 15);
     }
-    // Apply scale_factor when servings differ from base
     const ratio = servings / BASE_SERVINGS;
     const sf = ing.scale_factor !== undefined ? ing.scale_factor : 1.0;
     const scaledRatio = 1 - (1 - ratio) * sf;
     const gScaled = gBatch * scaledRatio;
     const gPerServing = gScaled / servings;
-    p += gPerServing * (ing.protein_per_100g || 0) / 100;
-    f += gPerServing * (ing.fat_per_100g || 0) / 100;
-    c += gPerServing * (ing.carbs_per_100g || 0) / 100;
+    p += gPerServing * ing.protein_per_100g / 100;
+    f += gPerServing * ing.fat_per_100g / 100;
+    c += gPerServing * ing.carbs_per_100g / 100;
   }
   return {
     protein: Math.round(p * 10) / 10,
@@ -667,8 +693,10 @@ async function loadData() {
     if (!r.ok) throw new Error('Could not load data.json');
     const d = await r.json();
     recipes = d.recipes || [];
-    pairings = d.pairings || [];
     stores = d.stores || {};
+    // Build ingredient lookup map by id
+    ingredientMap = {};
+    (d.ingredients || []).forEach(ing => { ingredientMap[ing.id] = ing; });
     showSync('', '');
   } catch(e) {
     showSync('Failed to load recipe data: ' + e.message, 'error');
@@ -886,9 +914,9 @@ function renderHome() {
         ${renderMealPairCard(mealB)}
       </div>`}
       <div class="macro-row">
-        <div class="macro-pill"><div class="val">${Math.round(totalProtein)}g</div><div class="lbl">Protein / meal</div></div>
-        <div class="macro-pill"><div class="val">${Math.round(totalFat)}g</div><div class="lbl">Fat / meal</div></div>
-        <div class="macro-pill"><div class="val">${Math.round(totalCarbs)}g</div><div class="lbl">Carbs / meal</div></div>
+        <div class="macro-pill"><div class="val">${Math.round(totalProtein)}g</div><div class="lbl">Protein</div></div>
+        <div class="macro-pill"><div class="val">${Math.round(totalFat)}g</div><div class="lbl">Fat</div></div>
+        <div class="macro-pill"><div class="val">${Math.round(totalCarbs)}g</div><div class="lbl">Carbs</div></div>
       </div>
     </div>
     <div class="section-title">Actions</div>
@@ -921,7 +949,8 @@ function renderMealPairCard(meal) {
   return `<div class="meal-pair-card" onclick="openRecipe('${meal.id}')">
     <div class="meal-pair-jp">${meal.title_jp}</div>
     <div class="meal-pair-name">${meal.title}</div>
-    <div class="meal-pair-meta">~${meal.cook_time_mins} min · ${calcMacros(meal).protein}g protein</div>
+    <div class="meal-pair-meta">~${meal.cook_time_mins} min</div>
+    <div class="meal-macro-row-inline" style="margin-top:4px">${(() => { const m = calcMacros(meal); return `<span>${m.protein}g P</span><span class="macro-dot">·</span><span>${m.fat}g F</span><span class="macro-dot">·</span><span>${m.carbs}g C</span><span class="macro-dot">·</span><span>${m.calories}kcal</span>`; })()}</div>
   </div>`;
 }
 
@@ -1003,13 +1032,11 @@ function renderMeals() {
         <div class="meal-card-info">
           <div class="meal-card-title">${r.title}</div>
           <div class="meal-card-desc">${r.description}</div>
-          <div class="meal-card-tags">${(r.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+          <div class="meal-card-tags">${(r.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}${!r.freezer_friendly ? '<span class="tag" style="background:var(--accent-soft);color:var(--accent);border-color:var(--accent)">🌿 Fresh only</span>' : ''}</div>
+          <div class="meal-macro-row-inline">${(() => { const m = calcMacros(r); return `<span>${m.protein}g P</span><span class="macro-dot">·</span><span>${m.fat}g F</span><span class="macro-dot">·</span><span>${m.carbs}g C</span><span class="macro-dot">·</span><span>${m.calories}kcal</span>`; })()}</div>
         </div>
         <div class="meal-card-macros">
-          <div class="meal-macro-val">${calcMacros(r).protein}g</div>
-          <div class="meal-macro-lbl">protein</div>
-          <div class="meal-macro-val" style="margin-top:4px">${r.cook_time_mins}</div>
-          <div class="meal-macro-lbl">mins</div>
+          <div class="meal-macro-val">${r.cook_time_mins}<span class="meal-macro-unit">min</span></div>
         </div>
       </div>`).join('')
     : '<div class="empty-state"><div class="es-icon">🍱</div><p>No meals found</p></div>';
@@ -1179,7 +1206,7 @@ function renderPickerList() {
       <div class="picker-item-jp">${r.title_jp}</div>
       <div class="picker-item-info">
         <div class="picker-item-name">${r.title}</div>
-        <div class="picker-item-meta">${macros.protein}g protein · ${macros.fat}g fat · ${r.cook_time_mins} min</div>
+        <div class="picker-item-meta">${macros.protein}g P · ${macros.fat}g F · ${macros.carbs}g C · ${macros.calories}kcal · ${r.cook_time_mins}min</div>
         ${isRecent ? '<div class="picker-item-recent">⏱ Cooked recently</div>' : ''}
       </div>
     </div>`;
@@ -1295,7 +1322,8 @@ function renderGrocery() {
   const byStore = {};
   [{ meal: mealA, servings: sA }, { meal: mealB, servings: sB }].forEach(({ meal, servings }) => {
     if (!meal) return;
-    meal.ingredients.forEach(ing => {
+    meal.ingredients.forEach(rawIng => {
+      const ing = resolveIngredient(rawIng);
       const store = ing.store || 'woolworths';
       if (!byStore[store]) byStore[store] = {};
       const key = ing.name.toLowerCase();
@@ -1370,6 +1398,8 @@ function openRecipe(id) {
   document.getElementById('rm-jp').textContent = r.title_jp;
   document.getElementById('rm-title').textContent = r.title;
   document.getElementById('rm-desc').textContent = r.description;
+  const freshNote = document.getElementById('rm-fresh-note');
+  if (freshNote) freshNote.style.display = r.freezer_friendly ? 'none' : '';
   const macros = calcMacros(r, modalServings);
   document.getElementById('rm-protein').textContent = macros.protein + 'g';
   document.getElementById('rm-fat').textContent = macros.fat + 'g';
@@ -1382,12 +1412,11 @@ function openRecipe(id) {
   document.getElementById('recipe-modal').classList.add('open');
 }
 
-function scaleAmount(ing, servings) {
-  const base = 7; // all amounts in data.json are for 7 servings
+function scaleAmount(rawIng, servings) {
+  const ing = resolveIngredient(rawIng);
+  const base = 7;
   const ratio = servings / base;
   const sf = ing.scale_factor !== undefined ? ing.scale_factor : 1.0;
-  // scale_factor controls how aggressively the ingredient scales:
-  // 1.0 = full linear scaling, 0.5 = half as aggressive, 0.0 = fixed
   const scaledRatio = 1 - (1 - ratio) * sf;
   return ing.amount * scaledRatio;
 }
@@ -1395,8 +1424,9 @@ function scaleAmount(ing, servings) {
 function renderRecipeIngredients() {
   if (!currentRecipe) return;
   document.getElementById('rm-servings-num').textContent = modalServings;
-  document.getElementById('rm-ingredient-list').innerHTML = currentRecipe.ingredients.map(ing => {
-    const amount = scaleAmount(ing, modalServings);
+  document.getElementById('rm-ingredient-list').innerHTML = currentRecipe.ingredients.map(rawIng => {
+    const ing = resolveIngredient(rawIng);
+    const amount = scaleAmount(rawIng, modalServings);
     const amtStr = ing.unit ? `${formatAmount(amount)} ${ing.unit}` : formatAmount(amount);
     const storeInfo = stores[ing.store] || { label: ing.store, emoji: '🛒' };
     return `<div class="ingredient-row">
@@ -1409,15 +1439,25 @@ function renderRecipeIngredients() {
   }).join('');
 
   // Store notes
-  const sn = currentRecipe.store_notes || {};
+  // Build store notes dynamically from master ingredient data
   const storeOrder = ['woolworths','woolworths-asian','genki','fishmonger'];
+  const byStore = {};
+  currentRecipe.ingredients.forEach(rawIng => {
+    const ing = resolveIngredient(rawIng);
+    const s = ing.store || 'woolworths';
+    if (!byStore[s]) byStore[s] = [];
+    byStore[s].push(ing.name);
+  });
+  // Merge with any manual store_notes overrides from recipe
+  const sn = currentRecipe.store_notes || {};
+  storeOrder.forEach(s => { if (sn[s]) byStore[s] = sn[s]; });
   document.getElementById('rm-store-notes').innerHTML = `
     <div class="store-note-title">Where to buy</div>
-    ${storeOrder.filter(s => sn[s]).map(s => {
+    ${storeOrder.filter(s => byStore[s]?.length).map(s => {
       const si = stores[s] || { label: s, emoji: '🛒' };
       return `<div class="store-note-row">
         <div class="store-note-label">${si.emoji} ${si.label}</div>
-        <div class="store-note-items">${sn[s].join(', ')}</div>
+        <div class="store-note-items">${byStore[s].join(', ')}</div>
       </div>`;
     }).join('')}`;
 }
@@ -1515,12 +1555,10 @@ function isCurrentWeekLocked() {
   const mealB = recipes.find(r => r.id === pairing.meal_b_id);
   const meals = [mealA, mealB].filter(Boolean);
   for (const meal of meals) {
-    for (const ing of meal.ingredients) {
-      const stores = ['woolworths', 'woolworths-asian', 'genki', 'fishmonger'];
-      for (const store of stores) {
-        const key = store + '_' + ing.name;
-        if (checkedItems[key]) return true;
-      }
+    for (const rawIng of meal.ingredients) {
+      const ing = resolveIngredient(rawIng);
+      const key = (ing.store || 'woolworths') + '_' + ing.name;
+      if (checkedItems[key]) return true;
     }
   }
   // Also locked if cook session exists for current week
@@ -1541,7 +1579,8 @@ function getGroceryStatus() {
   const byStore = {};
   [{ meal: mealA, servings: sA }, { meal: mealB, servings: sB }].forEach(({ meal, servings }) => {
     if (!meal) return;
-    meal.ingredients.forEach(ing => {
+    meal.ingredients.forEach(rawIng => {
+      const ing = resolveIngredient(rawIng);
       const store = ing.store || 'woolworths';
       if (!byStore[store]) byStore[store] = {};
       const key = ing.name.toLowerCase();
@@ -1644,7 +1683,8 @@ function markAllWoolworthsDone() {
   const mealB = recipes.find(r => r.id === pairing?.meal_b_id);
   [mealA, mealB].forEach(meal => {
     if (!meal) return;
-    meal.ingredients.forEach(ing => {
+    meal.ingredients.forEach(rawIng => {
+      const ing = resolveIngredient(rawIng);
       if (ing.store === 'woolworths' || ing.store === 'woolworths-asian') {
         const key = ing.store + '_' + ing.name;
         checkedItems[key] = true;
@@ -1657,7 +1697,8 @@ function markAllWoolworthsDone() {
 }
 
 // ── COOK MODE ──
-let userPairings = {}; // week_number -> { meal_a_id, meal_b_id }
+let userPairings = {};
+let ingredientMap = {}; // week_number -> { meal_a_id, meal_b_id }
 let cookSteps = [];
 let cookCurrentStep = 0;
 let cookPhase = 'prep';
