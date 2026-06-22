@@ -343,21 +343,22 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
     <div class="nav-top">
       <div class="nav-title" onclick="showView('home')">食事プランナー</div>
       <div class="nav-menu-wrap" id="nav-menu-wrap">
-      <button class="icon-btn" onclick="toggleNavMenu()" id="nav-menu-btn">⋮</button>
-      <div class="nav-menu-dropdown" id="nav-menu-dropdown">
-        <div class="nav-menu-user" id="nav-menu-user"></div>
-        <div class="nav-menu-email" id="nav-menu-email"></div>
-        <div class="nav-menu-divider"></div>
-        <div class="nav-menu-section">Theme</div>
-        <div class="nav-menu-item" id="menu-theme-sumi" onclick="setTheme('sumi')"><div class="theme-swatch" style="background:linear-gradient(135deg,#0e0d0c 50%,#c0392b 50%)"></div>🖋️ Sumi</div>
-        <div class="nav-menu-item" id="menu-theme-sakura" onclick="setTheme('sakura')"><div class="theme-swatch" style="background:linear-gradient(135deg,#0a0c14 50%,#e8799a 50%)"></div>🌸 Sakura</div>
-        <div class="nav-menu-item" id="menu-theme-ai" onclick="setTheme('ai')"><div class="theme-swatch" style="background:linear-gradient(135deg,#080c14 50%,#c8a84a 50%)"></div>藍 Ai</div>
-        <div class="nav-menu-divider"></div>
-        <div class="nav-menu-item" onclick="toggleMode()" id="menu-mode-btn">🌙 Dark mode</div>
-        <div class="nav-menu-divider"></div>
-        <div class="nav-menu-item" onclick="showView('settings');toggleNavMenu(true)">⚙️ Settings</div>
-        <div class="nav-menu-item" onclick="showCookDayModal()">📅 Cook day</div>
-        <div class="nav-menu-item danger" onclick="signOut()">🚪 Sign out</div>
+        <button class="icon-btn" onclick="toggleNavMenu()" id="nav-menu-btn">⋮</button>
+        <div class="nav-menu-dropdown" id="nav-menu-dropdown">
+          <div class="nav-menu-user" id="nav-menu-user"></div>
+          <div class="nav-menu-email" id="nav-menu-email"></div>
+          <div class="nav-menu-divider"></div>
+          <div class="nav-menu-section">Theme</div>
+          <div class="nav-menu-item" id="menu-theme-sumi" onclick="setTheme('sumi')"><div class="theme-swatch" style="background:linear-gradient(135deg,#0e0d0c 50%,#c0392b 50%)"></div>🖋️ Sumi</div>
+          <div class="nav-menu-item" id="menu-theme-sakura" onclick="setTheme('sakura')"><div class="theme-swatch" style="background:linear-gradient(135deg,#0a0c14 50%,#e8799a 50%)"></div>🌸 Sakura</div>
+          <div class="nav-menu-item" id="menu-theme-ai" onclick="setTheme('ai')"><div class="theme-swatch" style="background:linear-gradient(135deg,#080c14 50%,#c8a84a 50%)"></div>藍 Ai</div>
+          <div class="nav-menu-divider"></div>
+          <div class="nav-menu-item" onclick="toggleMode()" id="menu-mode-btn">🌙 Dark mode</div>
+          <div class="nav-menu-divider"></div>
+          <div class="nav-menu-item" onclick="showView('settings');toggleNavMenu(true)">⚙️ Settings</div>
+          <div class="nav-menu-item" onclick="showCookDayModal()">📅 Cook day</div>
+          <div class="nav-menu-item danger" onclick="signOut()">🚪 Sign out</div>
+        </div>
       </div>
     </div>
     <div class="nav-tabs">
@@ -754,6 +755,7 @@ function showView(v) {
   const tab = document.getElementById('tab-' + v);
   if (tab) tab.classList.add('active');
   if (v === 'settings') populateSettings();
+  if (v === 'home') { renderHome(); renderGroceryWarning(); }
   toggleNavMenu(true);
 }
 
