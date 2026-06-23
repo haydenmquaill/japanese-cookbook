@@ -1,0 +1,23 @@
+{
+  "name": "食事プランナー",
+  "short_name": "食事プランナー",
+  "description": "Japanese meal planner",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0e0d0c",
+  "theme_color": "#0e0d0c",
+  "icons": [
+    {
+      "src": "meal-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "meal-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
