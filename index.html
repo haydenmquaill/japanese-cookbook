@@ -621,8 +621,8 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
 
 <script>
 // ── CONFIG ──
-const SUPABASE_URL = 'https://ggvesjpbyocrqghfbepv.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdndmVzanBieW9jcnFnaGZiZXB2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIwNjM3NjEsImV4cCI6MjA5NzYzOTc2MX0.w3fvdACrM6HHGVdnDYT7QzOUkFkdmO6_k3i2hz17_RU';
+const SUPABASE_URL = 'https://nitchusgmixyrbqswdhe.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5pdGNodXNnbWl4eXJicXN3ZGhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEyNjEyMDIsImV4cCI6MjA5NjgzNzIwMn0.2HLpCwSAQ2n-Vr3pkKH7HgKeNhfa-l0a_tlSonwSO10';
 const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -696,9 +696,7 @@ function calcMacros(recipe, servings) {
 async function loadData() {
   showSync('Loading recipes…', 'syncing');
   try {
-    const { data: urlData, error: urlError } = await sb.storage.from('meal-planner').createSignedUrl('data.json', 60);
-    if (urlError) throw new Error('Could not get storage URL: ' + urlError.message);
-    const r = await fetch(urlData.signedUrl + '&t=' + Date.now());
+    const r = await fetch('data/data.json');
     if (!r.ok) throw new Error('Could not load data.json');
     const d = await r.json();
     recipes = d.recipes || [];
