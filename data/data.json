@@ -1552,6 +1552,7 @@
       "calories_per_serving": 660,
       "tags_compat": {
         "protein_source": "chicken",
+        "cook_style": "grilled",
         "fat_level": "low",
         "has_veg": true,
         "carb_heavy": false
@@ -1709,6 +1710,7 @@
       "calories_per_serving": 661,
       "tags_compat": {
         "protein_source": "chicken",
+        "cook_style": "simmered",
         "fat_level": "medium",
         "has_veg": true,
         "carb_heavy": true
@@ -1874,6 +1876,7 @@
       "calories_per_serving": 867,
       "tags_compat": {
         "protein_source": "fish",
+        "cook_style": "grilled",
         "fat_level": "high",
         "has_veg": true,
         "carb_heavy": false
@@ -2037,6 +2040,7 @@
       "calories_per_serving": 573,
       "tags_compat": {
         "protein_source": "pork",
+        "cook_style": "soup",
         "fat_level": "medium",
         "has_veg": true,
         "carb_heavy": false
@@ -2199,6 +2203,7 @@
       "calories_per_serving": 673,
       "tags_compat": {
         "protein_source": "beef",
+        "cook_style": "simmered",
         "fat_level": "medium",
         "has_veg": true,
         "carb_heavy": false
@@ -2385,6 +2390,7 @@
       "calories_per_serving": 515,
       "tags_compat": {
         "protein_source": "tofu",
+        "cook_style": "simmered",
         "fat_level": "low",
         "has_veg": true,
         "carb_heavy": false
@@ -2531,6 +2537,7 @@
       "calories_per_serving": 681,
       "tags_compat": {
         "protein_source": "chicken",
+        "cook_style": "simmered",
         "fat_level": "medium",
         "has_veg": false,
         "carb_heavy": false
@@ -2700,6 +2707,7 @@
       "calories_per_serving": 906,
       "tags_compat": {
         "protein_source": "pork",
+        "cook_style": "simmered",
         "fat_level": "high",
         "has_veg": true,
         "carb_heavy": false
@@ -2870,6 +2878,7 @@
       "calories_per_serving": 689,
       "tags_compat": {
         "protein_source": "beef",
+        "cook_style": "simmered",
         "fat_level": "medium",
         "has_veg": true,
         "carb_heavy": true
@@ -3018,6 +3027,7 @@
       "calories_per_serving": 730,
       "tags_compat": {
         "protein_source": "fish",
+        "cook_style": "grilled",
         "fat_level": "high",
         "has_veg": true,
         "carb_heavy": false
@@ -3190,6 +3200,7 @@
       "calories_per_serving": 718,
       "tags_compat": {
         "protein_source": "fish",
+        "cook_style": "simmered",
         "fat_level": "high",
         "has_veg": true,
         "carb_heavy": false
@@ -3384,6 +3395,7 @@
       "calories_per_serving": 579,
       "tags_compat": {
         "protein_source": "seafood",
+        "cook_style": "stir-fried",
         "fat_level": "low",
         "has_veg": true,
         "carb_heavy": false
@@ -3562,6 +3574,7 @@
       "calories_per_serving": 748,
       "tags_compat": {
         "protein_source": "chicken",
+        "cook_style": "stir-fried",
         "fat_level": "low",
         "has_veg": true,
         "carb_heavy": false
@@ -3733,6 +3746,7 @@
       "calories_per_serving": 575,
       "tags_compat": {
         "protein_source": "mixed",
+        "cook_style": "soup",
         "fat_level": "low",
         "has_veg": true,
         "carb_heavy": false
@@ -3911,6 +3925,7 @@
       "calories_per_serving": 567,
       "tags_compat": {
         "protein_source": "mixed",
+        "cook_style": "simmered",
         "fat_level": "low",
         "has_veg": true,
         "carb_heavy": false
@@ -4089,6 +4104,7 @@
       "calories_per_serving": 648,
       "tags_compat": {
         "protein_source": "chicken",
+        "cook_style": "grilled",
         "fat_level": "medium",
         "has_veg": true,
         "carb_heavy": false
@@ -4113,6 +4129,7 @@
       ],
       "tags_compat": {
         "protein_source": "lamb",
+        "cook_style": "grilled",
         "fat_level": "medium",
         "has_veg": true,
         "carb_heavy": false
@@ -4280,6 +4297,7 @@
       ],
       "tags_compat": {
         "protein_source": "pork",
+        "cook_style": "stir-fried",
         "fat_level": "medium",
         "has_veg": true,
         "carb_heavy": true
@@ -4451,6 +4469,7 @@
       ],
       "tags_compat": {
         "protein_source": "chicken",
+        "cook_style": "fried",
         "fat_level": "medium",
         "has_veg": false,
         "carb_heavy": false
@@ -4628,6 +4647,7 @@
       ],
       "tags_compat": {
         "protein_source": "pork",
+        "cook_style": "grilled",
         "fat_level": "medium",
         "has_veg": true,
         "carb_heavy": false
@@ -4789,6 +4809,7 @@
       ],
       "tags_compat": {
         "protein_source": "fish",
+        "cook_style": "grilled",
         "fat_level": "high",
         "has_veg": true,
         "carb_heavy": false
@@ -4929,6 +4950,7 @@
       ],
       "tags_compat": {
         "protein_source": "pork",
+        "cook_style": "stir-fried",
         "fat_level": "medium",
         "has_veg": false,
         "carb_heavy": false
@@ -5114,6 +5136,7 @@
       ],
       "tags_compat": {
         "protein_source": "beef",
+        "cook_style": "soup",
         "fat_level": "medium",
         "has_veg": true,
         "carb_heavy": true
@@ -5277,6 +5300,7 @@
       ],
       "tags_compat": {
         "protein_source": "chicken",
+        "cook_style": "fried",
         "fat_level": "medium",
         "has_veg": false,
         "carb_heavy": false
@@ -5462,6 +5486,7 @@
       ],
       "tags_compat": {
         "protein_source": "seafood",
+        "cook_style": "simmered",
         "fat_level": "low",
         "has_veg": false,
         "carb_heavy": false
@@ -5623,6 +5648,7 @@
       ],
       "tags_compat": {
         "protein_source": "fish",
+        "cook_style": "grilled",
         "fat_level": "high",
         "has_veg": true,
         "carb_heavy": false
@@ -5787,6 +5813,7 @@
       ],
       "tags_compat": {
         "protein_source": "fish",
+        "cook_style": "raw",
         "fat_level": "low",
         "has_veg": true,
         "carb_heavy": false
@@ -5943,6 +5970,7 @@
       ],
       "tags_compat": {
         "protein_source": "fish",
+        "cook_style": "fried",
         "fat_level": "medium",
         "has_veg": true,
         "carb_heavy": false
@@ -6107,6 +6135,7 @@
       ],
       "tags_compat": {
         "protein_source": "seafood",
+        "cook_style": "fried",
         "fat_level": "low",
         "has_veg": true,
         "carb_heavy": false
@@ -6268,6 +6297,7 @@
       ],
       "tags_compat": {
         "protein_source": "fish",
+        "cook_style": "fried",
         "fat_level": "high",
         "has_veg": true,
         "carb_heavy": false
@@ -6440,6 +6470,7 @@
       ],
       "tags_compat": {
         "protein_source": "tofu",
+        "cook_style": "fried",
         "fat_level": "medium",
         "has_veg": false,
         "carb_heavy": false
@@ -6618,6 +6649,7 @@
       ],
       "tags_compat": {
         "protein_source": "tofu",
+        "cook_style": "simmered",
         "fat_level": "low",
         "has_veg": true,
         "carb_heavy": false
@@ -6795,6 +6827,7 @@
       ],
       "tags_compat": {
         "protein_source": "tofu",
+        "cook_style": "grilled",
         "fat_level": "low",
         "has_veg": true,
         "carb_heavy": false
@@ -6973,6 +7006,7 @@
       ],
       "tags_compat": {
         "protein_source": "tofu",
+        "cook_style": "simmered",
         "fat_level": "low",
         "has_veg": false,
         "carb_heavy": false
@@ -7135,6 +7169,7 @@
       ],
       "tags_compat": {
         "protein_source": "tofu",
+        "cook_style": "fried",
         "fat_level": "medium",
         "has_veg": true,
         "carb_heavy": false
@@ -7338,6 +7373,7 @@
       ],
       "tags_compat": {
         "protein_source": "pork",
+        "cook_style": "fried",
         "fat_level": "medium",
         "has_veg": false,
         "carb_heavy": false
@@ -7507,6 +7543,7 @@
       ],
       "tags_compat": {
         "protein_source": "pork",
+        "cook_style": "simmered",
         "fat_level": "high",
         "has_veg": false,
         "carb_heavy": false
@@ -7693,6 +7730,7 @@
       ],
       "tags_compat": {
         "protein_source": "pork",
+        "cook_style": "simmered",
         "fat_level": "high",
         "has_veg": false,
         "carb_heavy": false
@@ -7878,6 +7916,7 @@
       ],
       "tags_compat": {
         "protein_source": "pork",
+        "cook_style": "stir-fried",
         "fat_level": "medium",
         "has_veg": true,
         "carb_heavy": false
@@ -8050,6 +8089,7 @@
       ],
       "tags_compat": {
         "protein_source": "pork",
+        "cook_style": "stir-fried",
         "fat_level": "medium",
         "has_veg": true,
         "carb_heavy": false
@@ -8260,6 +8300,7 @@
       ],
       "tags_compat": {
         "protein_source": "tofu",
+        "cook_style": "simmered",
         "fat_level": "low",
         "has_veg": false,
         "carb_heavy": false
@@ -8421,6 +8462,7 @@
       ],
       "tags_compat": {
         "protein_source": "fish",
+        "cook_style": "simmered",
         "fat_level": "low",
         "has_veg": true,
         "carb_heavy": false
@@ -8585,6 +8627,7 @@
       ],
       "tags_compat": {
         "protein_source": "mixed",
+        "cook_style": "soup",
         "fat_level": "low",
         "has_veg": false,
         "carb_heavy": false
@@ -8747,7 +8790,7 @@
       "difficulty": "easy",
       "freezer_friendly": true,
       "tags": ["pork", "noodles"],
-      "tags_compat": { "protein_source": "pork", "fat_level": "high", "has_veg": true, "carb_heavy": true },
+      "tags_compat": { "protein_source": "pork", "cook_style": "soup", "fat_level": "high", "has_veg": true, "carb_heavy": true },
       "ingredients": [
         { "ingredient_id": "ing_fresh_yakisoba_or_ramen_noodles", "amount": 980, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_ground_pork_mince", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
@@ -8784,7 +8827,7 @@
       "difficulty": "easy",
       "freezer_friendly": true,
       "tags": ["pork", "noodles", "curry"],
-      "tags_compat": { "protein_source": "pork", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
+      "tags_compat": { "protein_source": "pork", "cook_style": "soup", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
       "ingredients": [
         { "ingredient_id": "ing_frozen_udon_noodles", "amount": 1400, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_pork_loin_or_shoulder_thinly_sliced", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
@@ -8817,7 +8860,7 @@
       "difficulty": "easy",
       "freezer_friendly": true,
       "tags": ["pork", "noodles"],
-      "tags_compat": { "protein_source": "pork", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
+      "tags_compat": { "protein_source": "pork", "cook_style": "stir-fried", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
       "ingredients": [
         { "ingredient_id": "ing_frozen_udon_noodles", "amount": 1400, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_pork_loin_or_shoulder_thinly_sliced", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
@@ -8851,7 +8894,7 @@
       "difficulty": "easy",
       "freezer_friendly": true,
       "tags": ["egg", "noodles", "vegetarian"],
-      "tags_compat": { "protein_source": "mixed", "fat_level": "low", "has_veg": true, "carb_heavy": true },
+      "tags_compat": { "protein_source": "mixed", "cook_style": "soup", "fat_level": "low", "has_veg": true, "carb_heavy": true },
       "ingredients": [
         { "ingredient_id": "ing_frozen_udon_noodles", "amount": 1400, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_dashi_stock", "amount": 1600, "unit": "ml", "scale_factor": 0.75, "is_batch": true },
@@ -8884,7 +8927,7 @@
       "difficulty": "easy",
       "freezer_friendly": true,
       "tags": ["noodles", "vegetarian", "cold"],
-      "tags_compat": { "protein_source": "mixed", "fat_level": "low", "has_veg": false, "carb_heavy": true },
+      "tags_compat": { "protein_source": "mixed", "cook_style": "cold", "fat_level": "low", "has_veg": false, "carb_heavy": true },
       "ingredients": [
         { "ingredient_id": "ing_dried_soba_noodles", "amount": 980, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_dashi_stock", "amount": 700, "unit": "ml", "scale_factor": 0.75, "is_batch": true },
@@ -8916,7 +8959,7 @@
       "difficulty": "easy",
       "freezer_friendly": true,
       "tags": ["pork", "rice", "egg"],
-      "tags_compat": { "protein_source": "pork", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
+      "tags_compat": { "protein_source": "pork", "cook_style": "stir-fried", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
       "ingredients": [
         { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_pork_loin_or_shoulder_thinly_sliced", "amount": 500, "unit": "g", "scale_factor": 1.0, "is_batch": true },
@@ -8953,7 +8996,7 @@
       "freezer_friendly": true,
       "auto_pairing_eligible": false,
       "tags": ["chicken", "rice", "egg"],
-      "tags_compat": { "protein_source": "chicken", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
+      "tags_compat": { "protein_source": "chicken", "cook_style": "fried", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
       "ingredients": [
         { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_chicken_thigh_fillets_diced", "amount": 600, "unit": "g", "scale_factor": 1.0, "is_batch": true },
@@ -8987,7 +9030,7 @@
       "difficulty": "medium",
       "freezer_friendly": true,
       "tags": ["chicken", "rice", "curry", "fried"],
-      "tags_compat": { "protein_source": "chicken", "fat_level": "high", "has_veg": true, "carb_heavy": true },
+      "tags_compat": { "protein_source": "chicken", "cook_style": "fried", "fat_level": "high", "has_veg": true, "carb_heavy": true },
       "ingredients": [
         { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_chicken_thigh_fillets", "amount": 1100, "unit": "g", "scale_factor": 1.0, "is_batch": true },
@@ -9025,7 +9068,7 @@
       "difficulty": "easy",
       "freezer_friendly": true,
       "tags": ["beef", "rice"],
-      "tags_compat": { "protein_source": "beef", "fat_level": "high", "has_veg": true, "carb_heavy": false },
+      "tags_compat": { "protein_source": "beef", "cook_style": "grilled", "fat_level": "high", "has_veg": true, "carb_heavy": false },
       "ingredients": [
         { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_ground_beef_mince", "amount": 900, "unit": "g", "scale_factor": 1.0, "is_batch": true },
@@ -9064,7 +9107,7 @@
       "difficulty": "medium",
       "freezer_friendly": true,
       "tags": ["beef", "rice", "fried"],
-      "tags_compat": { "protein_source": "beef", "fat_level": "high", "has_veg": true, "carb_heavy": true },
+      "tags_compat": { "protein_source": "beef", "cook_style": "fried", "fat_level": "high", "has_veg": true, "carb_heavy": true },
       "ingredients": [
         { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_medium_potatoes_cubed", "amount": 6, "unit": null, "scale_factor": 1.0, "is_batch": true },
@@ -9103,7 +9146,7 @@
       "difficulty": "easy",
       "freezer_friendly": true,
       "tags": ["fish", "rice"],
-      "tags_compat": { "protein_source": "fish", "fat_level": "medium", "has_veg": true, "carb_heavy": false },
+      "tags_compat": { "protein_source": "fish", "cook_style": "simmered", "fat_level": "medium", "has_veg": true, "carb_heavy": false },
       "ingredients": [
         { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_yellowtail_kingfish_fillets_buri", "amount": 1000, "unit": "g", "scale_factor": 1.0, "is_batch": true },
@@ -9138,7 +9181,7 @@
       "difficulty": "easy",
       "freezer_friendly": true,
       "tags": ["chicken", "rice"],
-      "tags_compat": { "protein_source": "chicken", "fat_level": "low", "has_veg": true, "carb_heavy": false },
+      "tags_compat": { "protein_source": "chicken", "cook_style": "simmered", "fat_level": "low", "has_veg": true, "carb_heavy": false },
       "ingredients": [
         { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_chicken_thigh_fillets_diced", "amount": 800, "unit": "g", "scale_factor": 1.0, "is_batch": true },
@@ -9178,7 +9221,7 @@
       "freezer_friendly": true,
       "auto_pairing_eligible": false,
       "tags": ["beef", "rice", "hot pot"],
-      "tags_compat": { "protein_source": "beef", "fat_level": "high", "has_veg": true, "carb_heavy": false },
+      "tags_compat": { "protein_source": "beef", "cook_style": "hot pot", "fat_level": "high", "has_veg": true, "carb_heavy": false },
       "ingredients": [
         { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_beef_chuck_or_sirloin_thinly_sliced", "amount": 900, "unit": "g", "scale_factor": 1.0, "is_batch": true },
@@ -9216,7 +9259,7 @@
       "difficulty": "easy",
       "freezer_friendly": true,
       "tags": ["beef", "rice"],
-      "tags_compat": { "protein_source": "beef", "fat_level": "medium", "has_veg": true, "carb_heavy": false },
+      "tags_compat": { "protein_source": "beef", "cook_style": "stir-fried", "fat_level": "medium", "has_veg": true, "carb_heavy": false },
       "ingredients": [
         { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_beef_chuck_or_sirloin_thinly_sliced", "amount": 800, "unit": "g", "scale_factor": 1.0, "is_batch": true },
@@ -9255,7 +9298,7 @@
       "difficulty": "easy",
       "freezer_friendly": true,
       "tags": ["tofu", "rice", "vegetarian"],
-      "tags_compat": { "protein_source": "tofu", "fat_level": "medium", "has_veg": true, "carb_heavy": false },
+      "tags_compat": { "protein_source": "tofu", "cook_style": "stir-fried", "fat_level": "medium", "has_veg": true, "carb_heavy": false },
       "ingredients": [
         { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_firm_tofu_cubed", "amount": 900, "unit": "g", "scale_factor": 1.0, "is_batch": true },
@@ -9294,7 +9337,7 @@
       "difficulty": "medium",
       "freezer_friendly": true,
       "tags": ["pork", "rice", "dumplings"],
-      "tags_compat": { "protein_source": "pork", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
+      "tags_compat": { "protein_source": "pork", "cook_style": "fried", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
       "ingredients": [
         { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_ground_pork_mince", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
@@ -9332,7 +9375,7 @@
       "difficulty": "easy",
       "freezer_friendly": true,
       "tags": ["pork", "pasta"],
-      "tags_compat": { "protein_source": "pork", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
+      "tags_compat": { "protein_source": "pork", "cook_style": "stir-fried", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
       "ingredients": [
         { "ingredient_id": "ing_spaghetti", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_frankfurt_sausages_sliced", "amount": 500, "unit": "g", "scale_factor": 1.0, "is_batch": true },
@@ -9365,7 +9408,7 @@
       "difficulty": "easy",
       "freezer_friendly": true,
       "tags": ["seafood", "pasta"],
-      "tags_compat": { "protein_source": "seafood", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
+      "tags_compat": { "protein_source": "seafood", "cook_style": "stir-fried", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
       "ingredients": [
         { "ingredient_id": "ing_spaghetti", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_frozen_prawns_peeled_and_deveined", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
@@ -9401,7 +9444,7 @@
       "difficulty": "easy",
       "freezer_friendly": true,
       "tags": ["beef", "rice"],
-      "tags_compat": { "protein_source": "beef", "fat_level": "medium", "has_veg": true, "carb_heavy": false },
+      "tags_compat": { "protein_source": "beef", "cook_style": "simmered", "fat_level": "medium", "has_veg": true, "carb_heavy": false },
       "ingredients": [
         { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_beef_chuck_or_sirloin_thinly_sliced", "amount": 900, "unit": "g", "scale_factor": 1.0, "is_batch": true },
@@ -9437,7 +9480,7 @@
       "freezer_friendly": true,
       "auto_pairing_eligible": false,
       "tags": ["chicken", "rice", "hot pot"],
-      "tags_compat": { "protein_source": "chicken", "fat_level": "low", "has_veg": true, "carb_heavy": false },
+      "tags_compat": { "protein_source": "chicken", "cook_style": "hot pot", "fat_level": "low", "has_veg": true, "carb_heavy": false },
       "ingredients": [
         { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
         { "ingredient_id": "ing_chicken_thigh_fillets_cut_into_chunks", "amount": 1000, "unit": "g", "scale_factor": 1.0, "is_batch": true },
