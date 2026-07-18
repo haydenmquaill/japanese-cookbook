@@ -1212,6 +1212,177 @@
       "fat_per_100g": 2.0,
       "carbs_per_100g": 0.0,
       "store": "fishmonger"
+    },
+    {
+      "id": "ing_dried_soba_noodles",
+      "name": "Dried soba noodles",
+      "protein_per_100g": 14.0,
+      "fat_per_100g": 1.5,
+      "carbs_per_100g": 70.0,
+      "store": "genki",
+      "unit_g": null
+    },
+    {
+      "id": "ing_tomato_ketchup",
+      "name": "Tomato ketchup",
+      "protein_per_100g": 1.2,
+      "fat_per_100g": 0.1,
+      "carbs_per_100g": 26.0,
+      "store": "woolworths",
+      "unit_g": null
+    },
+    {
+      "id": "ing_butter",
+      "name": "Butter",
+      "protein_per_100g": 0.9,
+      "fat_per_100g": 81.0,
+      "carbs_per_100g": 0.1,
+      "store": "woolworths",
+      "unit_g": 14
+    },
+    {
+      "id": "ing_ground_beef_mince",
+      "name": "Ground beef (mince)",
+      "protein_per_100g": 17.0,
+      "fat_per_100g": 20.0,
+      "carbs_per_100g": 0.0,
+      "store": "woolworths",
+      "unit_g": null
+    },
+    {
+      "id": "ing_milk",
+      "name": "Milk",
+      "protein_per_100g": 3.4,
+      "fat_per_100g": 3.6,
+      "carbs_per_100g": 4.8,
+      "store": "woolworths",
+      "unit_g": null
+    },
+    {
+      "id": "ing_lotus_root_sliced",
+      "name": "Lotus root, sliced",
+      "protein_per_100g": 2.6,
+      "fat_per_100g": 0.1,
+      "carbs_per_100g": 17.0,
+      "store": "genki",
+      "unit_g": null
+    },
+    {
+      "id": "ing_burdock_gobo_sliced",
+      "name": "Burdock (gobo), sliced",
+      "protein_per_100g": 1.5,
+      "fat_per_100g": 0.1,
+      "carbs_per_100g": 24.0,
+      "store": "genki",
+      "unit_g": null
+    },
+    {
+      "id": "ing_snow_peas",
+      "name": "Snow peas",
+      "protein_per_100g": 2.8,
+      "fat_per_100g": 0.2,
+      "carbs_per_100g": 7.5,
+      "store": "woolworths",
+      "unit_g": null
+    },
+    {
+      "id": "ing_napa_cabbage_chopped",
+      "name": "Napa cabbage, chopped",
+      "protein_per_100g": 1.2,
+      "fat_per_100g": 0.2,
+      "carbs_per_100g": 3.2,
+      "store": "woolworths",
+      "unit_g": null
+    },
+    {
+      "id": "ing_green_capsicum_sliced",
+      "name": "Green capsicum, sliced",
+      "protein_per_100g": 0.9,
+      "fat_per_100g": 0.2,
+      "carbs_per_100g": 4.6,
+      "store": "woolworths",
+      "unit_g": 150
+    },
+    {
+      "id": "ing_bamboo_shoots_sliced",
+      "name": "Bamboo shoots, sliced",
+      "protein_per_100g": 1.8,
+      "fat_per_100g": 0.3,
+      "carbs_per_100g": 3.0,
+      "store": "woolworths-asian",
+      "unit_g": null
+    },
+    {
+      "id": "ing_gyoza_wrappers",
+      "name": "Gyoza wrappers",
+      "protein_per_100g": 8.0,
+      "fat_per_100g": 1.0,
+      "carbs_per_100g": 58.0,
+      "store": "woolworths-asian",
+      "unit_g": null
+    },
+    {
+      "id": "ing_chilli_oil_rayu",
+      "name": "Chilli oil (rāyu)",
+      "protein_per_100g": 0.0,
+      "fat_per_100g": 100.0,
+      "carbs_per_100g": 0.0,
+      "store": "genki",
+      "unit_g": 14
+    },
+    {
+      "id": "ing_spaghetti",
+      "name": "Spaghetti",
+      "protein_per_100g": 13.0,
+      "fat_per_100g": 1.5,
+      "carbs_per_100g": 75.0,
+      "store": "woolworths",
+      "unit_g": null
+    },
+    {
+      "id": "ing_frankfurt_sausages_sliced",
+      "name": "Frankfurt sausages, sliced",
+      "protein_per_100g": 12.0,
+      "fat_per_100g": 26.0,
+      "carbs_per_100g": 3.0,
+      "store": "woolworths",
+      "unit_g": null
+    },
+    {
+      "id": "ing_button_mushrooms_sliced",
+      "name": "Button mushrooms, sliced",
+      "protein_per_100g": 3.1,
+      "fat_per_100g": 0.3,
+      "carbs_per_100g": 3.3,
+      "store": "woolworths",
+      "unit_g": null
+    },
+    {
+      "id": "ing_grated_parmesan",
+      "name": "Grated parmesan",
+      "protein_per_100g": 38.0,
+      "fat_per_100g": 29.0,
+      "carbs_per_100g": 4.0,
+      "store": "woolworths",
+      "unit_g": 5
+    },
+    {
+      "id": "ing_ponzu_sauce",
+      "name": "Ponzu sauce",
+      "protein_per_100g": 2.0,
+      "fat_per_100g": 0.0,
+      "carbs_per_100g": 8.0,
+      "store": "genki",
+      "unit_g": 17
+    },
+    {
+      "id": "ing_corn_kernels",
+      "name": "Corn kernels",
+      "protein_per_100g": 3.3,
+      "fat_per_100g": 1.4,
+      "carbs_per_100g": 19.0,
+      "store": "woolworths",
+      "unit_g": null
     }
   ],
   "recipes": [
@@ -1248,22 +1419,22 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
         {
           "ingredient_id": "ing_sake_or_dry_sherry",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 2.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
@@ -1312,19 +1483,19 @@
       ],
       "steps": [
         {
-          "id": "s1",
-          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar","ing_garlic_cloves_minced","ing_fresh_ginger_grated","ing_cornstarch"],
-          "title": "Make teriyaki sauce",
-          "content": "Combine soy sauce, mirin, sake, sugar, garlic and ginger in a small saucepan over medium heat. Mix cornstarch with 2 tbsp cold water and stir in. Simmer until thickened, about 3–4 minutes. Set aside.",
-          "timer_seconds": 240,
-          "step_type": "prep"
-        },
-        {
           "id": "s2",
           "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
           "timer_seconds": 3000,
+          "step_type": "prep"
+        },
+        {
+          "id": "s1",
+          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar","ing_garlic_cloves_minced","ing_fresh_ginger_grated","ing_cornstarch"],
+          "title": "Make teriyaki sauce",
+          "content": "Combine soy sauce, mirin, sake, sugar, garlic and ginger in a small saucepan over medium heat. Mix cornstarch with 2 tbsp cold water and stir in. Simmer until thickened, about 3–4 minutes. Set aside.",
+          "timer_seconds": 240,
           "step_type": "prep"
         },
         {
@@ -1469,6 +1640,14 @@
       ],
       "steps": [
         {
+          "id": "s5",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
+          "step_type": "prep"
+        },
+        {
           "id": "s1",
           "ingredient_ids": ["ing_vegetable_oil","ing_large_onions_sliced"],
           "title": "Caramelise the onions",
@@ -1499,14 +1678,6 @@
           "content": "Turn off heat. Break curry blocks into the pot and stir until fully dissolved. Add soy sauce. Turn heat back to low and stir until sauce thickens, about 5 minutes.",
           "timer_seconds": 300,
           "step_type": "cook"
-        },
-        {
-          "id": "s5",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000,
-          "step_type": "prep"
         },
         {
           "id": "s6",
@@ -1641,19 +1812,19 @@
       ],
       "steps": [
         {
-          "id": "s1",
-          "ingredient_ids": ["ing_white_miso_paste","ing_mirin","ing_soy_sauce","ing_sake_or_dry_sherry","ing_sesame_oil","ing_garlic_cloves_minced","ing_fresh_ginger_grated","ing_salmon_fillets_raw_weight"],
-          "title": "Make miso marinade",
-          "content": "Whisk together miso paste, mirin, soy sauce, sake, sesame oil, garlic, and ginger in a bowl until smooth. Coat salmon fillets and marinate for at least 20 minutes.",
-          "timer_seconds": 1200,
-          "step_type": "prep"
-        },
-        {
           "id": "s2",
           "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
           "timer_seconds": 3000,
+          "step_type": "prep"
+        },
+        {
+          "id": "s1",
+          "ingredient_ids": ["ing_white_miso_paste","ing_mirin","ing_soy_sauce","ing_sake_or_dry_sherry","ing_sesame_oil","ing_garlic_cloves_minced","ing_fresh_ginger_grated","ing_salmon_fillets_raw_weight"],
+          "title": "Make miso marinade",
+          "content": "Whisk together miso paste, mirin, soy sauce, sake, sesame oil, garlic, and ginger in a bowl until smooth. Coat salmon fillets and marinate for at least 20 minutes.",
+          "timer_seconds": 1200,
           "step_type": "prep"
         },
         {
@@ -1806,6 +1977,14 @@
       ],
       "steps": [
         {
+          "id": "s4",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
+          "step_type": "prep"
+        },
+        {
           "id": "s1",
           "ingredient_ids": ["ing_sesame_oil","ing_pork_shoulder_or_loin_thinly_sliced","ing_fresh_ginger_grated"],
           "title": "Brown the pork",
@@ -1828,14 +2007,6 @@
           "content": "Reduce heat to low. Scoop out a ladleful of broth and dissolve miso into it, then stir back into the pot. Do not boil after adding miso. Taste and adjust.",
           "timer_seconds": null,
           "step_type": "cook"
-        },
-        {
-          "id": "s4",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000,
-          "step_type": "prep"
         },
         {
           "id": "s5",
@@ -1918,22 +2089,22 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
         {
           "ingredient_id": "ing_sake_or_dry_sherry",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 2.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
@@ -1968,6 +2139,14 @@
       ],
       "steps": [
         {
+          "id": "s4",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
+          "step_type": "prep"
+        },
+        {
           "id": "s1",
           "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar","ing_dashi_or_beef_stock","ing_large_onions_thinly_sliced"],
           "title": "Simmer onions in broth",
@@ -1990,14 +2169,6 @@
           "content": "Whisk eggs and drizzle over the beef mixture. Cover with a lid and cook on low until the egg is just set.",
           "timer_seconds": 180,
           "step_type": "cook"
-        },
-        {
-          "id": "s4",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000,
-          "step_type": "prep"
         },
         {
           "id": "s5",
@@ -2144,6 +2315,14 @@
       ],
       "steps": [
         {
+          "id": "s5",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
+          "step_type": "prep"
+        },
+        {
           "id": "s1",
           "ingredient_ids": ["ing_firm_tofu_cubed"],
           "title": "Press and prep the tofu",
@@ -2174,14 +2353,6 @@
           "content": "Stir in spinach and cook until just wilted, about 2 minutes.",
           "timer_seconds": 120,
           "step_type": "cook"
-        },
-        {
-          "id": "s5",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000,
-          "step_type": "prep"
         },
         {
           "id": "s6",
@@ -2273,15 +2444,15 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
@@ -2301,6 +2472,14 @@
         }
       ],
       "steps": [
+        {
+          "id": "s4",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
+          "step_type": "prep"
+        },
         {
           "id": "s1",
           "ingredient_ids": ["ing_dashi_stock","ing_soy_sauce","ing_mirin","ing_sugar","ing_large_onions_thinly_sliced"],
@@ -2324,14 +2503,6 @@
           "content": "Lightly beat eggs and pour two thirds over the chicken. Cover and cook on low for 90 seconds until just setting. Pour remaining egg over the top, cover and turn off heat. Residual heat finishes the egg.",
           "timer_seconds": 90,
           "step_type": "cook"
-        },
-        {
-          "id": "s4",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000,
-          "step_type": "prep"
         },
         {
           "id": "s5",
@@ -2397,22 +2568,22 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 100,
-          "unit": "ml",
+          "amount": 6.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 100,
-          "unit": "ml",
+          "amount": 6.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
         {
           "ingredient_id": "ing_sake_or_dry_sherry",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
@@ -2461,6 +2632,14 @@
       ],
       "steps": [
         {
+          "id": "s4",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
+          "step_type": "prep"
+        },
+        {
           "id": "s1",
           "ingredient_ids": ["ing_vegetable_oil","ing_pork_belly_sliced_into_2cm_pieces"],
           "title": "Sear the pork",
@@ -2483,14 +2662,6 @@
           "content": "Simmer uncovered, turning pork occasionally, until sauce reduces to a thick sticky glaze and coats the pork.",
           "timer_seconds": 900,
           "step_type": "cook"
-        },
-        {
-          "id": "s4",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000,
-          "step_type": "prep"
         },
         {
           "id": "s5a",
@@ -2595,15 +2766,15 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
@@ -2630,6 +2801,14 @@
         }
       ],
       "steps": [
+        {
+          "id": "s5",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
+          "step_type": "prep"
+        },
         {
           "id": "s1",
           "ingredient_ids": ["ing_vegetable_oil","ing_beef_chuck_or_sirloin_thinly_sliced"],
@@ -2661,14 +2840,6 @@
           "content": "Stir in frozen peas and cook 2 more minutes.",
           "timer_seconds": 120,
           "step_type": "cook"
-        },
-        {
-          "id": "s5",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000,
-          "step_type": "prep"
         },
         {
           "id": "s6",
@@ -2787,19 +2958,19 @@
       ],
       "steps": [
         {
-          "id": "s1",
-          "ingredient_ids": ["ing_salmon_fillets_150g_each","ing_salt","ing_sake_or_dry_sherry"],
-          "title": "Salt the salmon",
-          "content": "Pat salmon dry with paper towel. Sprinkle salt generously over both sides of each fillet and drizzle with sake. Place on a rack uncovered in the fridge for at least 30 minutes — this draws out moisture and concentrates the flavour.",
-          "timer_seconds": 1800,
-          "step_type": "prep"
-        },
-        {
           "id": "s2",
           "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
           "timer_seconds": 3000,
+          "step_type": "prep"
+        },
+        {
+          "id": "s1",
+          "ingredient_ids": ["ing_salmon_fillets_150g_each","ing_salt","ing_sake_or_dry_sherry"],
+          "title": "Salt the salmon",
+          "content": "Pat salmon dry with paper towel. Sprinkle salt generously over both sides of each fillet and drizzle with sake. Place on a rack uncovered in the fridge for at least 30 minutes — this draws out moisture and concentrates the flavour.",
+          "timer_seconds": 1800,
           "step_type": "prep"
         },
         {
@@ -2893,15 +3064,15 @@
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 100,
-          "unit": "ml",
+          "amount": 6.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
         {
           "ingredient_id": "ing_sake_or_dry_sherry",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
@@ -2950,6 +3121,14 @@
       ],
       "steps": [
         {
+          "id": "s5",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
+          "step_type": "prep"
+        },
+        {
           "id": "s1",
           "ingredient_ids": ["ing_mackerel_fillets_150g_each"],
           "title": "Score the mackerel",
@@ -2980,14 +3159,6 @@
           "content": "Remove a ladleful of broth and whisk miso into it until smooth. Pour back into the pan and stir gently. Add halved baby bok choy and simmer uncovered for 3–4 more minutes until sauce thickens slightly and bok choy is just tender.",
           "timer_seconds": 240,
           "step_type": "cook"
-        },
-        {
-          "id": "s5",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000,
-          "step_type": "prep"
         },
         {
           "id": "s6",
@@ -3142,6 +3313,14 @@
       ],
       "steps": [
         {
+          "id": "s5",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
+          "step_type": "prep"
+        },
+        {
           "id": "s1",
           "ingredient_ids": ["ing_frozen_prawns_peeled_and_deveined"],
           "title": "Prep the prawns",
@@ -3172,14 +3351,6 @@
           "content": "Stir in cornstarch slurry and cook until sauce thickens, about 2 minutes. Return prawns to the pan and toss to coat. Drizzle sesame oil over the top.",
           "timer_seconds": 120,
           "step_type": "cook"
-        },
-        {
-          "id": "s5",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000,
-          "step_type": "prep"
         },
         {
           "id": "s6",
@@ -3323,6 +3494,14 @@
       ],
       "steps": [
         {
+          "id": "s4",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
+          "step_type": "prep"
+        },
+        {
           "id": "s1",
           "ingredient_ids": ["ing_sesame_oil","ing_ground_chicken_mince","ing_fresh_ginger_grated"],
           "title": "Cook the chicken mince",
@@ -3344,14 +3523,6 @@
           "title": "Make the scrambled egg",
           "content": "Whisk eggs with sugar and a pinch of salt. In a clean non-stick pan over low heat, add the egg mixture and stir constantly with chopsticks or a fork until fine, fluffy curds form. Remove from heat while still slightly soft.",
           "timer_seconds": 180,
-          "step_type": "prep"
-        },
-        {
-          "id": "s4",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000,
           "step_type": "prep"
         },
         {
@@ -3501,6 +3672,14 @@
       ],
       "steps": [
         {
+          "id": "s4",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
+          "step_type": "prep"
+        },
+        {
           "id": "s1",
           "ingredient_ids": ["ing_konnyaku_konjac_sliced"],
           "title": "Prep the konnyaku",
@@ -3523,14 +3702,6 @@
           "content": "Add daikon to the broth first as it takes longest. Simmer for 15 minutes, then add fishcakes, tofu, konnyaku, and boiled eggs. Simmer everything together gently.",
           "timer_seconds": 1800,
           "step_type": "cook"
-        },
-        {
-          "id": "s4",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000,
-          "step_type": "prep"
         },
         {
           "id": "s5",
@@ -3678,6 +3849,14 @@
       ],
       "steps": [
         {
+          "id": "s4",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
+          "step_type": "prep"
+        },
+        {
           "id": "s1",
           "ingredient_ids": ["ing_dried_hijiki_seaweed"],
           "title": "Rehydrate the hijiki",
@@ -3700,14 +3879,6 @@
           "content": "Add crumbled tofu, soy sauce, mirin, sake, sugar, and dashi stock to the pan. Stir and simmer until most of the liquid is absorbed, about 5 minutes. Add edamame and cook 1 more minute.",
           "timer_seconds": 360,
           "step_type": "cook"
-        },
-        {
-          "id": "s4",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000,
-          "step_type": "prep"
         },
         {
           "id": "s5",
@@ -3778,22 +3949,22 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 100,
-          "unit": "ml",
+          "amount": 6.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 100,
-          "unit": "ml",
+          "amount": 6.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
         {
           "ingredient_id": "ing_sake_or_dry_sherry",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": true
         },
@@ -3849,6 +4020,14 @@
       ],
       "steps": [
         {
+          "id": "s5",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
+          "step_type": "prep"
+        },
+        {
           "id": "s1",
           "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar","ing_honey"],
           "title": "Make the tare sauce",
@@ -3879,14 +4058,6 @@
           "content": "Brush cooked chicken generously with tare sauce and return to heat for 1 minute per side until the glaze caramelises. Repeat brushing once more off heat.",
           "timer_seconds": 120,
           "step_type": "cook"
-        },
-        {
-          "id": "s5",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000,
-          "step_type": "prep"
         },
         {
           "id": "s6",
@@ -3984,22 +4155,22 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_sake_or_dry_sherry",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 2.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -4034,20 +4205,20 @@
       ],
       "steps": [
         {
-          "id": "s1",
-          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_garlic_cloves_minced","ing_fresh_ginger_grated","ing_sesame_oil","ing_lamb_shoulder_or_leg_thinly_sliced"],
-          "title": "Marinate the lamb",
-          "step_type": "prep",
-          "content": "Combine soy sauce, mirin, sake, garlic, ginger, and sesame oil in a bowl. Add sliced lamb and toss to coat. Marinate for at least 20 minutes.",
-          "timer_seconds": 1200
-        },
-        {
           "id": "s2",
           "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
           "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
           "timer_seconds": 3000
+        },
+        {
+          "id": "s1",
+          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_garlic_cloves_minced","ing_fresh_ginger_grated","ing_sesame_oil","ing_lamb_shoulder_or_leg_thinly_sliced"],
+          "title": "Marinate the lamb",
+          "step_type": "prep",
+          "content": "Combine soy sauce, mirin, sake, garlic, ginger, and sesame oil in a bowl. Add sliced lamb and toss to coat. Marinate for at least 20 minutes.",
+          "timer_seconds": 1200
         },
         {
           "id": "s3",
@@ -4158,8 +4329,8 @@
         },
         {
           "ingredient_id": "ing_yakisoba_sauce_or_worcestershire_sauce",
-          "amount": 100,
-          "unit": "ml",
+          "amount": 6.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -4301,15 +4472,15 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_sake_or_dry_sherry",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -4372,20 +4543,20 @@
       ],
       "steps": [
         {
-          "id": "s1",
-          "ingredient_ids": ["ing_chicken_thigh_fillets_cut_into_chunks","ing_soy_sauce","ing_sake_or_dry_sherry","ing_fresh_ginger_grated","ing_garlic_cloves_minced","ing_sesame_oil"],
-          "title": "Marinate the chicken",
-          "step_type": "prep",
-          "content": "Cut chicken thigh into 4cm chunks. Combine soy sauce, sake, ginger, garlic, and sesame oil. Add chicken, toss well and marinate for at least 30 minutes — longer is better.",
-          "timer_seconds": 1800
-        },
-        {
           "id": "s2",
           "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
           "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
           "timer_seconds": 3000
+        },
+        {
+          "id": "s1",
+          "ingredient_ids": ["ing_chicken_thigh_fillets_cut_into_chunks","ing_soy_sauce","ing_sake_or_dry_sherry","ing_fresh_ginger_grated","ing_garlic_cloves_minced","ing_sesame_oil"],
+          "title": "Marinate the chicken",
+          "step_type": "prep",
+          "content": "Cut chicken thigh into 4cm chunks. Combine soy sauce, sake, ginger, garlic, and sesame oil. Add chicken, toss well and marinate for at least 30 minutes — longer is better.",
+          "timer_seconds": 1800
         },
         {
           "id": "s3",
@@ -4485,22 +4656,22 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_sake_or_dry_sherry",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -4535,6 +4706,14 @@
       ],
       "steps": [
         {
+          "id": "s3",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "step_type": "prep",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
+        },
+        {
           "id": "s1",
           "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar","ing_fresh_ginger_grated"],
           "title": "Make the ginger sauce",
@@ -4549,14 +4728,6 @@
           "step_type": "prep",
           "content": "Finely shred cabbage and toss with a pinch of salt. Set aside — it will soften slightly and serve as a fresh contrast to the rich pork.",
           "timer_seconds": null
-        },
-        {
-          "id": "s3",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "step_type": "prep",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000
         },
         {
           "id": "s4",
@@ -4682,20 +4853,20 @@
       ],
       "steps": [
         {
-          "id": "s1",
-          "ingredient_ids": ["ing_pacific_saury_sanma_fillets_or_whole","ing_salt"],
-          "title": "Salt the fish",
-          "step_type": "prep",
-          "content": "Pat sanma dry. Score the skin 2–3 times on each side. Salt generously on both sides and leave uncovered in the fridge for 30 minutes to draw out moisture.",
-          "timer_seconds": 1800
-        },
-        {
           "id": "s2",
           "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
           "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
           "timer_seconds": 3000
+        },
+        {
+          "id": "s1",
+          "ingredient_ids": ["ing_pacific_saury_sanma_fillets_or_whole","ing_salt"],
+          "title": "Salt the fish",
+          "step_type": "prep",
+          "content": "Pat sanma dry. Score the skin 2–3 times on each side. Salt generously on both sides and leave uncovered in the fridge for 30 minutes to draw out moisture.",
+          "timer_seconds": 1800
         },
         {
           "id": "s3",
@@ -4857,20 +5028,20 @@
       ],
       "steps": [
         {
-          "id": "s1",
-          "ingredient_ids": ["ing_firm_tofu_cubed"],
-          "title": "Press the tofu",
-          "step_type": "prep",
-          "content": "Wrap tofu in a clean towel and press for 15 minutes to remove excess moisture. Cut into 2cm cubes.",
-          "timer_seconds": 900
-        },
-        {
           "id": "s2",
           "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
           "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
           "timer_seconds": 3000
+        },
+        {
+          "id": "s1",
+          "ingredient_ids": ["ing_firm_tofu_cubed"],
+          "title": "Press the tofu",
+          "step_type": "prep",
+          "content": "Wrap tofu in a clean towel and press for 15 minutes to remove excess moisture. Cut into 2cm cubes.",
+          "timer_seconds": 900
         },
         {
           "id": "s3",
@@ -4971,15 +5142,15 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -4992,8 +5163,8 @@
         },
         {
           "ingredient_id": "ing_sake_or_dry_sherry",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 2.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -5148,15 +5319,15 @@
         },
         {
           "ingredient_id": "ing_rice_vinegar",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -5169,8 +5340,8 @@
         },
         {
           "ingredient_id": "ing_kewpie_mayonnaise",
-          "amount": 120,
-          "unit": "g",
+          "amount": 8,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -5205,6 +5376,14 @@
       ],
       "steps": [
         {
+          "id": "s3",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "step_type": "prep",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
+        },
+        {
           "id": "s1",
           "ingredient_ids": ["ing_rice_vinegar","ing_soy_sauce","ing_sugar"],
           "title": "Make nanban sauce",
@@ -5219,14 +5398,6 @@
           "step_type": "prep",
           "content": "Combine Kewpie mayo, finely chopped boiled eggs, and chopped pickles. Mix well. Refrigerate until needed.",
           "timer_seconds": null
-        },
-        {
-          "id": "s3",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "step_type": "prep",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000
         },
         {
           "id": "s4",
@@ -5326,15 +5497,15 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -5473,22 +5644,22 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_sake_or_dry_sherry",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 2.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -5530,20 +5701,20 @@
       ],
       "steps": [
         {
-          "id": "s1",
-          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar"],
-          "title": "Make teriyaki sauce",
-          "step_type": "prep",
-          "content": "Combine soy sauce, mirin, sake, and sugar in a small saucepan over medium heat. Simmer until slightly thickened, about 3 minutes. Set aside.",
-          "timer_seconds": 180
-        },
-        {
           "id": "s2",
           "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
           "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
           "timer_seconds": 3000
+        },
+        {
+          "id": "s1",
+          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar"],
+          "title": "Make teriyaki sauce",
+          "step_type": "prep",
+          "content": "Combine soy sauce, mirin, sake, and sugar in a small saucepan over medium heat. Simmer until slightly thickened, about 3 minutes. Set aside.",
+          "timer_seconds": 180
         },
         {
           "id": "s3",
@@ -5609,6 +5780,7 @@
       "cook_time_mins": 15,
       "difficulty": "easy",
       "freezer_friendly": false,
+      "auto_pairing_eligible": false,
       "tags": [
         "fish",
         "rice"
@@ -5636,8 +5808,8 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -5827,15 +5999,15 @@
         },
         {
           "ingredient_id": "ing_tonkatsu_sauce_or_worcestershire_sauce",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_kewpie_mayonnaise",
-          "amount": 60,
-          "unit": "g",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -5856,20 +6028,20 @@
       ],
       "steps": [
         {
-          "id": "s1",
-          "ingredient_ids": ["ing_whiting_or_flathead_fillets","ing_salt","ing_plain_flour","ing_eggs","ing_panko_breadcrumbs"],
-          "title": "Prep the fish",
-          "step_type": "prep",
-          "content": "Pat fillets dry and season with salt. Set up a crumbing station — three shallow bowls with flour, beaten egg, and panko breadcrumbs.",
-          "timer_seconds": null
-        },
-        {
           "id": "s2",
           "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
           "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
           "timer_seconds": 3000
+        },
+        {
+          "id": "s1",
+          "ingredient_ids": ["ing_whiting_or_flathead_fillets","ing_salt","ing_plain_flour","ing_eggs","ing_panko_breadcrumbs"],
+          "title": "Prep the fish",
+          "step_type": "prep",
+          "content": "Pat fillets dry and season with salt. Set up a crumbing station — three shallow bowls with flour, beaten egg, and panko breadcrumbs.",
+          "timer_seconds": null
         },
         {
           "id": "s3",
@@ -5991,15 +6163,15 @@
         },
         {
           "ingredient_id": "ing_tonkatsu_sauce",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_kewpie_mayonnaise",
-          "amount": 60,
-          "unit": "g",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -6020,20 +6192,20 @@
       ],
       "steps": [
         {
-          "id": "s1",
-          "ingredient_ids": ["ing_large_frozen_prawns_peeled_and_deveined_tails_on","ing_salt"],
-          "title": "Prep the prawns",
-          "step_type": "prep",
-          "content": "Thaw prawns completely and pat very dry. Make 3–4 shallow cuts along the belly of each prawn and press flat — this stops them curling during frying. Season lightly with salt.",
-          "timer_seconds": null
-        },
-        {
           "id": "s2",
           "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
           "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
           "timer_seconds": 3000
+        },
+        {
+          "id": "s1",
+          "ingredient_ids": ["ing_large_frozen_prawns_peeled_and_deveined_tails_on","ing_salt"],
+          "title": "Prep the prawns",
+          "step_type": "prep",
+          "content": "Thaw prawns completely and pat very dry. Make 3–4 shallow cuts along the belly of each prawn and press flat — this stops them curling during frying. Season lightly with salt.",
+          "timer_seconds": null
         },
         {
           "id": "s3",
@@ -6131,15 +6303,15 @@
         },
         {
           "ingredient_id": "ing_rice_vinegar",
-          "amount": 120,
-          "unit": "ml",
+          "amount": 8,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -6188,20 +6360,20 @@
       ],
       "steps": [
         {
-          "id": "s1",
-          "ingredient_ids": ["ing_rice_vinegar","ing_soy_sauce","ing_sugar","ing_dashi_stock","ing_medium_onion_thinly_sliced","ing_medium_carrot_julienned","ing_red_chilli_thinly_sliced"],
-          "title": "Make the nanban marinade",
-          "step_type": "prep",
-          "content": "Combine rice vinegar, soy sauce, sugar, and dashi stock in a saucepan over low heat. Stir until sugar dissolves. Pour into a wide dish. Add sliced onion, carrot, and chilli.",
-          "timer_seconds": null
-        },
-        {
           "id": "s2",
           "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
           "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
           "timer_seconds": 3000
+        },
+        {
+          "id": "s1",
+          "ingredient_ids": ["ing_rice_vinegar","ing_soy_sauce","ing_sugar","ing_dashi_stock","ing_medium_onion_thinly_sliced","ing_medium_carrot_julienned","ing_red_chilli_thinly_sliced"],
+          "title": "Make the nanban marinade",
+          "step_type": "prep",
+          "content": "Combine rice vinegar, soy sauce, sugar, and dashi stock in a saucepan over low heat. Stir until sugar dissolves. Pour into a wide dish. Add sliced onion, carrot, and chilli.",
+          "timer_seconds": null
         },
         {
           "id": "s3",
@@ -6296,8 +6468,8 @@
         },
         {
           "ingredient_id": "ing_vegetable_oil",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 2,
+          "unit": "tbsp",
           "scale_factor": 0.3,
           "is_batch": false
         },
@@ -6310,15 +6482,15 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -6360,20 +6532,20 @@
       ],
       "steps": [
         {
-          "id": "s1",
-          "ingredient_ids": ["ing_firm_tofu_cubed","ing_potato_starch_or_cornstarch"],
-          "title": "Press and prep the tofu",
-          "step_type": "prep",
-          "content": "Press firm tofu for 20 minutes to remove excess moisture. Cut into large 4cm cubes. Dust thoroughly in potato starch on all sides.",
-          "timer_seconds": 1200
-        },
-        {
           "id": "s2",
           "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
           "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
           "timer_seconds": 3000
+        },
+        {
+          "id": "s1",
+          "ingredient_ids": ["ing_firm_tofu_cubed","ing_potato_starch_or_cornstarch"],
+          "title": "Press and prep the tofu",
+          "step_type": "prep",
+          "content": "Press firm tofu for 20 minutes to remove excess moisture. Cut into large 4cm cubes. Dust thoroughly in potato starch on all sides.",
+          "timer_seconds": 1200
         },
         {
           "id": "s3",
@@ -6502,8 +6674,8 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -6644,22 +6816,22 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_sake_or_dry_sherry",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 2.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -6715,6 +6887,14 @@
       ],
       "steps": [
         {
+          "id": "s3",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "step_type": "prep",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
+        },
+        {
           "id": "s1",
           "ingredient_ids": ["ing_firm_tofu_cubed"],
           "title": "Press and slice the tofu",
@@ -6729,14 +6909,6 @@
           "step_type": "prep",
           "content": "Combine soy sauce, mirin, sake, and sugar in a small pan over medium heat. Simmer until slightly thickened, about 3 minutes. Set aside.",
           "timer_seconds": 180
-        },
-        {
-          "id": "s3",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "step_type": "prep",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000
         },
         {
           "id": "s4",
@@ -6843,15 +7015,15 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -7019,8 +7191,8 @@
         },
         {
           "ingredient_id": "ing_vegetable_oil",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 2,
+          "unit": "tbsp",
           "scale_factor": 0.3,
           "is_batch": false
         },
@@ -7033,15 +7205,15 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -7069,20 +7241,20 @@
       ],
       "steps": [
         {
-          "id": "s1",
-          "ingredient_ids": ["ing_medium_sweet_potato_sliced","ing_zucchini_sliced","ing_firm_tofu_cubed"],
-          "title": "Prep vegetables and tofu",
-          "step_type": "prep",
-          "content": "Slice sweet potato into 5mm rounds, zucchini into diagonal slices, cut tofu into thick rectangles. Pat everything very dry — moisture is the enemy of tempura batter.",
-          "timer_seconds": null
-        },
-        {
           "id": "s2",
           "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
           "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
           "timer_seconds": 3000
+        },
+        {
+          "id": "s1",
+          "ingredient_ids": ["ing_medium_sweet_potato_sliced","ing_zucchini_sliced","ing_firm_tofu_cubed"],
+          "title": "Prep vegetables and tofu",
+          "step_type": "prep",
+          "content": "Slice sweet potato into 5mm rounds, zucchini into diagonal slices, cut tofu into thick rectangles. Pat everything very dry — moisture is the enemy of tempura batter.",
+          "timer_seconds": null
         },
         {
           "id": "s3",
@@ -7208,8 +7380,8 @@
         },
         {
           "ingredient_id": "ing_vegetable_oil",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 2,
+          "unit": "tbsp",
           "scale_factor": 0.3,
           "is_batch": false
         },
@@ -7222,15 +7394,15 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -7258,20 +7430,20 @@
       ],
       "steps": [
         {
-          "id": "s1",
-          "ingredient_ids": ["ing_dashi_stock_or_chicken_stock","ing_soy_sauce","ing_mirin","ing_sugar","ing_large_onions_sliced"],
-          "title": "Make the katsu sauce",
-          "step_type": "prep",
-          "content": "Combine dashi stock, soy sauce, mirin, and sugar in a wide pan over medium heat. Add thinly sliced onion and simmer until translucent, about 5 minutes. Keep warm.",
-          "timer_seconds": 300
-        },
-        {
           "id": "s2",
           "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
           "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
           "timer_seconds": 3000
+        },
+        {
+          "id": "s1",
+          "ingredient_ids": ["ing_dashi_stock_or_chicken_stock","ing_soy_sauce","ing_mirin","ing_sugar","ing_large_onions_sliced"],
+          "title": "Make the katsu sauce",
+          "step_type": "prep",
+          "content": "Combine dashi stock, soy sauce, mirin, and sugar in a wide pan over medium heat. Add thinly sliced onion and simmer until translucent, about 5 minutes. Keep warm.",
+          "timer_seconds": 300
         },
         {
           "id": "s3",
@@ -7356,22 +7528,22 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 120,
-          "unit": "ml",
+          "amount": 8,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 120,
-          "unit": "ml",
+          "amount": 8,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_sake_or_dry_sherry",
-          "amount": 100,
-          "unit": "ml",
+          "amount": 6.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -7434,6 +7606,14 @@
       ],
       "steps": [
         {
+          "id": "s5",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "step_type": "prep",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
+        },
+        {
           "id": "s1",
           "ingredient_ids": ["ing_pork_belly_sliced_into_2cm_pieces"],
           "title": "Blanch the pork",
@@ -7464,14 +7644,6 @@
           "step_type": "cook",
           "content": "Add peeled boiled eggs. Braise another 30 minutes. Remove lid and simmer until sauce reduces to a sticky glaze, about 15 minutes.",
           "timer_seconds": 2700
-        },
-        {
-          "id": "s5",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "step_type": "prep",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000
         },
         {
           "id": "s6",
@@ -7549,22 +7721,22 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 100,
-          "unit": "ml",
+          "amount": 6.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_sake_or_dry_sherry",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -7620,6 +7792,14 @@
       ],
       "steps": [
         {
+          "id": "s5",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
+          "title": "Cook the rice",
+          "step_type": "prep",
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
+        },
+        {
           "id": "s1",
           "ingredient_ids": ["ing_pork_belly_sliced_into_2cm_pieces"],
           "title": "Roll and tie the pork",
@@ -7650,14 +7830,6 @@
           "step_type": "cook",
           "content": "Soft boil eggs for 6.5 minutes, peel and add to the braising liquid for the last 30 minutes. They turn golden and absorb the sauce.",
           "timer_seconds": 390
-        },
-        {
-          "id": "s5",
-          "ingredient_ids": ["ing_white_rice_raw_weight"],
-          "title": "Cook the rice",
-          "step_type": "prep",
-          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
-          "timer_seconds": 3000
         },
         {
           "id": "s6",
@@ -7998,20 +8170,20 @@
       ],
       "steps": [
         {
-          "id": "s1",
-          "ingredient_ids": ["ing_white_miso_paste","ing_mirin","ing_sake_or_dry_sherry","ing_soy_sauce","ing_sugar"],
-          "title": "Make the miso sauce",
-          "step_type": "prep",
-          "content": "Whisk together miso paste, mirin, sake, soy sauce, and sugar in a small bowl until smooth. Set aside.",
-          "timer_seconds": null
-        },
-        {
           "id": "s2",
           "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
           "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
           "timer_seconds": 3000
+        },
+        {
+          "id": "s1",
+          "ingredient_ids": ["ing_white_miso_paste","ing_mirin","ing_sake_or_dry_sherry","ing_soy_sauce","ing_sugar"],
+          "title": "Make the miso sauce",
+          "step_type": "prep",
+          "content": "Whisk together miso paste, mirin, sake, soy sauce, and sugar in a small bowl until smooth. Set aside.",
+          "timer_seconds": null
         },
         {
           "id": "s3",
@@ -8116,15 +8288,15 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -8270,22 +8442,22 @@
         },
         {
           "ingredient_id": "ing_soy_sauce",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_mirin",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
         {
           "ingredient_id": "ing_sake_or_dry_sherry",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 5.5,
+          "unit": "tbsp",
           "scale_factor": 0.75,
           "is_batch": false
         },
@@ -8327,20 +8499,20 @@
       ],
       "steps": [
         {
-          "id": "s1",
-          "ingredient_ids": ["ing_white_fish_fillets__snapper__bream_or_flathead_"],
-          "title": "Score and prep the fish",
-          "step_type": "prep",
-          "content": "Score the skin of each fillet with 2–3 shallow cuts. Prevents curling and lets the sauce penetrate.",
-          "timer_seconds": null
-        },
-        {
           "id": "s2",
           "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
           "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
           "timer_seconds": 3000
+        },
+        {
+          "id": "s1",
+          "ingredient_ids": ["ing_white_fish_fillets__snapper__bream_or_flathead_"],
+          "title": "Score and prep the fish",
+          "step_type": "prep",
+          "content": "Score the skin of each fillet with 2–3 shallow cuts. Prevents curling and lets the sauce penetrate.",
+          "timer_seconds": null
         },
         {
           "id": "s3",
@@ -8406,6 +8578,7 @@
       "cook_time_mins": 15,
       "difficulty": "easy",
       "freezer_friendly": false,
+      "auto_pairing_eligible": false,
       "tags": [
         "fish",
         "rice"
@@ -8560,6 +8733,730 @@
           "Pickled ginger (gari)"
         ]
       }
+    },
+    {
+      "id": "miso-ramen",
+      "title": "Miso Ramen",
+      "title_jp": "味噌ラーメン",
+      "description": "A rich, home-style miso ramen — ground pork, corn, butter and a savoury miso broth over springy noodles. A genuine everyday noodle staple, not restaurant tonkotsu.",
+      "protein_per_serving": 42.5,
+      "fat_per_serving": 24.8,
+      "carbs_per_serving": 88.4,
+      "calories_per_serving": 764,
+      "cook_time_mins": 40,
+      "difficulty": "easy",
+      "freezer_friendly": true,
+      "tags": ["pork", "noodles"],
+      "tags_compat": { "protein_source": "pork", "fat_level": "high", "has_veg": true, "carb_heavy": true },
+      "ingredients": [
+        { "ingredient_id": "ing_fresh_yakisoba_or_ramen_noodles", "amount": 980, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_ground_pork_mince", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_chicken_stock", "amount": 1400, "unit": "ml", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_white_miso_paste", "amount": 7, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_soy_sauce", "amount": 3, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_garlic_cloves_minced", "amount": 4, "unit": null, "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_fresh_ginger_grated", "amount": 2, "unit": "tsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_sesame_oil", "amount": 2, "unit": "tbsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_butter", "amount": 7, "unit": null, "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_corn_kernels", "amount": 350, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_bean_sprouts", "amount": 300, "unit": "g", "scale_factor": 1.0, "is_batch": false },
+        { "ingredient_id": "ing_spring_onions_sliced", "amount": 14, "unit": null, "scale_factor": 0.5, "is_batch": false }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_fresh_yakisoba_or_ramen_noodles"], "title": "Cook the noodles", "step_type": "prep", "content": "Bring a large pot of water to the boil. Cook ramen noodles according to packet instructions. Drain, rinse briefly in cold water to stop cooking, and set aside.", "timer_seconds": 300 },
+        { "id": "s2", "ingredient_ids": ["ing_ground_pork_mince", "ing_garlic_cloves_minced", "ing_fresh_ginger_grated", "ing_sesame_oil"], "title": "Brown the pork", "step_type": "cook", "content": "Heat sesame oil in a large pot. Add garlic and ginger, cook until fragrant. Add ground pork and cook, breaking it up, until browned through.", "timer_seconds": 420 },
+        { "id": "s3", "ingredient_ids": ["ing_chicken_stock", "ing_white_miso_paste", "ing_soy_sauce"], "title": "Build the broth", "step_type": "cook", "content": "Pour in chicken stock, then whisk in miso paste and soy sauce until dissolved. Bring to a gentle simmer for 10 minutes — do not boil hard or the miso turns bitter.", "timer_seconds": 600 },
+        { "id": "s4", "ingredient_ids": ["ing_corn_kernels"], "title": "Add the corn", "step_type": "cook", "content": "Stir corn kernels into the broth and warm through for 2 minutes.", "timer_seconds": 120 },
+        { "id": "s5", "ingredient_ids": ["ing_bean_sprouts", "ing_butter", "ing_spring_onions_sliced"], "title": "Portion and freeze", "step_type": "portion", "content": "Divide noodles across 7 containers, ladle broth and pork over each, top with a small handful of raw bean sprouts, a knob of butter, and spring onion. Cool completely before sealing. Freeze the broth and noodles separately if possible — top with fresh bean sprouts and butter when reheating. Freeze up to 2 months.", "timer_seconds": null }
+      ],
+      "notes": "Home miso ramen won't taste like a 12-hour tonkotsu broth, and that's fine — this is the version people actually cook on a Tuesday night. The butter-and-corn combination is a genuine Hokkaido-style touch, not a gimmick."
+    },
+    {
+      "id": "curry-udon",
+      "title": "Curry Udon",
+      "title_jp": "カレーうどん",
+      "description": "Thick udon noodles in a silky curry-spiced dashi broth — a beloved everyday noodle dish, and a great way to use the same curry blocks as your regular curry rice.",
+      "protein_per_serving": 33.8,
+      "fat_per_serving": 14.2,
+      "carbs_per_serving": 92.6,
+      "calories_per_serving": 636,
+      "cook_time_mins": 35,
+      "difficulty": "easy",
+      "freezer_friendly": true,
+      "tags": ["pork", "noodles", "curry"],
+      "tags_compat": { "protein_source": "pork", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
+      "ingredients": [
+        { "ingredient_id": "ing_frozen_udon_noodles", "amount": 1400, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_pork_loin_or_shoulder_thinly_sliced", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_dashi_stock", "amount": 1200, "unit": "ml", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_sandb_golden_curry_blocks_medium_box", "amount": 5, "unit": null, "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_soy_sauce", "amount": 2, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_large_onions_sliced", "amount": 2, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_cornstarch", "amount": 2, "unit": "tbsp", "scale_factor": 0.6, "is_batch": true },
+        { "ingredient_id": "ing_spring_onions_sliced", "amount": 14, "unit": null, "scale_factor": 0.5, "is_batch": false }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_frozen_udon_noodles"], "title": "Cook the noodles", "step_type": "prep", "content": "Cook frozen udon noodles according to packet instructions. Drain and set aside.", "timer_seconds": 240 },
+        { "id": "s2", "ingredient_ids": ["ing_pork_loin_or_shoulder_thinly_sliced", "ing_large_onions_sliced"], "title": "Cook pork and onion", "step_type": "cook", "content": "Cook sliced pork and onion in a large pot over medium-high heat until pork is no longer pink and onion has softened.", "timer_seconds": 360 },
+        { "id": "s3", "ingredient_ids": ["ing_dashi_stock", "ing_sandb_golden_curry_blocks_medium_box", "ing_soy_sauce"], "title": "Build the curry broth", "step_type": "cook", "content": "Add dashi stock and bring to a simmer. Break in curry blocks and stir until dissolved, then stir in soy sauce. Simmer 10 minutes.", "timer_seconds": 600 },
+        { "id": "s4", "ingredient_ids": ["ing_cornstarch"], "title": "Thicken the broth", "step_type": "cook", "content": "Mix cornstarch with a splash of cold water and stir into the broth. Simmer until slightly thickened and glossy.", "timer_seconds": 180 },
+        { "id": "s5", "ingredient_ids": ["ing_spring_onions_sliced"], "title": "Portion and freeze", "step_type": "portion", "content": "Divide noodles across 7 containers and ladle the curry broth with pork over the top. Top with spring onion. Cool completely, seal, and freeze up to 2 months.", "timer_seconds": null }
+      ],
+      "notes": "Uses the same curry blocks as your regular curry rice — worth batching both on the same week if you're buying a box specially."
+    },
+    {
+      "id": "yaki-udon",
+      "title": "Yaki Udon",
+      "title_jp": "焼きうどん",
+      "description": "Stir-fried udon with pork and vegetables in a savoury soy-based sauce — a quick, everyday noodle dish, and a good contrast to Niku Udon's brothy style.",
+      "protein_per_serving": 36.4,
+      "fat_per_serving": 18.6,
+      "carbs_per_serving": 89.0,
+      "calories_per_serving": 700,
+      "cook_time_mins": 25,
+      "difficulty": "easy",
+      "freezer_friendly": true,
+      "tags": ["pork", "noodles"],
+      "tags_compat": { "protein_source": "pork", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
+      "ingredients": [
+        { "ingredient_id": "ing_frozen_udon_noodles", "amount": 1400, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_pork_loin_or_shoulder_thinly_sliced", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_vegetable_oil", "amount": 2, "unit": "tbsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_green_cabbage_shredded", "amount": 400, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_medium_carrots_julienned", "amount": 2, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_bean_sprouts", "amount": 300, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_soy_sauce", "amount": 4, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_oyster_sauce", "amount": 2, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_sesame_oil", "amount": 1, "unit": "tbsp", "scale_factor": 0.5, "is_batch": true }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_frozen_udon_noodles"], "title": "Cook the noodles", "step_type": "prep", "content": "Cook frozen udon noodles according to packet instructions. Drain and set aside.", "timer_seconds": 240 },
+        { "id": "s2", "ingredient_ids": ["ing_vegetable_oil", "ing_pork_loin_or_shoulder_thinly_sliced"], "title": "Stir-fry the pork", "step_type": "cook", "content": "Heat oil in a wok over high heat. Add pork and stir-fry until just cooked through. Push to one side.", "timer_seconds": 240 },
+        { "id": "s3", "ingredient_ids": ["ing_green_cabbage_shredded", "ing_medium_carrots_julienned", "ing_bean_sprouts"], "title": "Add the vegetables", "step_type": "cook", "content": "Add cabbage and carrot and stir-fry for 2 minutes. Add bean sprouts and toss for 1 more minute.", "timer_seconds": 180 },
+        { "id": "s4", "ingredient_ids": ["ing_soy_sauce", "ing_oyster_sauce", "ing_sesame_oil"], "title": "Toss with the noodles", "step_type": "cook", "content": "Add noodles, soy sauce, oyster sauce, and sesame oil. Toss vigorously over high heat until everything is evenly coated, about 2 minutes.", "timer_seconds": 120 },
+        { "id": "s5", "ingredient_ids": [], "title": "Portion and freeze", "step_type": "portion", "content": "Divide across 7 containers. Cool completely, seal, and freeze up to 3 months. Reheat with a splash of water — noodles reheat better in a pan than microwave if possible.", "timer_seconds": null }
+      ],
+      "notes": "A drier, wok-fried cousin to Niku Udon — good for weeks when you want noodles but not another brothy dish."
+    },
+    {
+      "id": "tsukimi-udon",
+      "title": "Tsukimi Udon",
+      "title_jp": "月見うどん",
+      "description": "\"Moon-viewing\" udon in a simple soy-dashi broth topped with a soft egg — one of the simplest, most comforting everyday noodle bowls in Japan.",
+      "protein_per_serving": 28.4,
+      "fat_per_serving": 12.6,
+      "carbs_per_serving": 84.2,
+      "calories_per_serving": 573,
+      "cook_time_mins": 20,
+      "difficulty": "easy",
+      "freezer_friendly": true,
+      "tags": ["egg", "noodles", "vegetarian"],
+      "tags_compat": { "protein_source": "mixed", "fat_level": "low", "has_veg": true, "carb_heavy": true },
+      "ingredients": [
+        { "ingredient_id": "ing_frozen_udon_noodles", "amount": 1400, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_dashi_stock", "amount": 1600, "unit": "ml", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_soy_sauce", "amount": 4, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_mirin", "amount": 4, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_eggs", "amount": 7, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_fish_cake_narutomaki_sliced", "amount": 210, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_baby_spinach", "amount": 200, "unit": "g", "scale_factor": 1.0, "is_batch": false },
+        { "ingredient_id": "ing_spring_onions_sliced", "amount": 14, "unit": null, "scale_factor": 0.5, "is_batch": false }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_frozen_udon_noodles"], "title": "Cook the noodles", "step_type": "prep", "content": "Cook frozen udon noodles according to packet instructions. Drain and set aside.", "timer_seconds": 240 },
+        { "id": "s2", "ingredient_ids": ["ing_dashi_stock", "ing_soy_sauce", "ing_mirin"], "title": "Make the broth", "step_type": "cook", "content": "Combine dashi stock, soy sauce, and mirin in a pot. Bring to a gentle simmer.", "timer_seconds": 300 },
+        { "id": "s3", "ingredient_ids": ["ing_fish_cake_narutomaki_sliced", "ing_baby_spinach"], "title": "Warm the toppings", "step_type": "cook", "content": "Add fish cake slices and spinach to the broth, simmer 2 minutes until spinach wilts.", "timer_seconds": 120 },
+        { "id": "s4", "ingredient_ids": ["ing_eggs"], "title": "Poach the eggs (fresh, per serving)", "step_type": "cook", "content": "This step is done fresh at serving time, not batched: crack an egg gently into the simmering broth in each individual bowl and cook until the white sets but the yolk stays soft, about 2-3 minutes.", "timer_seconds": 180 },
+        { "id": "s5", "ingredient_ids": ["ing_spring_onions_sliced"], "title": "Portion and freeze", "step_type": "portion", "content": "Divide noodles, fish cake, and spinach across 7 containers with broth. Do not add the egg until reheating — cool the base completely, seal, and freeze up to 2 months. Top with spring onion and a fresh poached egg when reheating.", "timer_seconds": null }
+      ],
+      "notes": "The name comes from the egg yolk resembling the moon against the broth. Freeze the broth and noodles; always poach the egg fresh when you reheat."
+    },
+    {
+      "id": "zaru-soba",
+      "title": "Zaru Soba",
+      "title_jp": "ざるそば",
+      "description": "Chilled soba noodles served with a cold dipping sauce — a genuine hot-weather everyday meal, and the only dish in the rotation that's meant to be eaten cold straight from the fridge.",
+      "protein_per_serving": 26.8,
+      "fat_per_serving": 8.4,
+      "carbs_per_serving": 92.5,
+      "calories_per_serving": 548,
+      "cook_time_mins": 20,
+      "difficulty": "easy",
+      "freezer_friendly": true,
+      "tags": ["noodles", "vegetarian", "cold"],
+      "tags_compat": { "protein_source": "mixed", "fat_level": "low", "has_veg": false, "carb_heavy": true },
+      "ingredients": [
+        { "ingredient_id": "ing_dried_soba_noodles", "amount": 980, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_dashi_stock", "amount": 700, "unit": "ml", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_soy_sauce", "amount": 7, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_mirin", "amount": 7, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_eggs", "amount": 7, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_nori_sheets_cut_into_strips", "amount": 7, "unit": null, "scale_factor": 0.5, "is_batch": false },
+        { "ingredient_id": "ing_spring_onions_sliced", "amount": 14, "unit": null, "scale_factor": 0.5, "is_batch": false },
+        { "ingredient_id": "ing_wasabi_paste", "amount": 2, "unit": "tsp", "scale_factor": 0.5, "is_batch": false }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_dried_soba_noodles"], "title": "Cook and chill the noodles", "step_type": "prep", "content": "Boil soba noodles according to packet instructions. Drain and rinse thoroughly under cold running water while rubbing gently to remove surface starch, until fully chilled.", "timer_seconds": 300 },
+        { "id": "s2", "ingredient_ids": ["ing_eggs"], "title": "Boil the eggs", "step_type": "prep", "content": "Soft-boil eggs for 7 minutes, then cool in ice water and peel.", "timer_seconds": 420 },
+        { "id": "s3", "ingredient_ids": ["ing_dashi_stock", "ing_soy_sauce", "ing_mirin"], "title": "Make the mentsuyu dipping sauce", "step_type": "cook", "content": "Combine dashi stock, soy sauce, and mirin in a small pot. Bring to a simmer for 3 minutes, then cool completely and refrigerate.", "timer_seconds": 180 },
+        { "id": "s4", "ingredient_ids": ["ing_nori_sheets_cut_into_strips", "ing_spring_onions_sliced", "ing_wasabi_paste"], "title": "Portion and chill", "step_type": "portion", "content": "Divide chilled noodles across 7 containers, top with nori strips and a halved egg. Store the dipping sauce separately with spring onion and wasabi on the side. Keep refrigerated, eat within 3-4 days — freezing isn't necessary since this keeps well chilled and needs no reheating.", "timer_seconds": null }
+      ],
+      "notes": "This one's eaten cold straight from the fridge — no reheating, no rice cooker phase. A nice change of pace in summer, and the fastest thing in the whole rotation to actually eat once it's made."
+    },
+    {
+      "id": "yakimeshi",
+      "title": "Yakimeshi",
+      "title_jp": "焼き飯",
+      "description": "Japanese-style wok-fried rice with pork, egg, and vegetables — a genuine everyday household staple, and a completely different cooking technique to every donburi in the rotation.",
+      "protein_per_serving": 38.6,
+      "fat_per_serving": 20.4,
+      "carbs_per_serving": 94.8,
+      "calories_per_serving": 762,
+      "cook_time_mins": 25,
+      "difficulty": "easy",
+      "freezer_friendly": true,
+      "tags": ["pork", "rice", "egg"],
+      "tags_compat": { "protein_source": "pork", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
+      "ingredients": [
+        { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_pork_loin_or_shoulder_thinly_sliced", "amount": 500, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_eggs", "amount": 5, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_vegetable_oil", "amount": 3, "unit": "tbsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_garlic_cloves_minced", "amount": 3, "unit": null, "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_medium_carrots_chopped", "amount": 2, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_frozen_peas", "amount": 200, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_soy_sauce", "amount": 5, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_sesame_oil", "amount": 1, "unit": "tbsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_spring_onions_sliced", "amount": 14, "unit": null, "scale_factor": 0.5, "is_batch": false }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_white_rice_raw_weight"], "title": "Cook the rice", "step_type": "prep", "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else. Cool the cooked rice completely before frying — day-old, cold rice fries best.", "timer_seconds": 3000 },
+        { "id": "s2", "ingredient_ids": ["ing_pork_loin_or_shoulder_thinly_sliced", "ing_vegetable_oil"], "title": "Cook the pork", "step_type": "cook", "content": "Heat oil in a wok over high heat. Cook diced pork until browned through. Remove and set aside.", "timer_seconds": 300 },
+        { "id": "s3", "ingredient_ids": ["ing_garlic_cloves_minced", "ing_medium_carrots_chopped", "ing_frozen_peas"], "title": "Cook the vegetables", "step_type": "cook", "content": "In the same wok, cook garlic and carrot for 2 minutes. Add peas and cook 1 more minute.", "timer_seconds": 180 },
+        { "id": "s4", "ingredient_ids": ["ing_eggs"], "title": "Scramble the egg", "step_type": "cook", "content": "Push vegetables aside, pour in beaten egg, and scramble until just set.", "timer_seconds": 120 },
+        { "id": "s5", "ingredient_ids": ["ing_soy_sauce", "ing_sesame_oil"], "title": "Fry the rice", "step_type": "cook", "content": "Add cold cooked rice, breaking up any clumps. Return pork to the wok. Add soy sauce and sesame oil, and stir-fry over high heat until everything is well combined and the rice is lightly crisped.", "timer_seconds": 300 },
+        { "id": "s6", "ingredient_ids": ["ing_spring_onions_sliced"], "title": "Portion and freeze", "step_type": "portion", "content": "Divide across 7 containers, top with spring onion. Cool completely, seal, and freeze up to 3 months.", "timer_seconds": null }
+      ],
+      "notes": "Use rice that's been refrigerated overnight if you have it — fresh hot rice goes gluggy in a wok. Otherwise, spread freshly cooked rice on a tray to cool and dry out for 20 minutes before frying."
+    },
+    {
+      "id": "omurice",
+      "title": "Omurice",
+      "title_jp": "オムライス",
+      "description": "Ketchup-fried chicken rice wrapped in a soft omelette — a beloved yōshoku household dish. Best saved for a weekend when you can make the omelette fresh rather than batch-cooked.",
+      "protein_per_serving": 32.4,
+      "fat_per_serving": 22.6,
+      "carbs_per_serving": 86.0,
+      "calories_per_serving": 706,
+      "cook_time_mins": 35,
+      "difficulty": "medium",
+      "freezer_friendly": true,
+      "auto_pairing_eligible": false,
+      "tags": ["chicken", "rice", "egg"],
+      "tags_compat": { "protein_source": "chicken", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
+      "ingredients": [
+        { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_chicken_thigh_fillets_diced", "amount": 600, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_large_onions_sliced", "amount": 1, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_vegetable_oil", "amount": 2, "unit": "tbsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_tomato_ketchup", "amount": 8, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_frozen_peas", "amount": 150, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_eggs", "amount": 14, "unit": null, "scale_factor": 1.0, "is_batch": false },
+        { "ingredient_id": "ing_butter", "amount": 7, "unit": null, "scale_factor": 0.5, "is_batch": false },
+        { "ingredient_id": "ing_milk", "amount": 7, "unit": "tbsp", "scale_factor": 0.5, "is_batch": false }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_white_rice_raw_weight"], "title": "Cook the rice", "step_type": "prep", "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.", "timer_seconds": 3000 },
+        { "id": "s2", "ingredient_ids": ["ing_vegetable_oil", "ing_chicken_thigh_fillets_diced", "ing_large_onions_sliced"], "title": "Cook chicken and onion", "step_type": "cook", "content": "Heat oil in a large pan. Cook diced chicken and onion until chicken is browned and onion has softened.", "timer_seconds": 480 },
+        { "id": "s3", "ingredient_ids": ["ing_tomato_ketchup", "ing_frozen_peas"], "title": "Make the ketchup rice", "step_type": "cook", "content": "Add cooked rice and peas to the pan. Stir in ketchup and fry until the rice is evenly coated and lightly caramelised at the edges.", "timer_seconds": 300 },
+        { "id": "s4", "ingredient_ids": [], "title": "Batch-cool the rice", "step_type": "portion", "content": "Divide the ketchup rice across 7 containers. Cool completely, seal, and freeze up to 2 months — this part batches perfectly.", "timer_seconds": null },
+        { "id": "s5", "ingredient_ids": ["ing_eggs", "ing_butter", "ing_milk"], "title": "Make a fresh omelette per serving (at serving time)", "step_type": "cook", "content": "This step isn't batched — do it fresh each time you eat a portion. Whisk 2 eggs with a splash of milk. Melt butter in a small pan over medium heat, pour in egg, and swirl to a thin, soft omelette. Slide it over a reheated portion of ketchup rice and fold or wrap to cover.", "timer_seconds": 180 }
+      ],
+      "notes": "The rice batches and freezes beautifully, but the omelette really does need to be made fresh, one portion at a time — that's a real technique to practice, not a quick weeknight step, which is why this one's kept out of the regular rotation. Great for a lazy weekend breakfast."
+    },
+    {
+      "id": "chicken-katsu-curry",
+      "title": "Chicken Katsu Curry",
+      "title_jp": "チキンカツカレー",
+      "description": "Crispy fried chicken cutlet over curry rice — the iconic katsu-curry combination, and a katsu preparation for chicken rather than the usual pork.",
+      "protein_per_serving": 50.4,
+      "fat_per_serving": 26.8,
+      "carbs_per_serving": 98.2,
+      "calories_per_serving": 900,
+      "cook_time_mins": 50,
+      "difficulty": "medium",
+      "freezer_friendly": true,
+      "tags": ["chicken", "rice", "curry", "fried"],
+      "tags_compat": { "protein_source": "chicken", "fat_level": "high", "has_veg": true, "carb_heavy": true },
+      "ingredients": [
+        { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_chicken_thigh_fillets", "amount": 1100, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_large_onions_sliced", "amount": 1, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_medium_carrots_chopped", "amount": 2, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_medium_potatoes_cubed", "amount": 2, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_chicken_stock", "amount": 900, "unit": "ml", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_sandb_golden_curry_blocks_medium_box", "amount": 5, "unit": null, "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_salt", "amount": 1, "unit": "tsp", "scale_factor": 0.3, "is_batch": true },
+        { "ingredient_id": "ing_plain_flour", "amount": 150, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_eggs", "amount": 3, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_panko_breadcrumbs", "amount": 200, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_vegetable_oil_for_frying", "amount": 200, "unit": "ml", "scale_factor": 0.3, "is_batch": true }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_white_rice_raw_weight"], "title": "Cook the rice", "step_type": "prep", "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.", "timer_seconds": 3000 },
+        { "id": "s2", "ingredient_ids": ["ing_large_onions_sliced", "ing_medium_carrots_chopped", "ing_medium_potatoes_cubed", "ing_chicken_stock"], "title": "Simmer the curry vegetables", "step_type": "cook", "content": "Combine onion, carrot, potato, and chicken stock in a pot. Bring to a boil, then simmer until vegetables are tender, about 15 minutes.", "timer_seconds": 900 },
+        { "id": "s3", "ingredient_ids": ["ing_sandb_golden_curry_blocks_medium_box"], "title": "Add the curry roux", "step_type": "cook", "content": "Remove from heat, break in curry blocks, and stir until fully dissolved. Simmer gently a few more minutes until thickened.", "timer_seconds": 300 },
+        { "id": "s4", "ingredient_ids": ["ing_chicken_thigh_fillets", "ing_salt", "ing_plain_flour", "ing_eggs", "ing_panko_breadcrumbs"], "title": "Crumb the chicken", "step_type": "prep", "content": "Season chicken thighs with salt. Set up a crumbing station — flour, beaten egg, panko in three bowls. Coat each piece in flour, dip in egg, then press into panko.", "timer_seconds": null },
+        { "id": "s5", "ingredient_ids": ["ing_vegetable_oil_for_frying"], "title": "Fry the katsu", "step_type": "cook", "content": "Heat oil to 170°C. Fry chicken in batches for 4-5 minutes per side until deep golden and cooked through. Drain on a rack, then slice.", "timer_seconds": 540 },
+        { "id": "s6", "ingredient_ids": [], "title": "Portion and freeze", "step_type": "portion", "content": "Divide rice across 7 containers, ladle curry over, and top with sliced katsu. Cool completely with lids off before sealing. Freeze up to 3 months. Reheat the katsu in the oven at 200°C for 12 minutes to restore crispiness before adding to the reheated curry rice.", "timer_seconds": null }
+      ],
+      "notes": "Keep the fried katsu separate from the curry when reheating if you want to preserve the crunch — a quick oven blast beats microwaving it in the sauce."
+    },
+    {
+      "id": "hambagu",
+      "title": "Hambāgu",
+      "title_jp": "ハンバーグ",
+      "description": "Japanese-style hamburger steak in a ketchup-Worcestershire sauce — genuinely one of the most common household dinners in Japan, not a burger at all.",
+      "protein_per_serving": 44.2,
+      "fat_per_serving": 28.4,
+      "carbs_per_serving": 90.5,
+      "calories_per_serving": 828,
+      "cook_time_mins": 35,
+      "difficulty": "easy",
+      "freezer_friendly": true,
+      "tags": ["beef", "rice"],
+      "tags_compat": { "protein_source": "beef", "fat_level": "high", "has_veg": true, "carb_heavy": false },
+      "ingredients": [
+        { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_ground_beef_mince", "amount": 900, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_large_onions_sliced", "amount": 1, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_panko_breadcrumbs", "amount": 100, "unit": "g", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_milk", "amount": 4, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_eggs", "amount": 2, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_salt", "amount": 1, "unit": "tsp", "scale_factor": 0.3, "is_batch": true },
+        { "ingredient_id": "ing_vegetable_oil", "amount": 2, "unit": "tbsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_tomato_ketchup", "amount": 6, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_tonkatsu_sauce_or_worcestershire_sauce", "amount": 4, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_butter", "amount": 3, "unit": null, "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_broccolini_or_broccoli_florets", "amount": 400, "unit": "g", "scale_factor": 1.0, "is_batch": false }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_white_rice_raw_weight"], "title": "Cook the rice", "step_type": "prep", "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.", "timer_seconds": 3000 },
+        { "id": "s2", "ingredient_ids": ["ing_large_onions_sliced", "ing_vegetable_oil"], "title": "Soften the onion", "step_type": "prep", "content": "Finely dice onion and cook in a little oil over medium heat until soft and translucent. Cool slightly.", "timer_seconds": 300 },
+        { "id": "s3", "ingredient_ids": ["ing_ground_beef_mince", "ing_panko_breadcrumbs", "ing_milk", "ing_eggs", "ing_salt"], "title": "Mix and shape the patties", "step_type": "prep", "content": "Soak panko in milk for a few minutes. Combine with ground beef, cooked onion, egg, and salt. Mix until just combined (don't overwork). Shape into 7 oval patties, tossing each between your hands to remove air pockets.", "timer_seconds": null },
+        { "id": "s4", "ingredient_ids": [], "title": "Pan-fry the patties", "step_type": "cook", "content": "Heat a little oil in a pan over medium heat. Cook patties 4-5 minutes per side until well browned and cooked through. Remove and set aside.", "timer_seconds": 600 },
+        { "id": "s5", "ingredient_ids": ["ing_tomato_ketchup", "ing_tonkatsu_sauce_or_worcestershire_sauce", "ing_butter"], "title": "Make the sauce", "step_type": "cook", "content": "In the same pan, combine ketchup, Worcestershire-style sauce, and a splash of water. Simmer 2 minutes, then swirl in butter to glaze.", "timer_seconds": 120 },
+        { "id": "s6", "ingredient_ids": ["ing_broccolini_or_broccoli_florets"], "title": "Steam the broccolini", "step_type": "prep", "content": "Steam broccolini for 3-4 minutes until just tender.", "timer_seconds": 240 },
+        { "id": "s7", "ingredient_ids": [], "title": "Portion and freeze", "step_type": "portion", "content": "Divide rice, a patty, sauce, and broccolini across 7 containers. Cool completely, seal, and freeze up to 3 months.", "timer_seconds": null }
+      ],
+      "notes": "The milk-soaked panko is what keeps the patty soft rather than dense — don't skip it, and don't overwork the mince when mixing."
+    },
+    {
+      "id": "korokke",
+      "title": "Korokke",
+      "title_jp": "コロッケ",
+      "description": "Crispy panko-crumbed potato and beef croquettes — a hugely common household dish, and one of the best foods there is for freezing ahead.",
+      "protein_per_serving": 33.6,
+      "fat_per_serving": 24.5,
+      "carbs_per_serving": 92.4,
+      "calories_per_serving": 758,
+      "cook_time_mins": 65,
+      "difficulty": "medium",
+      "freezer_friendly": true,
+      "tags": ["beef", "rice", "fried"],
+      "tags_compat": { "protein_source": "beef", "fat_level": "high", "has_veg": true, "carb_heavy": true },
+      "ingredients": [
+        { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_medium_potatoes_cubed", "amount": 6, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_ground_beef_mince", "amount": 600, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_large_onions_sliced", "amount": 1, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_butter", "amount": 2, "unit": null, "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_salt", "amount": 1, "unit": "tsp", "scale_factor": 0.3, "is_batch": true },
+        { "ingredient_id": "ing_plain_flour", "amount": 150, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_eggs", "amount": 3, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_panko_breadcrumbs", "amount": 250, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_vegetable_oil_for_frying", "amount": 200, "unit": "ml", "scale_factor": 0.3, "is_batch": true },
+        { "ingredient_id": "ing_tonkatsu_sauce", "amount": 5, "unit": "tbsp", "scale_factor": 0.75, "is_batch": false },
+        { "ingredient_id": "ing_green_cabbage_finely_shredded", "amount": 400, "unit": "g", "scale_factor": 1.0, "is_batch": false }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_white_rice_raw_weight"], "title": "Cook the rice", "step_type": "prep", "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.", "timer_seconds": 3000 },
+        { "id": "s2", "ingredient_ids": ["ing_medium_potatoes_cubed"], "title": "Boil and mash the potato", "step_type": "prep", "content": "Boil potato until fork-tender, about 15 minutes. Drain well and mash until smooth.", "timer_seconds": 900 },
+        { "id": "s3", "ingredient_ids": ["ing_ground_beef_mince", "ing_large_onions_sliced", "ing_butter", "ing_salt"], "title": "Cook the beef filling", "step_type": "cook", "content": "Melt butter in a pan, cook diced onion until soft, then add ground beef and salt and cook until browned. Combine with the mashed potato and mix well.", "timer_seconds": 480 },
+        { "id": "s4", "ingredient_ids": [], "title": "Chill the mixture", "step_type": "prep", "content": "Spread the potato-beef mixture on a tray and refrigerate at least 30 minutes until firm enough to shape — this step matters, don't skip it.", "timer_seconds": 1800 },
+        { "id": "s5", "ingredient_ids": ["ing_plain_flour", "ing_eggs", "ing_panko_breadcrumbs"], "title": "Shape and crumb", "step_type": "prep", "content": "Shape the chilled mixture into 14 oval patties. Coat each in flour, dip in beaten egg, then press into panko, covering evenly.", "timer_seconds": null },
+        { "id": "s6", "ingredient_ids": ["ing_vegetable_oil_for_frying"], "title": "Fry the croquettes", "step_type": "cook", "content": "Heat oil to 170°C. Fry croquettes in batches for 3-4 minutes until deep golden — they're already cooked inside, you're just crisping the crumb. Drain on a rack.", "timer_seconds": 240 },
+        { "id": "s7", "ingredient_ids": ["ing_tonkatsu_sauce", "ing_green_cabbage_finely_shredded"], "title": "Portion and freeze", "step_type": "portion", "content": "Divide rice across 7 containers with 2 croquettes each, shredded cabbage, and a small tub of tonkatsu sauce. Cool completely with lids off before sealing. Freeze up to 3 months. Reheat in the oven at 200°C for 12-15 minutes to restore crispiness.", "timer_seconds": null }
+      ],
+      "notes": "The most labour-intensive recipe in the book — boiling, mashing, chilling, shaping, and double-breading all add up. Worth batching a double portion of just the filling while you're at it, since it freezes raw just as well before crumbing."
+    },
+    {
+      "id": "buri-daikon",
+      "title": "Buri Daikon",
+      "title_jp": "ぶり大根",
+      "description": "Yellowtail simmered slowly with daikon in a sweet soy broth — a classic nimono technique, and a different way to cook buri to the grilled teriyaki style.",
+      "protein_per_serving": 40.8,
+      "fat_per_serving": 15.6,
+      "carbs_per_serving": 90.2,
+      "calories_per_serving": 674,
+      "cook_time_mins": 35,
+      "difficulty": "easy",
+      "freezer_friendly": true,
+      "tags": ["fish", "rice"],
+      "tags_compat": { "protein_source": "fish", "fat_level": "medium", "has_veg": true, "carb_heavy": false },
+      "ingredients": [
+        { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_yellowtail_kingfish_fillets_buri", "amount": 1000, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_large_daikon_radish_cut_into_rounds", "amount": 800, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_dashi_stock", "amount": 800, "unit": "ml", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_soy_sauce", "amount": 5, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_mirin", "amount": 5, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_sake_or_dry_sherry", "amount": 3, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_sugar", "amount": 2, "unit": "tbsp", "scale_factor": 0.6, "is_batch": true },
+        { "ingredient_id": "ing_fresh_ginger_thinly_sliced", "amount": 2, "unit": "tbsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_spring_onions_sliced", "amount": 14, "unit": null, "scale_factor": 0.5, "is_batch": false }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_white_rice_raw_weight"], "title": "Cook the rice", "step_type": "prep", "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.", "timer_seconds": 3000 },
+        { "id": "s2", "ingredient_ids": ["ing_large_daikon_radish_cut_into_rounds"], "title": "Parboil the daikon", "step_type": "prep", "content": "Boil daikon rounds for 10 minutes until slightly softened. Drain.", "timer_seconds": 600 },
+        { "id": "s3", "ingredient_ids": ["ing_yellowtail_kingfish_fillets_buri"], "title": "Blanch the fish", "step_type": "prep", "content": "Briefly blanch buri fillets in boiling water for 1 minute to remove strong odour, then rinse in cold water.", "timer_seconds": 60 },
+        { "id": "s4", "ingredient_ids": ["ing_dashi_stock", "ing_soy_sauce", "ing_mirin", "ing_sake_or_dry_sherry", "ing_sugar", "ing_fresh_ginger_thinly_sliced"], "title": "Simmer everything together", "step_type": "cook", "content": "Combine dashi, soy sauce, mirin, sake, sugar, and ginger in a wide pot. Add daikon and buri. Bring to a simmer, cover with a drop-lid (or foil), and simmer gently for 20 minutes until the daikon is tender and the flavour has penetrated.", "timer_seconds": 1200 },
+        { "id": "s5", "ingredient_ids": ["ing_spring_onions_sliced"], "title": "Portion and freeze", "step_type": "portion", "content": "Divide rice, buri, and daikon across 7 containers, spoon the reduced sauce over the top, and garnish with spring onion. Cool completely, seal, and freeze up to 2 months.", "timer_seconds": null }
+      ],
+      "notes": "Blanching the fish first (a step called 'shimofuri') removes the strong fishy edge and is the difference between a good buri daikon and a great one — don't skip it."
+    },
+    {
+      "id": "chikuzenni",
+      "title": "Chikuzenni",
+      "title_jp": "筑前煮",
+      "description": "Chicken and root vegetables simmered together in a sweet soy broth — a veg-forward, deeply traditional home-style simmer from Fukuoka.",
+      "protein_per_serving": 37.4,
+      "fat_per_serving": 13.8,
+      "carbs_per_serving": 89.6,
+      "calories_per_serving": 636,
+      "cook_time_mins": 40,
+      "difficulty": "easy",
+      "freezer_friendly": true,
+      "tags": ["chicken", "rice"],
+      "tags_compat": { "protein_source": "chicken", "fat_level": "low", "has_veg": true, "carb_heavy": false },
+      "ingredients": [
+        { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_chicken_thigh_fillets_diced", "amount": 800, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_sesame_oil", "amount": 1, "unit": "tbsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_lotus_root_sliced", "amount": 300, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_burdock_gobo_sliced", "amount": 200, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_medium_carrots_chopped", "amount": 2, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_konnyaku_konjac_sliced", "amount": 300, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_shiitake_mushrooms_sliced", "amount": 200, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_dashi_stock", "amount": 700, "unit": "ml", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_soy_sauce", "amount": 5, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_mirin", "amount": 4, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_sugar", "amount": 2, "unit": "tbsp", "scale_factor": 0.6, "is_batch": true },
+        { "ingredient_id": "ing_snow_peas", "amount": 100, "unit": "g", "scale_factor": 1.0, "is_batch": false }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_white_rice_raw_weight"], "title": "Cook the rice", "step_type": "prep", "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.", "timer_seconds": 3000 },
+        { "id": "s2", "ingredient_ids": ["ing_snow_peas"], "title": "Blanch the snow peas", "step_type": "prep", "content": "Blanch snow peas in boiling water for 1 minute, then plunge into cold water. Set aside for garnish.", "timer_seconds": 60 },
+        { "id": "s3", "ingredient_ids": ["ing_sesame_oil", "ing_chicken_thigh_fillets_diced"], "title": "Brown the chicken", "step_type": "cook", "content": "Heat sesame oil in a large pot. Cook diced chicken until lightly browned on all sides.", "timer_seconds": 360 },
+        { "id": "s4", "ingredient_ids": ["ing_lotus_root_sliced", "ing_burdock_gobo_sliced", "ing_medium_carrots_chopped", "ing_konnyaku_konjac_sliced", "ing_shiitake_mushrooms_sliced"], "title": "Add the vegetables", "step_type": "cook", "content": "Add lotus root, burdock, carrot, konnyaku, and shiitake. Stir-fry for 2-3 minutes until everything is coated in oil.", "timer_seconds": 180 },
+        { "id": "s5", "ingredient_ids": ["ing_dashi_stock", "ing_soy_sauce", "ing_mirin", "ing_sugar"], "title": "Simmer", "step_type": "cook", "content": "Add dashi stock, soy sauce, mirin, and sugar. Bring to a boil, then reduce to a simmer, cover with a drop-lid, and cook for 20 minutes until vegetables are tender and the liquid has reduced to a light glaze.", "timer_seconds": 1200 },
+        { "id": "s6", "ingredient_ids": [], "title": "Portion and freeze", "step_type": "portion", "content": "Divide rice and the chicken-vegetable simmer across 7 containers, topping each with a few blanched snow peas. Cool completely, seal, and freeze up to 3 months.", "timer_seconds": null }
+      ],
+      "notes": "A genuinely traditional home-style dish with a lot more root vegetable variety than most of the rotation — a good one for a lighter, veg-heavy week."
+    },
+    {
+      "id": "sukiyaki",
+      "title": "Sukiyaki",
+      "title_jp": "すき焼き",
+      "description": "Thin-sliced beef, tofu, and vegetables simmered in a sweet soy broth, traditionally dipped in raw egg — an iconic hot pot best saved for when you have people over.",
+      "protein_per_serving": 41.6,
+      "fat_per_serving": 30.2,
+      "carbs_per_serving": 88.4,
+      "calories_per_serving": 838,
+      "cook_time_mins": 35,
+      "difficulty": "easy",
+      "freezer_friendly": true,
+      "auto_pairing_eligible": false,
+      "tags": ["beef", "rice", "hot pot"],
+      "tags_compat": { "protein_source": "beef", "fat_level": "high", "has_veg": true, "carb_heavy": false },
+      "ingredients": [
+        { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_beef_chuck_or_sirloin_thinly_sliced", "amount": 900, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_firm_tofu_cubed", "amount": 600, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_napa_cabbage_chopped", "amount": 600, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_shiitake_mushrooms_sliced", "amount": 200, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_enoki_mushrooms", "amount": 200, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_konnyaku_konjac_sliced", "amount": 300, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_large_onions_thinly_sliced", "amount": 1, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_soy_sauce", "amount": 7, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_mirin", "amount": 7, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_sake_or_dry_sherry", "amount": 4, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_sugar", "amount": 4, "unit": "tbsp", "scale_factor": 0.6, "is_batch": true },
+        { "ingredient_id": "ing_eggs", "amount": 7, "unit": null, "scale_factor": 1.0, "is_batch": false }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_white_rice_raw_weight"], "title": "Cook the rice", "step_type": "prep", "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.", "timer_seconds": 3000 },
+        { "id": "s2", "ingredient_ids": ["ing_soy_sauce", "ing_mirin", "ing_sake_or_dry_sherry", "ing_sugar"], "title": "Make the warishita sauce", "step_type": "prep", "content": "Combine soy sauce, mirin, sake, and sugar in a small pot. Warm gently until sugar dissolves, then set aside.", "timer_seconds": 180 },
+        { "id": "s3", "ingredient_ids": ["ing_napa_cabbage_chopped", "ing_shiitake_mushrooms_sliced", "ing_enoki_mushrooms", "ing_konnyaku_konjac_sliced", "ing_large_onions_thinly_sliced"], "title": "Prepare the vegetables", "step_type": "prep", "content": "Wash and cut napa cabbage, shiitake, enoki, konnyaku, and onion into hot-pot-ready pieces. Arrange on a platter for easy access at the table.", "timer_seconds": null },
+        { "id": "s4", "ingredient_ids": ["ing_beef_chuck_or_sirloin_thinly_sliced", "ing_firm_tofu_cubed"], "title": "Cook in batches at the table", "step_type": "cook", "content": "In a wide, shallow pot (traditionally over a tabletop burner), simmer a portion of beef, tofu, and vegetables in the warishita sauce, adding more sauce and water as needed. Cook in batches rather than all at once for the best texture.", "timer_seconds": 600 },
+        { "id": "s5", "ingredient_ids": ["ing_eggs"], "title": "Serve with a raw egg dip (fresh, at the table)", "step_type": "portion", "content": "Traditionally each diner cracks a raw egg into their own small bowl, beats it lightly, and dips each hot piece of beef and vegetable into it before eating. Serve alongside rice. Best cooked and eaten fresh at the table rather than portioned into containers — not really a batch-and-freeze dish.", "timer_seconds": null }
+      ],
+      "notes": "This is a table-cooked, share-style hot pot rather than a batch-prep meal — great for having people over, but it doesn't divide into weekly containers the way the rest of the rotation does, which is why it's excluded from auto-pairing by default."
+    },
+    {
+      "id": "chinjao-rosu",
+      "title": "Chinjao Rosu",
+      "title_jp": "チンジャオロース",
+      "description": "Julienned beef and capsicum stir-fried in a glossy oyster-soy sauce — a Japanese-Chinese household staple, quick enough for any weeknight.",
+      "protein_per_serving": 39.2,
+      "fat_per_serving": 16.4,
+      "carbs_per_serving": 88.8,
+      "calories_per_serving": 668,
+      "cook_time_mins": 25,
+      "difficulty": "easy",
+      "freezer_friendly": true,
+      "tags": ["beef", "rice"],
+      "tags_compat": { "protein_source": "beef", "fat_level": "medium", "has_veg": true, "carb_heavy": false },
+      "ingredients": [
+        { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_beef_chuck_or_sirloin_thinly_sliced", "amount": 800, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_cornstarch", "amount": 2, "unit": "tbsp", "scale_factor": 0.6, "is_batch": true },
+        { "ingredient_id": "ing_soy_sauce", "amount": 2, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_green_capsicum_sliced", "amount": 3, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_red_capsicum_sliced", "amount": 1, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_bamboo_shoots_sliced", "amount": 200, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_garlic_cloves_minced", "amount": 3, "unit": null, "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_fresh_ginger_grated", "amount": 1, "unit": "tsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_vegetable_oil", "amount": 2, "unit": "tbsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_oyster_sauce", "amount": 3, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_sake_or_dry_sherry", "amount": 2, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_sesame_oil", "amount": 1, "unit": "tbsp", "scale_factor": 0.5, "is_batch": true }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_white_rice_raw_weight"], "title": "Cook the rice", "step_type": "prep", "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.", "timer_seconds": 3000 },
+        { "id": "s2", "ingredient_ids": ["ing_beef_chuck_or_sirloin_thinly_sliced", "ing_cornstarch", "ing_soy_sauce"], "title": "Marinate the beef", "step_type": "prep", "content": "Toss beef strips with cornstarch and soy sauce. Set aside for 10 minutes to tenderise.", "timer_seconds": 600 },
+        { "id": "s3", "ingredient_ids": ["ing_vegetable_oil"], "title": "Sear the beef", "step_type": "cook", "content": "Heat oil in a wok over high heat. Stir-fry beef in batches until just browned. Remove and set aside.", "timer_seconds": 240 },
+        { "id": "s4", "ingredient_ids": ["ing_garlic_cloves_minced", "ing_fresh_ginger_grated", "ing_green_capsicum_sliced", "ing_red_capsicum_sliced", "ing_bamboo_shoots_sliced"], "title": "Stir-fry the vegetables", "step_type": "cook", "content": "In the same wok, stir-fry garlic and ginger for 30 seconds, then add capsicum and bamboo shoots. Stir-fry for 2-3 minutes until just tender-crisp.", "timer_seconds": 180 },
+        { "id": "s5", "ingredient_ids": ["ing_oyster_sauce", "ing_sake_or_dry_sherry", "ing_sesame_oil"], "title": "Combine and sauce", "step_type": "cook", "content": "Return beef to the wok. Add oyster sauce, sake, and sesame oil. Toss everything together over high heat until glossy and combined.", "timer_seconds": 120 },
+        { "id": "s6", "ingredient_ids": [], "title": "Portion and freeze", "step_type": "portion", "content": "Divide rice and the beef stir-fry across 7 containers. Cool completely, seal, and freeze up to 3 months.", "timer_seconds": null }
+      ],
+      "notes": "Cutting the beef and capsicum into matching thin strips (not chunks) is what makes this dish — it cooks faster and looks the part too."
+    },
+    {
+      "id": "yasai-itame-don",
+      "title": "Yasai Itame Don",
+      "title_jp": "野菜炒め丼",
+      "description": "A mixed vegetable and tofu stir-fry bowl in a savoury garlic-soy sauce — a genuinely vegetarian option for weeks where you want to balance out the heavier meat dishes.",
+      "protein_per_serving": 30.5,
+      "fat_per_serving": 16.8,
+      "carbs_per_serving": 92.4,
+      "calories_per_serving": 654,
+      "cook_time_mins": 20,
+      "difficulty": "easy",
+      "freezer_friendly": true,
+      "tags": ["tofu", "rice", "vegetarian"],
+      "tags_compat": { "protein_source": "tofu", "fat_level": "medium", "has_veg": true, "carb_heavy": false },
+      "ingredients": [
+        { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_firm_tofu_cubed", "amount": 900, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_vegetable_oil", "amount": 2, "unit": "tbsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_garlic_cloves_minced", "amount": 3, "unit": null, "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_fresh_ginger_grated", "amount": 1, "unit": "tsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_green_cabbage_shredded", "amount": 400, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_medium_carrots_julienned", "amount": 2, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_red_capsicum_sliced", "amount": 1, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_shiitake_or_mixed_mushrooms_sliced", "amount": 200, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_bean_sprouts", "amount": 300, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_soy_sauce", "amount": 4, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_oyster_sauce", "amount": 2, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_sesame_oil", "amount": 1, "unit": "tbsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_sesame_seeds", "amount": 2, "unit": "tbsp", "scale_factor": 0.5, "is_batch": false }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_white_rice_raw_weight"], "title": "Cook the rice", "step_type": "prep", "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.", "timer_seconds": 3000 },
+        { "id": "s2", "ingredient_ids": ["ing_vegetable_oil", "ing_firm_tofu_cubed"], "title": "Pan-fry the tofu", "step_type": "cook", "content": "Heat oil in a wok over medium-high heat. Fry tofu cubes until golden on a couple of sides. Remove and set aside.", "timer_seconds": 300 },
+        { "id": "s3", "ingredient_ids": ["ing_garlic_cloves_minced", "ing_fresh_ginger_grated", "ing_green_cabbage_shredded", "ing_medium_carrots_julienned", "ing_red_capsicum_sliced", "ing_shiitake_or_mixed_mushrooms_sliced"], "title": "Stir-fry the vegetables", "step_type": "cook", "content": "In the same wok, stir-fry garlic and ginger briefly, then add cabbage, carrot, capsicum, and mushrooms. Stir-fry for 3-4 minutes until just tender.", "timer_seconds": 240 },
+        { "id": "s4", "ingredient_ids": ["ing_bean_sprouts", "ing_soy_sauce", "ing_oyster_sauce", "ing_sesame_oil"], "title": "Combine and sauce", "step_type": "cook", "content": "Return tofu to the wok, add bean sprouts, soy sauce, oyster sauce, and sesame oil. Toss over high heat until everything is well coated.", "timer_seconds": 120 },
+        { "id": "s5", "ingredient_ids": ["ing_sesame_seeds"], "title": "Portion and freeze", "step_type": "portion", "content": "Divide rice and the vegetable-tofu stir-fry across 7 containers, sprinkle with sesame seeds. Cool completely, seal, and freeze up to 3 months.", "timer_seconds": null }
+      ],
+      "notes": "Pan-frying the tofu first, rather than just tossing it in raw, is what keeps it from falling apart in the stir-fry."
+    },
+    {
+      "id": "gyoza-to-gohan",
+      "title": "Gyoza to Gohan",
+      "title_jp": "餃子とご飯",
+      "description": "Pan-fried pork and cabbage dumplings, crisp on the bottom and steamed on top, served with rice — one of the most common weeknight dinners in Japan, and genuinely one of the best freezer foods there is.",
+      "protein_per_serving": 36.8,
+      "fat_per_serving": 22.4,
+      "carbs_per_serving": 90.6,
+      "calories_per_serving": 730,
+      "cook_time_mins": 60,
+      "difficulty": "medium",
+      "freezer_friendly": true,
+      "tags": ["pork", "rice", "dumplings"],
+      "tags_compat": { "protein_source": "pork", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
+      "ingredients": [
+        { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_ground_pork_mince", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_green_cabbage_finely_shredded", "amount": 500, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_garlic_cloves_minced", "amount": 4, "unit": null, "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_fresh_ginger_grated", "amount": 2, "unit": "tsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_spring_onions_sliced", "amount": 14, "unit": null, "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_soy_sauce", "amount": 2, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_sesame_oil", "amount": 2, "unit": "tbsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_gyoza_wrappers", "amount": 600, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_vegetable_oil", "amount": 3, "unit": "tbsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_rice_vinegar", "amount": 3, "unit": "tbsp", "scale_factor": 0.75, "is_batch": false },
+        { "ingredient_id": "ing_chilli_oil_rayu", "amount": 2, "unit": "tbsp", "scale_factor": 0.5, "is_batch": false }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_white_rice_raw_weight"], "title": "Cook the rice", "step_type": "prep", "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.", "timer_seconds": 3000 },
+        { "id": "s2", "ingredient_ids": ["ing_green_cabbage_finely_shredded"], "title": "Salt and drain the cabbage", "step_type": "prep", "content": "Finely chop cabbage, salt lightly, and let sit 10 minutes, then squeeze out as much liquid as possible — a watery filling makes for soggy gyoza.", "timer_seconds": 600 },
+        { "id": "s3", "ingredient_ids": ["ing_ground_pork_mince", "ing_garlic_cloves_minced", "ing_fresh_ginger_grated", "ing_spring_onions_sliced", "ing_soy_sauce", "ing_sesame_oil"], "title": "Mix the filling", "step_type": "prep", "content": "Combine ground pork, drained cabbage, garlic, ginger, spring onion, soy sauce, and sesame oil. Mix well until sticky and well combined.", "timer_seconds": null },
+        { "id": "s4", "ingredient_ids": ["ing_gyoza_wrappers"], "title": "Wrap the gyoza", "step_type": "prep", "content": "Place a small spoonful of filling in the centre of each wrapper. Wet the edge, fold in half, and pleat to seal. This is the slow part — put on some music, it takes a while for a full batch.", "timer_seconds": null },
+        { "id": "s5", "ingredient_ids": ["ing_vegetable_oil"], "title": "Pan-fry and steam", "step_type": "cook", "content": "Heat oil in a large flat-bottomed pan. Arrange gyoza flat-side down and fry until golden on the bottom, about 2 minutes. Add a splash of water, cover immediately, and steam for 4-5 minutes until the wrappers are translucent and cooked through. Uncover and let any remaining water evaporate to re-crisp the base.", "timer_seconds": 420 },
+        { "id": "s6", "ingredient_ids": ["ing_rice_vinegar", "ing_chilli_oil_rayu"], "title": "Portion and freeze", "step_type": "portion", "content": "Divide rice and gyoza across 7 containers with a small pot of soy sauce, rice vinegar, and chilli oil for dipping. For best results, freeze uncooked gyoza on a tray before fully assembling containers, then pan-fry straight from frozen when needed — cooked gyoza also freezes fine, just slightly softer on reheating. Freeze up to 2 months.", "timer_seconds": null }
+      ],
+      "notes": "Folding a full batch by hand does take a while — it's the slowest part of the whole rotation, not because it's difficult, just repetitive. Worth doubling the filling and freezing half uncooked while you're already set up."
+    },
+    {
+      "id": "naporitan",
+      "title": "Naporitan",
+      "title_jp": "ナポリタン",
+      "description": "Ketchup-fried spaghetti with sausage, onion, and capsicum — a beloved yōshoku pasta dish, and the first pasta in the rotation.",
+      "protein_per_serving": 29.8,
+      "fat_per_serving": 21.6,
+      "carbs_per_serving": 95.4,
+      "calories_per_serving": 716,
+      "cook_time_mins": 20,
+      "difficulty": "easy",
+      "freezer_friendly": true,
+      "tags": ["pork", "pasta"],
+      "tags_compat": { "protein_source": "pork", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
+      "ingredients": [
+        { "ingredient_id": "ing_spaghetti", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_frankfurt_sausages_sliced", "amount": 500, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_vegetable_oil", "amount": 2, "unit": "tbsp", "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_large_onions_sliced", "amount": 1, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_green_capsicum_sliced", "amount": 2, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_button_mushrooms_sliced", "amount": 200, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_tomato_ketchup", "amount": 10, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_butter", "amount": 2, "unit": null, "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_grated_parmesan", "amount": 4, "unit": "tbsp", "scale_factor": 0.5, "is_batch": false }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_spaghetti"], "title": "Cook the spaghetti", "step_type": "prep", "content": "Cook spaghetti in salted boiling water until just past al dente (a little softer than usual is traditional here). Drain, tossing with a little oil to prevent sticking.", "timer_seconds": 600 },
+        { "id": "s2", "ingredient_ids": ["ing_vegetable_oil", "ing_frankfurt_sausages_sliced", "ing_large_onions_sliced", "ing_green_capsicum_sliced", "ing_button_mushrooms_sliced"], "title": "Cook the vegetables and sausage", "step_type": "cook", "content": "Heat oil in a large pan. Cook sliced sausage, onion, capsicum, and mushroom until softened and lightly browned, about 6 minutes.", "timer_seconds": 360 },
+        { "id": "s3", "ingredient_ids": ["ing_tomato_ketchup", "ing_butter"], "title": "Toss with the pasta", "step_type": "cook", "content": "Add cooked spaghetti and ketchup to the pan. Toss over medium-high heat until the pasta is evenly coated and the ketchup has caramelised slightly at the edges. Swirl in butter to finish.", "timer_seconds": 240 },
+        { "id": "s4", "ingredient_ids": ["ing_grated_parmesan"], "title": "Portion and freeze", "step_type": "portion", "content": "Divide across 7 containers, top with a little grated parmesan. Cool completely, seal, and freeze up to 2 months. Reheat with a splash of water in a pan.", "timer_seconds": null }
+      ],
+      "notes": "The slightly overcooked, ketchup-caramelised spaghetti is the whole point — this isn't meant to taste like Italian pasta, it's its own household classic."
+    },
+    {
+      "id": "kinoko-wafu-pasta",
+      "title": "Ebi to Kinoko Wafu Pasta",
+      "title_jp": "海老ときのこ和風パスタ",
+      "description": "Japanese-style pasta with prawns, mixed mushrooms, garlic, butter, and soy sauce — a genuine everyday weeknight staple in Japan, distinct from Italian pasta.",
+      "protein_per_serving": 38.2,
+      "fat_per_serving": 17.4,
+      "carbs_per_serving": 90.8,
+      "calories_per_serving": 692,
+      "cook_time_mins": 20,
+      "difficulty": "easy",
+      "freezer_friendly": true,
+      "tags": ["seafood", "pasta"],
+      "tags_compat": { "protein_source": "seafood", "fat_level": "medium", "has_veg": true, "carb_heavy": true },
+      "ingredients": [
+        { "ingredient_id": "ing_spaghetti", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_frozen_prawns_peeled_and_deveined", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_butter", "amount": 4, "unit": null, "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_garlic_cloves_minced", "amount": 4, "unit": null, "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_shimeji_mushrooms", "amount": 200, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_enoki_mushrooms", "amount": 200, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_button_mushrooms_sliced", "amount": 200, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_soy_sauce", "amount": 5, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_spring_onions_sliced", "amount": 14, "unit": null, "scale_factor": 0.5, "is_batch": false },
+        { "ingredient_id": "ing_nori_sheets_cut_into_strips", "amount": 7, "unit": null, "scale_factor": 0.5, "is_batch": false }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_spaghetti"], "title": "Cook the spaghetti", "step_type": "prep", "content": "Cook spaghetti in salted boiling water until al dente. Reserve a cup of pasta water, then drain.", "timer_seconds": 600 },
+        { "id": "s2", "ingredient_ids": ["ing_frozen_prawns_peeled_and_deveined"], "title": "Thaw and dry the prawns", "step_type": "prep", "content": "Thaw prawns completely and pat dry.", "timer_seconds": null },
+        { "id": "s3", "ingredient_ids": ["ing_butter", "ing_garlic_cloves_minced"], "title": "Cook the garlic butter", "step_type": "cook", "content": "Melt butter in a large pan over medium heat. Add garlic and cook until fragrant, about 1 minute.", "timer_seconds": 60 },
+        { "id": "s4", "ingredient_ids": ["ing_shimeji_mushrooms", "ing_enoki_mushrooms", "ing_button_mushrooms_sliced"], "title": "Cook the mushrooms and prawns", "step_type": "cook", "content": "Add mushrooms and cook until softened, about 3 minutes. Add prawns and cook until just pink and curled, about 2-3 minutes.", "timer_seconds": 300 },
+        { "id": "s5", "ingredient_ids": ["ing_soy_sauce"], "title": "Toss with the pasta", "step_type": "cook", "content": "Add cooked spaghetti and soy sauce to the pan, along with a splash of the reserved pasta water. Toss until everything is evenly coated and glossy.", "timer_seconds": 120 },
+        { "id": "s6", "ingredient_ids": ["ing_spring_onions_sliced", "ing_nori_sheets_cut_into_strips"], "title": "Portion and freeze", "step_type": "portion", "content": "Divide across 7 containers, top with spring onion and nori strips. Cool completely, seal, and freeze up to 2 months. Reheat gently with a splash of water to loosen the sauce.", "timer_seconds": null }
+      ],
+      "notes": "Butter and soy sauce is a classic wafu combination — don't be tempted to add cream or cheese, that's a different dish entirely."
+    },
+    {
+      "id": "hayashi-rice",
+      "title": "Hayashi Rice",
+      "title_jp": "ハヤシライス",
+      "description": "Thin-sliced beef and onion in a rich tomato-demi sauce over rice — curry rice's yōshoku sibling, with a completely different sauce and flavour.",
+      "protein_per_serving": 37.6,
+      "fat_per_serving": 18.2,
+      "carbs_per_serving": 93.4,
+      "calories_per_serving": 704,
+      "cook_time_mins": 40,
+      "difficulty": "easy",
+      "freezer_friendly": true,
+      "tags": ["beef", "rice"],
+      "tags_compat": { "protein_source": "beef", "fat_level": "medium", "has_veg": true, "carb_heavy": false },
+      "ingredients": [
+        { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_beef_chuck_or_sirloin_thinly_sliced", "amount": 900, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_large_onions_sliced", "amount": 2, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_button_mushrooms_sliced", "amount": 200, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_butter", "amount": 2, "unit": null, "scale_factor": 0.5, "is_batch": true },
+        { "ingredient_id": "ing_plain_flour", "amount": 3, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_dashi_or_beef_stock", "amount": 900, "unit": "ml", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_canned_crushed_tomatoes", "amount": 400, "unit": "g", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_tomato_ketchup", "amount": 4, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_tonkatsu_sauce_or_worcestershire_sauce", "amount": 3, "unit": "tbsp", "scale_factor": 0.75, "is_batch": true }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_white_rice_raw_weight"], "title": "Cook the rice", "step_type": "prep", "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.", "timer_seconds": 3000 },
+        { "id": "s2", "ingredient_ids": ["ing_beef_chuck_or_sirloin_thinly_sliced", "ing_large_onions_sliced"], "title": "Brown the beef and onion", "step_type": "cook", "content": "Cook sliced beef and onion in a large pot over medium-high heat until beef is browned and onion softened, about 8 minutes.", "timer_seconds": 480 },
+        { "id": "s3", "ingredient_ids": ["ing_button_mushrooms_sliced", "ing_butter", "ing_plain_flour"], "title": "Make the roux", "step_type": "cook", "content": "Add mushrooms and cook 2 minutes. Push everything aside, melt butter in the cleared space, stir in flour, and cook 1-2 minutes to form a light roux, then stir through the rest of the pan.", "timer_seconds": 180 },
+        { "id": "s4", "ingredient_ids": ["ing_dashi_or_beef_stock", "ing_canned_crushed_tomatoes", "ing_tomato_ketchup", "ing_tonkatsu_sauce_or_worcestershire_sauce"], "title": "Simmer the sauce", "step_type": "cook", "content": "Add stock, crushed tomatoes, ketchup, and Worcestershire-style sauce. Bring to a boil, then simmer uncovered for 15-20 minutes until thickened to a stew-like consistency.", "timer_seconds": 1080 },
+        { "id": "s5", "ingredient_ids": [], "title": "Portion and freeze", "step_type": "portion", "content": "Divide rice across 7 containers and ladle the hayashi sauce over the top. Cool completely, seal, and freeze up to 3 months.", "timer_seconds": null }
+      ],
+      "notes": "Don't confuse this for curry — the tomato base gives it a completely different, slightly tangier flavour, closer to a light beef stew than a spiced curry."
+    },
+    {
+      "id": "mizutaki",
+      "title": "Mizutaki",
+      "title_jp": "水炊き",
+      "description": "Chicken and vegetables simmered gently in a clear dashi broth, served with a ponzu dip — a classic household hot pot, best saved for when you have people over.",
+      "protein_per_serving": 44.8,
+      "fat_per_serving": 14.6,
+      "carbs_per_serving": 82.4,
+      "calories_per_serving": 654,
+      "cook_time_mins": 35,
+      "difficulty": "easy",
+      "freezer_friendly": true,
+      "auto_pairing_eligible": false,
+      "tags": ["chicken", "rice", "hot pot"],
+      "tags_compat": { "protein_source": "chicken", "fat_level": "low", "has_veg": true, "carb_heavy": false },
+      "ingredients": [
+        { "ingredient_id": "ing_white_rice_raw_weight", "amount": 700, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_chicken_thigh_fillets_cut_into_chunks", "amount": 1000, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_dashi_stock", "amount": 1600, "unit": "ml", "scale_factor": 0.75, "is_batch": true },
+        { "ingredient_id": "ing_napa_cabbage_chopped", "amount": 600, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_firm_tofu_cubed", "amount": 500, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_shiitake_mushrooms_sliced", "amount": 200, "unit": "g", "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_medium_carrots_sliced", "amount": 2, "unit": null, "scale_factor": 1.0, "is_batch": true },
+        { "ingredient_id": "ing_ponzu_sauce", "amount": 8, "unit": "tbsp", "scale_factor": 0.75, "is_batch": false },
+        { "ingredient_id": "ing_spring_onions_sliced", "amount": 14, "unit": null, "scale_factor": 0.5, "is_batch": false }
+      ],
+      "steps": [
+        { "id": "s1", "ingredient_ids": ["ing_white_rice_raw_weight"], "title": "Cook the rice", "step_type": "prep", "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.", "timer_seconds": 3000 },
+        { "id": "s2", "ingredient_ids": ["ing_chicken_thigh_fillets_cut_into_chunks"], "title": "Blanch the chicken", "step_type": "prep", "content": "Briefly blanch chicken pieces in boiling water for 1-2 minutes to remove scum, then rinse.", "timer_seconds": 120 },
+        { "id": "s3", "ingredient_ids": ["ing_dashi_stock"], "title": "Start the broth", "step_type": "cook", "content": "Bring dashi stock to a simmer in a wide pot. Add the blanched chicken and simmer gently for 15 minutes until the chicken is cooked through and the broth is fragrant.", "timer_seconds": 900 },
+        { "id": "s4", "ingredient_ids": ["ing_napa_cabbage_chopped", "ing_firm_tofu_cubed", "ing_shiitake_mushrooms_sliced", "ing_medium_carrots_sliced"], "title": "Add the vegetables and tofu", "step_type": "cook", "content": "In batches, ideally at the table over a portable burner, add napa cabbage, tofu, shiitake, and carrot to the simmering broth, cooking each batch just until tender.", "timer_seconds": 600 },
+        { "id": "s5", "ingredient_ids": ["ing_ponzu_sauce", "ing_spring_onions_sliced"], "title": "Serve with ponzu (fresh, at the table)", "step_type": "portion", "content": "Serve each portion with ponzu sauce and spring onion on the side for dipping, alongside a bowl of rice. Best cooked and eaten fresh at the table rather than portioned into containers ahead of time — not really a batch-and-freeze dish.", "timer_seconds": null }
+      ],
+      "notes": "Like Sukiyaki, this is a share-style table hot pot rather than a batch-prep meal — great for guests, but it doesn't divide into weekly containers the way the rest of the rotation does, which is why it's excluded from auto-pairing by default."
     }
   ],
   "stores": {

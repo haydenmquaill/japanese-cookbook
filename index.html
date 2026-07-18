@@ -220,6 +220,16 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
 .step-need-amt{font-weight:600;color:var(--accent);white-space:nowrap;margin-left:10px;}
 .notes-box{margin-top:14px;padding:12px;background:var(--accent-soft);border:1px solid var(--accent);border-radius:var(--radius-sm);}
 .notes-box p{font-size:0.82rem;color:var(--text);line-height:1.5;}
+.my-prefs{margin-top:14px;padding:12px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);}
+.my-prefs-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.star-rating{display:flex;gap:2px;}
+.star-rating .star{font-size:1.2rem;color:var(--text3);cursor:pointer;line-height:1;}
+.star-rating .star.filled{color:var(--accent);}
+.fav-btn{background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text3);line-height:1;padding:0;}
+.fav-btn.active{color:var(--accent);}
+.pairing-toggle{display:flex;align-items:center;gap:6px;font-size:0.78rem;color:var(--text2);cursor:pointer;margin-left:auto;}
+.my-notes-input{width:100%;margin-top:10px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px;color:var(--text);font-size:0.82rem;font-family:inherit;resize:vertical;min-height:44px;}
+.my-notes-input:focus{outline:none;border-color:var(--accent);}
 
 /* BUTTONS */
 .btn{padding:12px 18px;border-radius:var(--radius);border:none;font-size:0.875rem;font-weight:600;cursor:pointer;transition:all 0.15s;display:inline-flex;align-items:center;gap:7px;}
@@ -569,6 +579,20 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
         <div class="modal-macro"><div class="val" id="rm-calories"></div><div class="lbl">kcal</div></div>
         <div class="modal-macro"><div class="val" id="rm-time"></div><div class="lbl">Mins</div></div>
       </div>
+      <div class="notes-box" id="rm-notes-box" style="display:none">
+        <p id="rm-notes-text"></p>
+      </div>
+      <div class="my-prefs">
+        <div class="my-prefs-row">
+          <div class="star-rating" id="rm-rating"></div>
+          <button class="fav-btn" id="rm-fav-btn" onclick="toggleMyFavourite()">♡</button>
+          <label class="pairing-toggle">
+            <input type="checkbox" id="rm-pairing-checkbox" onchange="toggleMyPairingEligible()">
+            In auto-pairing
+          </label>
+        </div>
+        <textarea class="my-notes-input" id="rm-my-notes" placeholder="Your notes on this recipe (tweaks, substitutions)…" onblur="saveMyNotes()"></textarea>
+      </div>
     </div>
     <div class="modal-tabs">
       <div class="modal-tab active" onclick="setRecipeTab('ingredients')">Ingredients</div>
@@ -587,9 +611,6 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
       </div>
       <div class="modal-section" id="rm-steps">
         <div class="step-list" id="rm-step-list"></div>
-        <div class="notes-box" id="rm-notes-box" style="display:none">
-          <p id="rm-notes-text"></p>
-        </div>
       </div>
     </div>
   </div>
@@ -610,6 +631,9 @@ let modalServings = 7;
 let currentRecipe = null;
 let activeTag = '';
 let groceryServings = {};
+let recipePreferences = {};
+let filterFavouritesOnly = false;
+let filterRatedOnly = false;
 
 // ── MACRO CALCULATION ──
 const BASE_SERVINGS = 7;
@@ -714,6 +738,44 @@ async function saveGroceryState() {
   await sb.from('grocery_state').upsert(payload, { onConflict: 'user_id' });
 }
 
+async function loadRecipePreferences() {
+  const { data } = await sb.from('recipe_preferences').select('*').eq('user_id', currentUser.id);
+  if (data) data.forEach(p => {
+    recipePreferences[p.recipe_id] = { auto_pairing_eligible: p.auto_pairing_eligible, rating: p.rating, favourite: p.favourite, notes: p.notes };
+  });
+}
+
+async function saveRecipePreference(recipeId, fields) {
+  const current = recipePreferences[recipeId] || { auto_pairing_eligible: null, rating: null, favourite: false, notes: null };
+  const merged = { ...current, ...fields };
+  recipePreferences[recipeId] = merged;
+  const payload = {
+    user_id: currentUser.id,
+    recipe_id: recipeId,
+    auto_pairing_eligible: merged.auto_pairing_eligible,
+    rating: merged.rating,
+    favourite: merged.favourite,
+    notes: merged.notes,
+    updated_at: new Date().toISOString()
+  };
+  await sb.from('recipe_preferences').upsert(payload, { onConflict: 'user_id,recipe_id' });
+}
+
+function isAutoPairingEligible(recipe) {
+  const pref = recipePreferences[recipe.id];
+  if (pref && pref.auto_pairing_eligible !== null && pref.auto_pairing_eligible !== undefined) {
+    return pref.auto_pairing_eligible;
+  }
+  return recipe.auto_pairing_eligible !== false;
+}
+
+function matchesPrefFilters(recipe) {
+  const pref = recipePreferences[recipe.id];
+  if (filterFavouritesOnly && !pref?.favourite) return false;
+  if (filterRatedOnly && !(pref?.rating >= 4)) return false;
+  return true;
+}
+
 async function saveScheduleField(fields) {
   await sb.from('schedule').update({ ...fields, updated_at: new Date().toISOString() }).eq('user_id', currentUser.id);
   Object.assign(userSchedule, fields);
@@ -785,7 +847,7 @@ async function launchApp() {
   loadPrefs();
   updateNavUser();
   showSync('Loading…', 'syncing');
-  await Promise.all([loadData(), loadUserSchedule(), loadGroceryState(), loadUserPairings()]);
+  await Promise.all([loadData(), loadUserSchedule(), loadGroceryState(), loadUserPairings(), loadRecipePreferences()]);
   showSync('', '');
   initGroceryWeekSel();
   renderHome();
@@ -977,7 +1039,9 @@ function renderTagFilters() {
   const tags = [...new Set(recipes.flatMap(r => r.tags || []))].sort();
   document.getElementById('tag-filters').innerHTML =
     `<div class="tag-filter${!activeTag?' active':''}" onclick="setTag('')">All</div>` +
-    tags.map(t => `<div class="tag-filter${activeTag===t?' active':''}" onclick="setTag('${t}')">${t}</div>`).join('');
+    tags.map(t => `<div class="tag-filter${activeTag===t?' active':''}" onclick="setTag('${t}')">${t}</div>`).join('') +
+    `<div class="tag-filter${filterFavouritesOnly?' active':''}" onclick="toggleFavFilter()">❤ Favourites</div>` +
+    `<div class="tag-filter${filterRatedOnly?' active':''}" onclick="toggleRatedFilter()">★ 4+ Rated</div>`;
   enableDragScroll(document.getElementById('tag-filters'));
 }
 
@@ -987,27 +1051,49 @@ function setTag(t) {
   renderMeals();
 }
 
+function refreshPrefFilterViews() {
+  renderTagFilters();
+  renderMeals();
+  if (document.getElementById('picker-overlay')?.classList.contains('open')) {
+    renderPickerTags();
+    renderPickerList();
+  }
+}
+
+function toggleFavFilter() {
+  filterFavouritesOnly = !filterFavouritesOnly;
+  refreshPrefFilterViews();
+}
+
+function toggleRatedFilter() {
+  filterRatedOnly = !filterRatedOnly;
+  refreshPrefFilterViews();
+}
+
 function renderMeals() {
   const q = (document.getElementById('meals-search')?.value || '').toLowerCase();
   let filtered = recipes.filter(r => {
     const matchQ = !q || r.title.toLowerCase().includes(q) || r.title_jp.includes(q) || r.description.toLowerCase().includes(q);
     const matchTag = !activeTag || (r.tags || []).includes(activeTag);
-    return matchQ && matchTag;
+    return matchQ && matchTag && matchesPrefFilters(r);
   });
   document.getElementById('meals-grid').innerHTML = filtered.length
-    ? filtered.map(r => `
+    ? filtered.map(r => {
+      const pref = recipePreferences[r.id];
+      return `
       <div class="meal-card" onclick="openRecipe('${r.id}')">
         <div class="meal-card-jp">${r.title_jp}</div>
         <div class="meal-card-info">
           <div class="meal-card-title">${r.title}</div>
           <div class="meal-card-desc">${r.description}</div>
-          <div class="meal-card-tags">${(r.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}${!r.freezer_friendly ? '<span class="tag" style="background:var(--accent-soft);color:var(--accent);border-color:var(--accent)">🌿 Fresh only</span>' : ''}</div>
+          <div class="meal-card-tags">${(r.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}${!r.freezer_friendly ? '<span class="tag" style="background:var(--accent-soft);color:var(--accent);border-color:var(--accent)">🌿 Fresh only</span>' : ''}${pref?.favourite ? '<span class="tag">❤ Favourite</span>' : ''}${pref?.rating ? `<span class="tag">${'★'.repeat(pref.rating)}</span>` : ''}${!isAutoPairingEligible(r) ? '<span class="tag">⛔ Not auto-paired</span>' : ''}</div>
           <div class="meal-macro-row-inline">${(() => { const m = calcMacros(r); return `<span>${m.protein}g P</span><span class="macro-dot">·</span><span>${m.fat}g F</span><span class="macro-dot">·</span><span>${m.carbs}g C</span><span class="macro-dot">·</span><span>${m.calories}kcal</span>`; })()}</div>
         </div>
         <div class="meal-card-macros">
           <div class="meal-macro-val">${r.cook_time_mins}<span class="meal-macro-unit">min</span></div>
         </div>
-      </div>`).join('')
+      </div>`;
+    }).join('')
     : '<div class="empty-state"><div class="es-icon">🍱</div><p>No meals found</p></div>';
 }
 
@@ -1068,7 +1154,9 @@ function renderPickerTags() {
   const tags = [...new Set(recipes.flatMap(r => r.tags || []))].sort();
   document.getElementById('picker-tag-filters').innerHTML =
     `<div class="picker-tag-filter${!pickerActiveTag ? ' active' : ''}" onclick="setPickerTag('')">All</div>` +
-    tags.map(t => `<div class="picker-tag-filter${pickerActiveTag === t ? ' active' : ''}" onclick="setPickerTag('${t}')">${t}</div>`).join('');
+    tags.map(t => `<div class="picker-tag-filter${pickerActiveTag === t ? ' active' : ''}" onclick="setPickerTag('${t}')">${t}</div>`).join('') +
+    `<div class="picker-tag-filter${filterFavouritesOnly ? ' active' : ''}" onclick="toggleFavFilter()">❤ Favourites</div>` +
+    `<div class="picker-tag-filter${filterRatedOnly ? ' active' : ''}" onclick="toggleRatedFilter()">★ 4+ Rated</div>`;
   enableDragScroll(document.getElementById('picker-tag-filters'));
 }
 
@@ -1150,7 +1238,7 @@ function renderPickerList() {
       if (mealBSource && r.tags_compat?.protein_source === mealBSource) return false;
       const matchQ = !q || r.title.toLowerCase().includes(q) || r.title_jp.includes(q);
       const matchTag = !pickerActiveTag || (r.tags || []).includes(pickerActiveTag);
-      return matchQ && matchTag;
+      return matchQ && matchTag && matchesPrefFilters(r);
     });
   } else {
     if (!pickerMealA) {
@@ -1161,7 +1249,7 @@ function renderPickerList() {
     pool = ranked.filter(r => {
       const matchQ = !q || r.title.toLowerCase().includes(q) || r.title_jp.includes(q);
       const matchTag = !pickerActiveTag || (r.tags || []).includes(pickerActiveTag);
-      return matchQ && matchTag;
+      return matchQ && matchTag && matchesPrefFilters(r);
     });
   }
 
@@ -1197,10 +1285,12 @@ function renderPickerList() {
     const proteinNote = combinedProtein
       ? `· <span style="color:${combinedProtein >= 90 && combinedProtein <= 115 ? '#27ae60' : combinedProtein < 80 ? 'var(--accent)' : 'var(--text2)'}">${combinedProtein}g combined P</span>`
       : '';
+    const pref = recipePreferences[r.id];
+    const prefBadges = `${pref?.favourite ? ' ❤' : ''}${pref?.rating ? ' ' + '★'.repeat(pref.rating) : ''}`;
     return `<div class="picker-item${isSelected ? ' selected' : ''}${isTopPick ? ' top-pick' : ''}" onclick="selectPickerMeal('${r.id}')">
       <div class="picker-item-jp">${r.title_jp}</div>
       <div class="picker-item-info">
-        <div class="picker-item-name">${r.title}</div>
+        <div class="picker-item-name">${r.title}${prefBadges}</div>
         <div class="picker-item-meta">${macros.protein}g P · ${macros.fat}g F · ${macros.carbs}g C · ${macros.calories}kcal · ${r.cook_time_mins}min ${proteinNote}</div>
         ${isRecent ? '<div class="picker-item-recent">⏱ Cooked recently</div>' : ''}
       </div>
@@ -1412,10 +1502,59 @@ function openRecipe(id) {
   document.getElementById('rm-carbs').textContent = macros.carbs + 'g';
   document.getElementById('rm-calories').textContent = macros.calories;
   document.getElementById('rm-time').textContent = r.cook_time_mins;
+  const nb = document.getElementById('rm-notes-box');
+  if (r.notes) {
+    nb.style.display = '';
+    document.getElementById('rm-notes-text').textContent = r.notes;
+  } else { nb.style.display = 'none'; }
+  renderMyPrefs();
   setRecipeTab('ingredients');
   renderRecipeIngredients();
   renderRecipeSteps();
   document.getElementById('recipe-modal').classList.add('open');
+}
+
+// ── MY PREFERENCES (per-recipe, per-user) ──
+function renderMyPrefs() {
+  if (!currentRecipe) return;
+  const pref = recipePreferences[currentRecipe.id] || { auto_pairing_eligible: null, rating: null, favourite: false, notes: null };
+  const rating = pref.rating || 0;
+  document.getElementById('rm-rating').innerHTML = [1, 2, 3, 4, 5].map(n =>
+    `<span class="star${n <= rating ? ' filled' : ''}" onclick="setMyRating(${n})">★</span>`).join('');
+  const favBtn = document.getElementById('rm-fav-btn');
+  favBtn.textContent = pref.favourite ? '♥' : '♡';
+  favBtn.classList.toggle('active', !!pref.favourite);
+  document.getElementById('rm-pairing-checkbox').checked = isAutoPairingEligible(currentRecipe);
+  document.getElementById('rm-my-notes').value = pref.notes || '';
+}
+
+function setMyRating(n) {
+  if (!currentRecipe) return;
+  const pref = recipePreferences[currentRecipe.id];
+  const newRating = (pref && pref.rating === n) ? null : n;
+  saveRecipePreference(currentRecipe.id, { rating: newRating });
+  renderMyPrefs();
+}
+
+function toggleMyFavourite() {
+  if (!currentRecipe) return;
+  const pref = recipePreferences[currentRecipe.id];
+  saveRecipePreference(currentRecipe.id, { favourite: !(pref && pref.favourite) });
+  renderMyPrefs();
+  renderMeals();
+}
+
+function toggleMyPairingEligible() {
+  if (!currentRecipe) return;
+  const checked = document.getElementById('rm-pairing-checkbox').checked;
+  saveRecipePreference(currentRecipe.id, { auto_pairing_eligible: checked });
+  renderMeals();
+}
+
+function saveMyNotes() {
+  if (!currentRecipe) return;
+  const value = document.getElementById('rm-my-notes').value.trim();
+  saveRecipePreference(currentRecipe.id, { notes: value || null });
 }
 
 function scaleAmount(rawIng, servings) {
@@ -1497,11 +1636,6 @@ function renderRecipeSteps() {
       <div class="step-content">${s.content}</div>
     </div>`;
   }).join('');
-  const nb = document.getElementById('rm-notes-box');
-  if (currentRecipe.notes) {
-    nb.style.display = '';
-    document.getElementById('rm-notes-text').textContent = currentRecipe.notes;
-  } else { nb.style.display = 'none'; }
 }
 
 function formatTimer(s) {
@@ -2068,7 +2202,7 @@ function getMealAPool(forWeek) {
     })
     .map(r => {
       const isRecent = recentIds.includes(r.id);
-      const score = (isRecent ? -50 : 0) + (Math.random() * 10);
+      const score = (isRecent ? -50 : 0) + (!isAutoPairingEligible(r) ? -1000 : 0) + (Math.random() * 10);
       return { recipe: r, score };
     })
     .sort((a, b) => b.score - a.score)
@@ -2135,6 +2269,7 @@ function getMealBPool(forWeek, mealA) {
       }
       // Random jitter — increased to break ties more effectively
       score += (Math.random() * 16) - 8;
+      if (!isAutoPairingEligible(r)) score -= 1000;
       return { recipe: r, score };
     })
     .sort((a, b) => b.score - a.score)
@@ -2149,6 +2284,7 @@ function scoreRecipe(recipe, forWeek, partnerMeal) {
   if (excluded.has(recipe.id)) return -999;
   if (adjacentSources.has(recipe.tags_compat?.protein_source)) return -999;
   if (partnerMeal && recipe.tags_compat?.protein_source === partnerMeal.tags_compat?.protein_source) return -999;
+  if (!isAutoPairingEligible(recipe)) return -999;
   let score = 100;
   if (recentIds.includes(recipe.id)) score -= 30;
   return score;
