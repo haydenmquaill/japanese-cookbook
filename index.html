@@ -113,15 +113,14 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
 /* MEALS VIEW */
 .meals-search{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;color:var(--text);font-size:0.95rem;outline:none;margin-bottom:12px;transition:border-color 0.15s;}
 .meals-search:focus{border-color:var(--accent);}
+.meal-filters-row{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
+.meal-filters-row>*{min-width:80px;}
+.meal-filter-toggle{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;gap:5px;padding:9px 8px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--surface2);color:var(--text2);font-size:0.75rem;font-weight:600;cursor:pointer;transition:all 0.15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;}
+.meal-filter-toggle:hover{border-color:var(--accent);}
+.meal-filter-toggle.active{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);}
+.meal-filter-select{flex:1;min-width:0;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:9px 8px;color:var(--text);font-size:0.75rem;font-weight:600;outline:none;text-align:center;text-align-last:center;}
+.meal-filter-select:focus{border-color:var(--accent);}
 .meals-search::placeholder{color:var(--text3);}
-.tag-filters{display:flex;gap:6px;overflow-x:auto;margin-bottom:12px;padding-bottom:4px;scrollbar-width:none;}
-.tag-filters::-webkit-scrollbar{display:none;}
-.tag-filter{padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:var(--surface2);color:var(--text2);cursor:pointer;font-size:0.75rem;transition:all 0.15s;flex-shrink:0;white-space:nowrap;}
-.tag-filter.active{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600;}
-.picker-tag-filters{display:flex;gap:6px;overflow-x:auto;margin-bottom:10px;padding-bottom:4px;scrollbar-width:none;}
-.picker-tag-filters::-webkit-scrollbar{display:none;}
-.picker-tag-filter{padding:4px 10px;border-radius:20px;border:1px solid var(--border);background:var(--surface2);color:var(--text2);cursor:pointer;font-size:0.72rem;transition:all 0.15s;flex-shrink:0;white-space:nowrap;}
-.picker-tag-filter.active{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600;}
 .meals-grid{display:flex;flex-direction:column;gap:8px;}
 .meal-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:13px;}
 .meal-card:hover{border-color:var(--accent);background:var(--surface2);}
@@ -457,7 +456,25 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
   <!-- MEALS -->
   <div id="view-meals" class="view">
     <input class="meals-search" id="meals-search" placeholder="Search meals…" oninput="renderMeals()">
-    <div class="tag-filters" id="tag-filters"></div>
+    <div class="meal-filters-row">
+      <select class="meal-filter-select" id="meals-protein-select" onchange="setProteinFilter(this.value)"></select>
+      <select class="meal-filter-select" id="meals-format-select" onchange="setFormatFilter(this.value)"></select>
+      <select class="meal-filter-select" id="meals-style-select" onchange="setCookStyleFilter(this.value)"></select>
+    </div>
+    <div class="meal-filters-row">
+      <div class="meal-filter-toggle" id="meals-fav-toggle" onclick="toggleFavFilter()">❤ Favourites</div>
+      <div class="meal-filter-toggle" id="meals-pairing-toggle" onclick="toggleAutoPairingFilter()">✓ Auto-Pairing</div>
+      <div class="meal-filter-toggle" id="meals-veg-toggle" onclick="toggleVegFilter()">🌱 Vegetarian</div>
+      <select class="meal-filter-select" id="meals-rating-select" onchange="setRatingFilter(this.value)">
+        <option value="">Any Rating</option>
+        <option value="5">★★★★★</option>
+        <option value="4">★★★★+</option>
+        <option value="3">★★★+</option>
+        <option value="2">★★+</option>
+        <option value="1">★+</option>
+        <option value="unrated">Unrated</option>
+      </select>
+    </div>
     <div class="meals-grid" id="meals-grid"></div>
   </div>
 
@@ -488,8 +505,26 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
           <div class="picker-selected-name" id="picker-sel-b-name"></div>
           <button class="picker-selected-clear" onclick="clearPickerMeal('b')">✕</button>
         </div>
-        <div class="picker-tag-filters" id="picker-tag-filters"></div>
         <input class="picker-search" id="picker-search" placeholder="Search meals…" oninput="renderPickerList()">
+        <div class="meal-filters-row">
+          <select class="meal-filter-select" id="picker-protein-select" onchange="setProteinFilter(this.value)"></select>
+          <select class="meal-filter-select" id="picker-format-select" onchange="setFormatFilter(this.value)"></select>
+          <select class="meal-filter-select" id="picker-style-select" onchange="setCookStyleFilter(this.value)"></select>
+        </div>
+        <div class="meal-filters-row">
+          <div class="meal-filter-toggle" id="picker-fav-toggle" onclick="toggleFavFilter()">❤ Favourites</div>
+          <div class="meal-filter-toggle" id="picker-pairing-toggle" onclick="toggleAutoPairingFilter()">✓ Auto-Pairing</div>
+          <div class="meal-filter-toggle" id="picker-veg-toggle" onclick="toggleVegFilter()">🌱 Vegetarian</div>
+          <select class="meal-filter-select" id="picker-rating-select" onchange="setRatingFilter(this.value)">
+            <option value="">Any Rating</option>
+            <option value="5">★★★★★</option>
+            <option value="4">★★★★+</option>
+            <option value="3">★★★+</option>
+            <option value="2">★★+</option>
+            <option value="1">★+</option>
+            <option value="unrated">Unrated</option>
+          </select>
+        </div>
         <div id="picker-exclusion-note" style="font-size:0.72rem;color:var(--text3);margin-bottom:8px;"></div>
         <div class="picker-list" id="picker-list"></div>
       </div>
@@ -629,11 +664,15 @@ let userSchedule = { current_week: 1 };
 let checkedItems = {};
 let modalServings = 7;
 let currentRecipe = null;
-let activeTag = '';
 let groceryServings = {};
 let recipePreferences = {};
 let filterFavouritesOnly = false;
-let filterRatedOnly = false;
+let filterAutoPairingOnly = false;
+let filterRatingMin = '';
+let filterProteinSource = '';
+let filterFormat = '';
+let filterCookStyle = '';
+let filterVegetarianOnly = false;
 
 // ── MACRO CALCULATION ──
 const BASE_SERVINGS = 7;
@@ -769,11 +808,101 @@ function isAutoPairingEligible(recipe) {
   return recipe.auto_pairing_eligible !== false;
 }
 
-function matchesPrefFilters(recipe) {
+function getFormat(recipe) {
+  const tags = recipe.tags || [];
+  if (tags.includes('noodles')) return 'noodles';
+  if (tags.includes('pasta')) return 'pasta';
+  return 'rice';
+}
+
+function matchesFilters(recipe) {
   const pref = recipePreferences[recipe.id];
+  if (filterProteinSource && recipe.tags_compat?.protein_source !== filterProteinSource) return false;
+  if (filterFormat && getFormat(recipe) !== filterFormat) return false;
+  if (filterCookStyle && recipe.tags_compat?.cook_style !== filterCookStyle) return false;
+  if (filterVegetarianOnly && !(recipe.tags || []).includes('vegetarian')) return false;
   if (filterFavouritesOnly && !pref?.favourite) return false;
-  if (filterRatedOnly && !(pref?.rating >= 4)) return false;
+  if (filterAutoPairingOnly && !isAutoPairingEligible(recipe)) return false;
+  if (filterRatingMin === 'unrated') {
+    if (pref?.rating) return false;
+  } else if (filterRatingMin) {
+    if (!(pref?.rating >= Number(filterRatingMin))) return false;
+  }
   return true;
+}
+
+function isPickerOpen() {
+  return document.getElementById('picker-overlay')?.classList.contains('open');
+}
+
+function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+function renderFilterDropdownOptions() {
+  const proteinSources = [...new Set(recipes.map(r => r.tags_compat?.protein_source).filter(Boolean))].sort();
+  const cookStyles = [...new Set(recipes.map(r => r.tags_compat?.cook_style).filter(Boolean))].sort();
+  const proteinOptions = `<option value="">Any Protein</option>` + proteinSources.map(p => `<option value="${p}">${capitalize(p)}</option>`).join('');
+  const formatOptions = `<option value="">Any Format</option><option value="rice">Rice</option><option value="noodles">Noodles</option><option value="pasta">Pasta</option>`;
+  const styleOptions = `<option value="">Any Style</option>` + cookStyles.map(s => `<option value="${s}">${capitalize(s)}</option>`).join('');
+  ['meals-protein-select', 'picker-protein-select'].forEach(id => { const el = document.getElementById(id); if (el) el.innerHTML = proteinOptions; });
+  ['meals-format-select', 'picker-format-select'].forEach(id => { const el = document.getElementById(id); if (el) el.innerHTML = formatOptions; });
+  ['meals-style-select', 'picker-style-select'].forEach(id => { const el = document.getElementById(id); if (el) el.innerHTML = styleOptions; });
+  updateFilterControlsUI();
+}
+
+function updateFilterControlsUI() {
+  [document.getElementById('meals-fav-toggle'), document.getElementById('picker-fav-toggle')].forEach(el => el && el.classList.toggle('active', filterFavouritesOnly));
+  [document.getElementById('meals-pairing-toggle'), document.getElementById('picker-pairing-toggle')].forEach(el => el && el.classList.toggle('active', filterAutoPairingOnly));
+  [document.getElementById('meals-veg-toggle'), document.getElementById('picker-veg-toggle')].forEach(el => el && el.classList.toggle('active', filterVegetarianOnly));
+  [document.getElementById('meals-rating-select'), document.getElementById('picker-rating-select')].forEach(el => { if (el) el.value = filterRatingMin; });
+  [document.getElementById('meals-protein-select'), document.getElementById('picker-protein-select')].forEach(el => { if (el) el.value = filterProteinSource; });
+  [document.getElementById('meals-format-select'), document.getElementById('picker-format-select')].forEach(el => { if (el) el.value = filterFormat; });
+  [document.getElementById('meals-style-select'), document.getElementById('picker-style-select')].forEach(el => { if (el) el.value = filterCookStyle; });
+}
+
+function toggleFavFilter() {
+  filterFavouritesOnly = !filterFavouritesOnly;
+  updateFilterControlsUI();
+  renderMeals();
+  if (isPickerOpen()) renderPickerList();
+}
+
+function toggleVegFilter() {
+  filterVegetarianOnly = !filterVegetarianOnly;
+  updateFilterControlsUI();
+  renderMeals();
+  if (isPickerOpen()) renderPickerList();
+}
+
+function setProteinFilter(v) {
+  filterProteinSource = v;
+  renderMeals();
+  if (isPickerOpen()) renderPickerList();
+}
+
+function setFormatFilter(v) {
+  filterFormat = v;
+  renderMeals();
+  if (isPickerOpen()) renderPickerList();
+}
+
+function setCookStyleFilter(v) {
+  filterCookStyle = v;
+  renderMeals();
+  if (isPickerOpen()) renderPickerList();
+}
+
+function toggleAutoPairingFilter() {
+  filterAutoPairingOnly = !filterAutoPairingOnly;
+  updateFilterControlsUI();
+  renderMeals();
+  if (isPickerOpen()) renderPickerList();
+}
+
+function setRatingFilter(val) {
+  filterRatingMin = val;
+  updateFilterControlsUI();
+  renderMeals();
+  if (isPickerOpen()) renderPickerList();
 }
 
 async function saveScheduleField(fields) {
@@ -856,7 +985,7 @@ async function launchApp() {
   renderMeals();
   renderSchedule();
   refreshGroceryWeekSel(true);
-  renderTagFilters();
+  renderFilterDropdownOptions();
   loadCookSession();
   await autoFillSchedule();
 }
@@ -1035,47 +1164,12 @@ async function advanceWeek() {
 }
 
 // ── MEALS ──
-function renderTagFilters() {
-  const tags = [...new Set(recipes.flatMap(r => r.tags || []))].sort();
-  document.getElementById('tag-filters').innerHTML =
-    `<div class="tag-filter${!activeTag?' active':''}" onclick="setTag('')">All</div>` +
-    tags.map(t => `<div class="tag-filter${activeTag===t?' active':''}" onclick="setTag('${t}')">${t}</div>`).join('') +
-    `<div class="tag-filter${filterFavouritesOnly?' active':''}" onclick="toggleFavFilter()">❤ Favourites</div>` +
-    `<div class="tag-filter${filterRatedOnly?' active':''}" onclick="toggleRatedFilter()">★ 4+ Rated</div>`;
-  enableDragScroll(document.getElementById('tag-filters'));
-}
-
-function setTag(t) {
-  activeTag = t;
-  renderTagFilters();
-  renderMeals();
-}
-
-function refreshPrefFilterViews() {
-  renderTagFilters();
-  renderMeals();
-  if (document.getElementById('picker-overlay')?.classList.contains('open')) {
-    renderPickerTags();
-    renderPickerList();
-  }
-}
-
-function toggleFavFilter() {
-  filterFavouritesOnly = !filterFavouritesOnly;
-  refreshPrefFilterViews();
-}
-
-function toggleRatedFilter() {
-  filterRatedOnly = !filterRatedOnly;
-  refreshPrefFilterViews();
-}
-
 function renderMeals() {
+  updateFilterControlsUI();
   const q = (document.getElementById('meals-search')?.value || '').toLowerCase();
   let filtered = recipes.filter(r => {
     const matchQ = !q || r.title.toLowerCase().includes(q) || r.title_jp.includes(q) || r.description.toLowerCase().includes(q);
-    const matchTag = !activeTag || (r.tags || []).includes(activeTag);
-    return matchQ && matchTag && matchesPrefFilters(r);
+    return matchQ && matchesFilters(r);
   });
   document.getElementById('meals-grid').innerHTML = filtered.length
     ? filtered.map(r => {
@@ -1148,28 +1242,10 @@ let pickerMealA = null;
 let pickerMealB = null;
 let pickerActiveTab = 'a';
 let pickerAdvanceAfter = false;
-let pickerActiveTag = '';
-
-function renderPickerTags() {
-  const tags = [...new Set(recipes.flatMap(r => r.tags || []))].sort();
-  document.getElementById('picker-tag-filters').innerHTML =
-    `<div class="picker-tag-filter${!pickerActiveTag ? ' active' : ''}" onclick="setPickerTag('')">All</div>` +
-    tags.map(t => `<div class="picker-tag-filter${pickerActiveTag === t ? ' active' : ''}" onclick="setPickerTag('${t}')">${t}</div>`).join('') +
-    `<div class="picker-tag-filter${filterFavouritesOnly ? ' active' : ''}" onclick="toggleFavFilter()">❤ Favourites</div>` +
-    `<div class="picker-tag-filter${filterRatedOnly ? ' active' : ''}" onclick="toggleRatedFilter()">★ 4+ Rated</div>`;
-  enableDragScroll(document.getElementById('picker-tag-filters'));
-}
-
-function setPickerTag(t) {
-  pickerActiveTag = t;
-  renderPickerTags();
-  renderPickerList();
-}
 
 function openMealPicker(week, advanceAfter) {
   pickerWeek = week;
   pickerAdvanceAfter = advanceAfter || false;
-  pickerActiveTag = '';
   const existing = userPairings[week];
   pickerMealA = existing ? recipes.find(r => r.id === existing.meal_a_id) : null;
   pickerMealB = existing ? recipes.find(r => r.id === existing.meal_b_id) : null;
@@ -1177,7 +1253,6 @@ function openMealPicker(week, advanceAfter) {
   document.getElementById('picker-title').textContent = `Plan ${wLabel.primary} · ${wLabel.secondary}`;
   document.getElementById('picker-search').value = '';
   setPickerTab('a');
-  renderPickerTags();
   updatePickerSelected();
   renderPickerList();
   updatePickerConfirm();
@@ -1194,12 +1269,10 @@ function showLockedMsg() {
 
 function setPickerTab(tab) {
   pickerActiveTab = tab;
-  pickerActiveTag = '';
   document.getElementById('picker-tab-a').classList.toggle('active', tab === 'a');
   document.getElementById('picker-tab-b').classList.toggle('active', tab === 'b');
   document.getElementById('picker-search').value = '';
   document.getElementById('picker-search').placeholder = tab === 'a' ? 'Search meals…' : pickerMealA ? 'Search compatible meals…' : 'Pick Meal A first';
-  renderPickerTags();
   renderPickerList();
 }
 
@@ -1227,6 +1300,7 @@ function clearPickerMeal(which) {
 }
 
 function renderPickerList() {
+  updateFilterControlsUI();
   const q = (document.getElementById('picker-search')?.value || '').toLowerCase();
   const recentIds = getRecentMealIds(pickerWeek, 4);
   let pool;
@@ -1237,8 +1311,7 @@ function renderPickerList() {
     pool = basePool.filter(r => {
       if (mealBSource && r.tags_compat?.protein_source === mealBSource) return false;
       const matchQ = !q || r.title.toLowerCase().includes(q) || r.title_jp.includes(q);
-      const matchTag = !pickerActiveTag || (r.tags || []).includes(pickerActiveTag);
-      return matchQ && matchTag && matchesPrefFilters(r);
+      return matchQ && matchesFilters(r);
     });
   } else {
     if (!pickerMealA) {
@@ -1248,14 +1321,15 @@ function renderPickerList() {
     const ranked = getMealBPool(pickerWeek, pickerMealA);
     pool = ranked.filter(r => {
       const matchQ = !q || r.title.toLowerCase().includes(q) || r.title_jp.includes(q);
-      const matchTag = !pickerActiveTag || (r.tags || []).includes(pickerActiveTag);
-      return matchQ && matchTag && matchesPrefFilters(r);
+      return matchQ && matchesFilters(r);
     });
   }
 
+  const hasActiveFilter = !!(filterProteinSource || filterFormat || filterCookStyle || filterVegetarianOnly || filterFavouritesOnly || filterAutoPairingOnly || filterRatingMin);
+
   if (pool.length === 0) {
-    const reason = pickerActiveTag
-      ? 'No meals match this filter within the available pool'
+    const reason = hasActiveFilter
+      ? 'No meals match these filters within the available pool'
       : pickerActiveTab === 'b' && pickerMealA
       ? `No compatible meals available — try a different Meal A`
       : 'No meals available for this week';
@@ -1264,7 +1338,6 @@ function renderPickerList() {
   }
   // Show exclusion note
   const excluded = getExcludedIds(pickerWeek);
-  const totalExcluded = recipes.length - pool.length - (pickerActiveTag ? 0 : 0);
   const noteEl = document.getElementById('picker-exclusion-note');
   if (noteEl) {
     const mealBSource = pickerActiveTab === 'a' ? pickerMealB?.tags_compat?.protein_source : null;
@@ -1275,7 +1348,7 @@ function renderPickerList() {
 
   document.getElementById('picker-list').innerHTML = pool.map((r, i) => {
     const isSelected = (pickerActiveTab === 'a' && pickerMealA?.id === r.id) || (pickerActiveTab === 'b' && pickerMealB?.id === r.id);
-    const isTopPick = pickerActiveTab === 'b' && i === 0 && !q && !pickerActiveTag;
+    const isTopPick = pickerActiveTab === 'b' && i === 0 && !q && !hasActiveFilter;
     const isRecent = recentIds.includes(r.id);
     const macros = calcMacros(r);
     // For Meal B show combined protein
@@ -2580,25 +2653,6 @@ function showSync(msg, type) {
   bar.className = 'sync-bar' + (msg ? ' show' : '') + (type ? ' ' + type : '');
 }
 
-// ── DRAG SCROLL ──
-function enableDragScroll(el) {
-  if (!el) return;
-  let isDown = false, startX, scrollLeft;
-  el.addEventListener('mousedown', e => {
-    isDown = true;
-    el.style.cursor = 'grabbing';
-    startX = e.pageX - el.offsetLeft;
-    scrollLeft = el.scrollLeft;
-  });
-  el.addEventListener('mouseleave', () => { isDown = false; el.style.cursor = ''; });
-  el.addEventListener('mouseup', () => { isDown = false; el.style.cursor = ''; });
-  el.addEventListener('mousemove', e => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - el.offsetLeft;
-    el.scrollLeft = scrollLeft - (x - startX) * 1.5;
-  });
-}
 
 // ── BOOT ──
 loadPrefs();

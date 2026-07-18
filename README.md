@@ -5,7 +5,7 @@ A Japanese-inspired meal prep planner built for batch cooking, freezer-friendly 
 ## Features
 
 - **63 Japanese recipes** — authentic everyday home-cooking staples covering rice bowls, noodles, yōshoku, simmered dishes, stir-fries, and hot pots. Almost all freezer-friendly; a few (raw-fish or last-minute-fresh dishes like Maguro Don and Ochazuke) aren't, and are flagged accordingly.
-- **Smart meal scheduling** — pick your own meals each week from a searchable, filterable recipe list. Meal B is auto-suggested based on compatibility ranking (protein variety, fat balance, recent history). Recipes can be marked `auto_pairing_eligible: false` to keep them in the recipe list without the algorithm ever auto-suggesting them — used for dishes that don't batch-cook well (hot pots, Omurice) or aren't freezer-friendly (Maguro Don). They're still fully searchable and selectable by hand in the meal picker.
+- **Smart meal scheduling** — pick your own meals each week from a searchable recipe list, filterable by Protein source, Format (rice/noodles/pasta), and Cook style (fried/grilled/simmered/stir-fried/soup/hot pot/cold/raw) dropdowns, plus Favourites/Auto-Pairing/Vegetarian toggles and a Rating filter — same filter set in both the Meals tab and the Schedule tab's meal picker. Meal B is auto-suggested based on compatibility ranking (protein variety, fat balance, recent history). Recipes can be marked `auto_pairing_eligible: false` to keep them in the recipe list without the algorithm ever auto-suggesting them — used for dishes that don't batch-cook well (hot pots, Omurice) or aren't freezer-friendly (Maguro Don, Ochazuke). They're still fully searchable and selectable by hand in the meal picker.
 - **Relative week rotation, not calendar dates** — weeks are tracked purely as "this week" / "next week" / "in N weeks" relative to your current position. You advance to the next week yourself (whenever you actually cook, not on a fixed schedule), so cooking early or late never desyncs the app from reality.
 - **Cook mode** — unified step-by-step cook session for both weekly meals. Rice is cooked first in its own rice-cooker phase (sized from both meals' combined servings, water at 1.2× the rice weight), then prep for both meals runs in parallel (marinating, chopping), then each meal is cooked sequentially. Every step shows a "You'll need" block with the exact scaled quantity of each ingredient it introduces — no more leaving cook mode to check the Ingredients tab. Built-in timers per step, session persistence across page reloads, and a screen wake lock so the phone doesn't sleep mid-session.
 - **Grocery lists** — weekly lists aggregated by store (Woolworths, Asian aisle, Genki Mart, Fishmonger) with serving adjusters and persistent check-off state saved to Supabase.
@@ -177,6 +177,7 @@ Users are added via the Supabase Dashboard under Authentication → Users → Ad
       "tags": ["chicken", "rice"],
       "tags_compat": {
         "protein_source": "chicken",
+        "cook_style": "grilled",
         "fat_level": "low",
         "has_veg": true,
         "carb_heavy": false
@@ -228,10 +229,11 @@ Users are added via the Supabase Dashboard under Authentication → Users → Ad
 - A step titled exactly `"Cook the rice"` is treated specially in cook mode: it's pulled out of the per-recipe prep flow and replaced with a single combined rice-cooker step (sized from both meals' servings, water at 1.2× the rice weight, run before anything else). Its own `content` in `data.json` is just generic rice-cooker instructions — the actual amount is computed live in cook mode from `ingredient_ids`.
 
 **Recipe compatibility:**
-- `protein_source` — used to avoid pairing two meals with the same protein
+- `protein_source` — used to avoid pairing two meals with the same protein. Also powers the Protein filter dropdown in Meals/Schedule.
 - `fat_level` — `low`, `medium`, or `high` — used to balance weekly fat intake
 - `has_veg` — whether the meal contains substantial vegetables
 - `carb_heavy` — whether the meal is potato or noodle based (avoids two carb-heavy meals in one week)
+- `cook_style` — the recipe's primary cooking technique: `fried`, `grilled`, `simmered`, `stir-fried`, `soup`, `hot pot`, `cold`, or `raw`. Pick whichever technique most *defines* the dish, not every technique a step happens to use (e.g. Tonkatsu Don has a simmered onion-dashi sauce too, but it's tagged `fried` because the katsu is what makes it that dish). Powers the Cook Style filter dropdown.
 
 **Other recipe-level fields:**
 - `auto_pairing_eligible` — omit for normal recipes (defaults to eligible). Set to `false` for recipes that shouldn't ever be auto-suggested by the pairing algorithm — not freezer-friendly, or don't batch-cook into weekly containers well (hot pots, Omurice's per-portion omelette). These recipes stay fully visible and searchable in the meal picker, just heavily deprioritised in ranking and excluded from the fully-automated `autoFillWeek`/`autoFillSchedule` flow.
@@ -249,9 +251,10 @@ When a user picks Meal A, compatible Meal B options are ranked by score:
 
 1. Add any new ingredients to the `ingredients` array with their nutritional data
 2. Add the recipe to the `recipes` array referencing ingredient IDs, using `tbsp`/`tsp` for seasoning amounts and `ml`/`l` for bulk liquids (see Key fields above)
-3. Tag each step's `ingredient_ids` (see above) so cook mode can show per-step quantities
-4. If the recipe isn't freezer-friendly or doesn't batch-cook well, set `auto_pairing_eligible: false`
-5. Re-upload `data.json` to Supabase Storage — no code changes needed
+3. Set `tags_compat.cook_style` to whichever technique most defines the dish
+4. Tag each step's `ingredient_ids` (see above) so cook mode can show per-step quantities
+5. If the recipe isn't freezer-friendly or doesn't batch-cook well, set `auto_pairing_eligible: false`
+6. Re-upload `data.json` to Supabase Storage — no code changes needed
 
 ## Nutrition data
 
