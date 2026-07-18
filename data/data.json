@@ -1313,6 +1313,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar","ing_garlic_cloves_minced","ing_fresh_ginger_grated","ing_cornstarch"],
           "title": "Make teriyaki sauce",
           "content": "Combine soy sauce, mirin, sake, sugar, garlic and ginger in a small saucepan over medium heat. Mix cornstarch with 2 tbsp cold water and stir in. Simmer until thickened, about 3–4 minutes. Set aside.",
           "timer_seconds": 240,
@@ -1320,13 +1321,15 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
-          "content": "Rinse rice until water runs clear. Add to a pot with water (ratio 1:1.5). Bring to a boil, reduce to low, cover and cook until absorbed.",
-          "timer_seconds": 1080,
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
           "step_type": "prep"
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_chicken_breast_raw_weight","ing_sesame_oil"],
           "title": "Cook the chicken",
           "content": "Slice chicken into thin fillets. Heat sesame oil in a pan over medium-high heat. Cook chicken 4–5 minutes per side until cooked through.",
           "timer_seconds": 540,
@@ -1334,6 +1337,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": [],
           "title": "Glaze and slice",
           "content": "Pour teriyaki sauce over the cooked chicken in the pan. Toss to coat and cook 1–2 more minutes until glossy. Rest 5 minutes, then slice.",
           "timer_seconds": 120,
@@ -1341,6 +1345,7 @@
         },
         {
           "id": "s5a",
+          "ingredient_ids": ["ing_broccolini_or_broccoli_florets"],
           "title": "Steam the broccolini",
           "step_type": "prep",
           "content": "Bring a small pot of salted water to a boil. Add broccolini and steam for 3–4 minutes until bright green and just tender. Drain and set aside.",
@@ -1348,6 +1353,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": [],
           "title": "Portion and freeze",
           "content": "Divide rice and glazed chicken across containers. Spoon any remaining sauce over the top. Steam broccolini for 3–4 minutes until just tender and add a portion to each container. Cool completely, then seal. Refrigerate up to 4 days or freeze up to 3 months.",
           "timer_seconds": null,
@@ -1464,6 +1470,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_vegetable_oil","ing_large_onions_sliced"],
           "title": "Caramelise the onions",
           "content": "Heat oil in a large pot over medium heat. Add onions and cook slowly, stirring often, until deeply golden and soft. This step builds the base flavour — don't rush it.",
           "timer_seconds": 900,
@@ -1471,6 +1478,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_chicken_breast_raw_weight","ing_medium_carrots_chopped","ing_medium_potatoes_cubed","ing_chicken_stock"],
           "title": "Add chicken and veg",
           "content": "Add chicken to the pot and brown on the outside, about 3 minutes. Add carrots, potatoes, and pour in stock. Bring to a boil, then reduce to a simmer.",
           "timer_seconds": 180,
@@ -1478,6 +1486,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": [],
           "title": "Simmer",
           "content": "Simmer uncovered until carrots and potato are just tender.",
           "timer_seconds": 1200,
@@ -1485,6 +1494,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_sandb_golden_curry_blocks_medium_box","ing_soy_sauce"],
           "title": "Add curry blocks",
           "content": "Turn off heat. Break curry blocks into the pot and stir until fully dissolved. Add soy sauce. Turn heat back to low and stir until sauce thickens, about 5 minutes.",
           "timer_seconds": 300,
@@ -1492,13 +1502,15 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
-          "content": "Rinse rice and cook in a separate pot with water — boil, reduce, cover, cook until absorbed.",
-          "timer_seconds": 1080,
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
           "step_type": "prep"
         },
         {
           "id": "s6",
+          "ingredient_ids": [],
           "title": "Portion and freeze",
           "content": "Portion rice and curry across containers. Cool completely before sealing. Refrigerate up to 4 days or freeze up to 3 months. Reheat curry in a pot or microwave with a splash of water to loosen.",
           "timer_seconds": null,
@@ -1630,6 +1642,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_white_miso_paste","ing_mirin","ing_soy_sauce","ing_sake_or_dry_sherry","ing_sesame_oil","ing_garlic_cloves_minced","ing_fresh_ginger_grated","ing_salmon_fillets_raw_weight"],
           "title": "Make miso marinade",
           "content": "Whisk together miso paste, mirin, soy sauce, sake, sesame oil, garlic, and ginger in a bowl until smooth. Coat salmon fillets and marinate for at least 20 minutes.",
           "timer_seconds": 1200,
@@ -1637,13 +1650,15 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
-          "content": "Rinse rice until water runs clear. Cook in a pot with water — bring to a boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080,
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
           "step_type": "prep"
         },
         {
           "id": "s3",
+          "ingredient_ids": [],
           "title": "Bake the salmon",
           "content": "Preheat oven to 200°C. Place marinated salmon on a lined baking tray and bake until just cooked through and slightly caramelised on top.",
           "timer_seconds": 1080,
@@ -1651,6 +1666,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_frozen_edamame"],
           "title": "Cook the edamame",
           "content": "Boil or microwave edamame according to packet instructions. Drain and set aside.",
           "timer_seconds": 300,
@@ -1658,6 +1674,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_sesame_seeds"],
           "title": "Portion and freeze",
           "content": "Divide rice across containers. Add a salmon fillet and a portion of edamame to each. Sprinkle with sesame seeds. Cool completely before sealing. Freeze up to 2 months. Reheat gently — microwave at medium power to avoid drying the salmon out.",
           "timer_seconds": null,
@@ -1790,6 +1807,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_sesame_oil","ing_pork_shoulder_or_loin_thinly_sliced","ing_fresh_ginger_grated"],
           "title": "Brown the pork",
           "content": "Heat sesame oil in a large pot over medium-high heat. Add pork and ginger and cook until the pork is no longer pink, about 3–4 minutes.",
           "timer_seconds": 240,
@@ -1797,6 +1815,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_medium_carrots_sliced_into_half_moons","ing_daikon_radish_cubed","ing_medium_potato_cubed","ing_shiitake_mushrooms_sliced","ing_dashi_stock_or_chicken_stock"],
           "title": "Add vegetables and simmer",
           "content": "Add carrots, daikon, potato, and shiitake to the pot. Pour in dashi stock. Bring to a boil, then reduce to a steady simmer until all vegetables are tender.",
           "timer_seconds": 1200,
@@ -1804,6 +1823,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_white_or_red_miso_paste"],
           "title": "Add miso",
           "content": "Reduce heat to low. Scoop out a ladleful of broth and dissolve miso into it, then stir back into the pot. Do not boil after adding miso. Taste and adjust.",
           "timer_seconds": null,
@@ -1811,13 +1831,15 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
-          "content": "Rinse rice and cook in a separate pot with water — bring to boil, reduce, cover until absorbed.",
-          "timer_seconds": 1080,
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
           "step_type": "prep"
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_spring_onions_sliced"],
           "title": "Portion and freeze",
           "content": "Ladle soup into containers and top with spring onions. Portion rice separately. Cool completely before sealing. Freeze up to 3 months. Reheat soup in a saucepan on low — avoid boiling to preserve the miso.",
           "timer_seconds": null,
@@ -1947,6 +1969,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar","ing_dashi_or_beef_stock","ing_large_onions_thinly_sliced"],
           "title": "Simmer onions in broth",
           "content": "Combine soy sauce, mirin, sake, sugar, and dashi stock in a wide pan over medium heat. Add onions and simmer until soft and translucent, about 8 minutes.",
           "timer_seconds": 480,
@@ -1954,6 +1977,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_beef_chuck_or_sirloin_thinly_sliced"],
           "title": "Cook the beef",
           "content": "Add beef to the pan, spreading it out in a single layer. Cook until just done, about 3–4 minutes. Don't overcook — the beef should be tender.",
           "timer_seconds": 240,
@@ -1961,6 +1985,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_eggs"],
           "title": "Add the egg",
           "content": "Whisk eggs and drizzle over the beef mixture. Cover with a lid and cook on low until the egg is just set.",
           "timer_seconds": 180,
@@ -1968,13 +1993,15 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
-          "content": "Rinse rice and cook in a pot with water — bring to boil, reduce, cover until absorbed.",
-          "timer_seconds": 1080,
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
           "step_type": "prep"
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_baby_spinach_or_mizuna","ing_sesame_oil"],
           "title": "Portion and freeze",
           "content": "Stir baby spinach or mizuna into the beef and onion mixture off the heat — it wilts in about 30 seconds. Divide rice across containers. Spoon beef, onion, egg, and wilted greens over each. Drizzle sesame oil over the top. Cool completely before sealing. Freeze up to 3 months.",
           "timer_seconds": null,
@@ -2118,6 +2145,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_firm_tofu_cubed"],
           "title": "Press and prep the tofu",
           "content": "If time allows, press tofu for 15–20 minutes to remove excess moisture. Wrap in a clean towel and place something heavy on top. Cut into 2cm cubes.",
           "timer_seconds": 1200,
@@ -2125,6 +2153,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_sesame_oil","ing_garlic_cloves_minced","ing_fresh_ginger_grated","ing_medium_carrots_julienned","ing_red_capsicum_sliced","ing_shiitake_or_mixed_mushrooms_sliced"],
           "title": "Stir-fry the vegetables",
           "content": "Heat sesame oil in a large pan over medium heat. Add garlic and ginger, cook 1 minute. Add carrots, capsicum, and mushrooms and stir-fry for 3–4 minutes until slightly softened.",
           "timer_seconds": 300,
@@ -2132,6 +2161,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_dashi_stock_or_vegetable_stock","ing_soy_sauce","ing_mirin"],
           "title": "Simmer in broth",
           "content": "Pour in dashi stock, soy sauce, and mirin. Bring to a gentle simmer. Carefully add tofu and simmer for 10 minutes, letting the tofu absorb the broth.",
           "timer_seconds": 600,
@@ -2139,6 +2169,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_frozen_spinach_or_fresh_baby_spinach"],
           "title": "Add the spinach",
           "content": "Stir in spinach and cook until just wilted, about 2 minutes.",
           "timer_seconds": 120,
@@ -2146,13 +2177,15 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
-          "content": "Rinse rice and cook in a pot with water — bring to boil, reduce, cover until absorbed.",
-          "timer_seconds": 1080,
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
           "step_type": "prep"
         },
         {
           "id": "s6",
+          "ingredient_ids": ["ing_sesame_seeds"],
           "title": "Portion and freeze",
           "content": "Divide rice across containers. Spoon tofu and vegetables over each with a ladle of broth. Sprinkle with sesame seeds. Cool completely before sealing. Freeze up to 2 months.",
           "timer_seconds": null,
@@ -2270,6 +2303,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_dashi_stock","ing_soy_sauce","ing_mirin","ing_sugar","ing_large_onions_thinly_sliced"],
           "title": "Simmer onions in broth",
           "content": "Combine dashi stock, soy sauce, mirin, and sugar in a wide pan over medium heat. Add onions and simmer until soft and translucent, about 8 minutes.",
           "timer_seconds": 480,
@@ -2277,6 +2311,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_chicken_thigh_fillets_sliced"],
           "title": "Cook the chicken",
           "content": "Add chicken thigh to the pan in a single layer. Cook until just done, about 5 minutes. Don't overcook — thigh stays juicy but can toughen if pushed too far.",
           "timer_seconds": 300,
@@ -2284,6 +2319,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_eggs"],
           "title": "Add the egg",
           "content": "Lightly beat eggs and pour two thirds over the chicken. Cover and cook on low for 90 seconds until just setting. Pour remaining egg over the top, cover and turn off heat. Residual heat finishes the egg.",
           "timer_seconds": 90,
@@ -2291,13 +2327,15 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
-          "content": "Rinse rice and cook in a pot with water — bring to boil, reduce, cover until absorbed.",
-          "timer_seconds": 1080,
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
           "step_type": "prep"
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_spring_onions_sliced"],
           "title": "Portion and freeze",
           "content": "Divide rice across containers. Spoon chicken and egg mixture over each. Top with spring onions. Cool completely, seal and freeze up to 3 months.",
           "timer_seconds": null,
@@ -2424,6 +2462,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_vegetable_oil","ing_pork_belly_sliced_into_2cm_pieces"],
           "title": "Sear the pork",
           "content": "Heat oil in a heavy pan over high heat. Add pork belly and sear until golden and slightly crispy on the outside, about 4–5 minutes. Drain excess fat if needed.",
           "timer_seconds": 300,
@@ -2431,6 +2470,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_garlic_cloves_minced","ing_fresh_ginger_grated","ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar"],
           "title": "Add the sauce",
           "content": "Reduce heat to medium. Add garlic and ginger and cook 1 minute. Pour in soy sauce, mirin, sake, and sugar. Stir to combine.",
           "timer_seconds": 60,
@@ -2438,6 +2478,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": [],
           "title": "Reduce to a glaze",
           "content": "Simmer uncovered, turning pork occasionally, until sauce reduces to a thick sticky glaze and coats the pork.",
           "timer_seconds": 900,
@@ -2445,13 +2486,15 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
-          "content": "Rinse rice and cook in a pot with water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080,
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
           "step_type": "prep"
         },
         {
           "id": "s5a",
+          "ingredient_ids": ["ing_green_cabbage_finely_shredded"],
           "title": "Prepare the cabbage",
           "step_type": "prep",
           "content": "Finely shred green cabbage and toss with a small splash of rice vinegar and a pinch of salt. Set aside — it softens slightly as it sits and makes a great fresh contrast to the rich pork.",
@@ -2459,6 +2502,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_spring_onions_sliced"],
           "title": "Portion and freeze",
           "content": "Divide rice across containers. Spoon glazed pork over each and drizzle remaining sauce on top. Add a portion of shredded cabbage alongside the pork in each container. Garnish with spring onions. Cool completely, seal and freeze up to 3 months.",
           "timer_seconds": null,
@@ -2588,6 +2632,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_vegetable_oil","ing_beef_chuck_or_sirloin_thinly_sliced"],
           "title": "Brown the beef",
           "content": "Heat oil in a large pot over medium-high heat. Add beef and brown lightly, about 3 minutes. Remove and set aside.",
           "timer_seconds": 180,
@@ -2595,6 +2640,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_large_onions_sliced","ing_medium_carrots_sliced","ing_medium_potatoes_cubed"],
           "title": "Cook the vegetables",
           "content": "In the same pot add onions and cook until softened, about 4 minutes. Add carrots and potatoes and stir to combine.",
           "timer_seconds": 240,
@@ -2602,6 +2648,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_dashi_stock","ing_soy_sauce","ing_mirin","ing_sugar"],
           "title": "Simmer in broth",
           "content": "Return beef to the pot. Pour in dashi stock, soy sauce, mirin, and sugar. Bring to a boil then reduce to a steady simmer until potatoes are tender and broth has reduced slightly.",
           "timer_seconds": 1200,
@@ -2609,6 +2656,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_frozen_peas"],
           "title": "Add the peas",
           "content": "Stir in frozen peas and cook 2 more minutes.",
           "timer_seconds": 120,
@@ -2616,13 +2664,15 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
-          "content": "Rinse rice and cook in a pot with water — bring to boil, reduce, cover until absorbed.",
-          "timer_seconds": 1080,
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
           "step_type": "prep"
         },
         {
           "id": "s6",
+          "ingredient_ids": [],
           "title": "Portion and freeze",
           "content": "Portion rice and stew into separate containers. Cool completely, seal and freeze up to 3 months. Reheat stew in a saucepan with a splash of water or microwave covered.",
           "timer_seconds": null,
@@ -2738,6 +2788,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_salmon_fillets_150g_each","ing_salt","ing_sake_or_dry_sherry"],
           "title": "Salt the salmon",
           "content": "Pat salmon dry with paper towel. Sprinkle salt generously over both sides of each fillet and drizzle with sake. Place on a rack uncovered in the fridge for at least 30 minutes — this draws out moisture and concentrates the flavour.",
           "timer_seconds": 1800,
@@ -2745,13 +2796,15 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
-          "content": "Rinse rice until water runs clear. Cook in a pot with water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080,
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
           "step_type": "prep"
         },
         {
           "id": "s3",
+          "ingredient_ids": [],
           "title": "Grill the salmon",
           "content": "Pat salmon dry again with paper towel. Heat a non-stick pan or grill over medium-high heat. Cook salmon skin side down for 4 minutes until skin is crispy, then flip and cook 3 more minutes until just cooked through.",
           "timer_seconds": 420,
@@ -2759,6 +2812,7 @@
         },
         {
           "id": "s4a",
+          "ingredient_ids": ["ing_frozen_edamame"],
           "title": "Cook the edamame",
           "step_type": "prep",
           "content": "Cook frozen edamame according to packet instructions — usually 3–5 minutes in boiling water. Drain and set aside.",
@@ -2766,6 +2820,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_pickled_ginger_gari","ing_tsukemono_japanese_pickled_vegetables_assorted","ing_sesame_seeds","ing_nori_sheets_cut_into_strips"],
           "title": "Portion and freeze",
           "content": "Divide rice across containers. Place one salmon fillet on each. Add a small mound of pickled ginger and a portion of tsukemono alongside. Add a serve of edamame to each container. Sprinkle sesame seeds over the rice. Cool completely, seal and freeze up to 2 months. Pack nori strips separately to add after reheating.",
           "timer_seconds": null,
@@ -2896,6 +2951,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_mackerel_fillets_150g_each"],
           "title": "Score the mackerel",
           "content": "Score the skin of each mackerel fillet with 2–3 shallow cuts. This stops the fish curling and helps the sauce penetrate.",
           "timer_seconds": null,
@@ -2903,6 +2959,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_mirin","ing_sake_or_dry_sherry","ing_soy_sauce","ing_sugar","ing_water","ing_fresh_ginger_thinly_sliced"],
           "title": "Make the broth",
           "content": "Combine mirin, sake, soy sauce, sugar, and water in a wide pan over medium heat. Add sliced ginger and bring to a gentle simmer.",
           "timer_seconds": 180,
@@ -2910,6 +2967,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": [],
           "title": "Simmer the mackerel",
           "content": "Place mackerel fillets skin side up in the simmering broth. Cover with a drop lid (otoshibuta) or a sheet of foil pressed directly onto the fish. Simmer gently.",
           "timer_seconds": 600,
@@ -2917,6 +2975,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_white_miso_paste","ing_baby_bok_choy_halved"],
           "title": "Add the miso",
           "content": "Remove a ladleful of broth and whisk miso into it until smooth. Pour back into the pan and stir gently. Add halved baby bok choy and simmer uncovered for 3–4 more minutes until sauce thickens slightly and bok choy is just tender.",
           "timer_seconds": 240,
@@ -2924,13 +2983,15 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
-          "content": "Rinse rice and cook in a pot with water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080,
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
           "step_type": "prep"
         },
         {
           "id": "s6",
+          "ingredient_ids": ["ing_spring_onions_sliced"],
           "title": "Portion and freeze",
           "content": "Divide rice across containers. Carefully place a mackerel fillet on each, add a portion of bok choy, and spoon sauce generously over the top. Garnish with spring onions. Cool completely, seal and freeze up to 2 months.",
           "timer_seconds": null,
@@ -3082,6 +3143,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_frozen_prawns_peeled_and_deveined"],
           "title": "Prep the prawns",
           "content": "Thaw frozen prawns if needed. Pat completely dry with paper towel — this is important for getting a good sear rather than steaming the prawns.",
           "timer_seconds": null,
@@ -3089,6 +3151,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_vegetable_oil"],
           "title": "Sear the prawns",
           "content": "Heat vegetable oil in a large pan over high heat. Add prawns in a single layer and sear for 1 minute per side until just pink. Remove and set aside — they will finish cooking in the sauce.",
           "timer_seconds": 120,
@@ -3096,6 +3159,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_garlic_cloves_minced","ing_fresh_ginger_grated","ing_toban_djan_chilli_bean_paste","ing_canned_crushed_tomatoes","ing_soy_sauce","ing_sake_or_dry_sherry","ing_sugar","ing_chicken_stock"],
           "title": "Build the sauce",
           "content": "Reduce heat to medium. In the same pan add garlic, ginger, and toban djan and stir fry for 1 minute until fragrant. Add crushed tomatoes, soy sauce, sake, sugar, and chicken stock. Stir and simmer for 5 minutes.",
           "timer_seconds": 360,
@@ -3103,6 +3167,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_cornstarch_mixed_with_2_tbsp_water","ing_sesame_oil"],
           "title": "Thicken and finish",
           "content": "Stir in cornstarch slurry and cook until sauce thickens, about 2 minutes. Return prawns to the pan and toss to coat. Drizzle sesame oil over the top.",
           "timer_seconds": 120,
@@ -3110,13 +3175,15 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
-          "content": "Rinse rice and cook in a pot with water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080,
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
           "step_type": "prep"
         },
         {
           "id": "s6",
+          "ingredient_ids": ["ing_spring_onions_sliced"],
           "title": "Portion and freeze",
           "content": "Divide rice across containers. Spoon prawn and sauce mixture over each. Garnish with spring onions. Cool completely, seal and freeze up to 3 months. Reheat covered in microwave with a splash of water.",
           "timer_seconds": null,
@@ -3257,6 +3324,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_sesame_oil","ing_ground_chicken_mince","ing_fresh_ginger_grated"],
           "title": "Cook the chicken mince",
           "content": "Heat sesame oil in a pan over medium heat. Add ground chicken and ginger and break up with a spatula. Cook until no longer pink, about 4 minutes.",
           "timer_seconds": 240,
@@ -3264,6 +3332,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar"],
           "title": "Season the chicken",
           "content": "Add soy sauce, mirin, sake, and sugar to the chicken. Stir continuously over medium heat until liquid is absorbed and chicken is glossy and slightly sticky. Set aside.",
           "timer_seconds": 300,
@@ -3271,6 +3340,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_eggs","ing_sugar_for_egg"],
           "title": "Make the scrambled egg",
           "content": "Whisk eggs with sugar and a pinch of salt. In a clean non-stick pan over low heat, add the egg mixture and stir constantly with chopsticks or a fork until fine, fluffy curds form. Remove from heat while still slightly soft.",
           "timer_seconds": 180,
@@ -3278,13 +3348,15 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
-          "content": "Rinse rice and cook in a pot with water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080,
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
           "step_type": "prep"
         },
         {
           "id": "s4a",
+          "ingredient_ids": ["ing_frozen_edamame"],
           "title": "Cook the edamame",
           "step_type": "prep",
           "content": "Cook frozen edamame according to packet instructions. Drain and set aside.",
@@ -3292,6 +3364,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_spring_onions_sliced"],
           "title": "Portion and freeze",
           "content": "Divide rice across containers. Spoon chicken mince on one half and egg on the other half. Scatter a portion of edamame across each container. Garnish with spring onions. Cool completely, seal and freeze up to 3 months.",
           "timer_seconds": null,
@@ -3429,6 +3502,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_konnyaku_konjac_sliced"],
           "title": "Prep the konnyaku",
           "content": "Bring a small pot of water to boil. Blanch konnyaku for 2 minutes to remove the strong smell. Drain and set aside. Score the surface lightly with a knife so the broth penetrates.",
           "timer_seconds": 120,
@@ -3436,6 +3510,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_dashi_stock","ing_soy_sauce","ing_mirin","ing_sake","ing_salt"],
           "title": "Make the dashi broth",
           "content": "Pour dashi stock into a large pot over medium heat. Add soy sauce, mirin, sake, and salt. Bring to a gentle simmer.",
           "timer_seconds": 180,
@@ -3443,6 +3518,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_large_daikon_radish_cut_into_rounds","ing_mixed_fishcakes_chikuwa_hanpen_satsumaage","ing_firm_tofu_cubed","ing_boiled_eggs_peeled"],
           "title": "Simmer everything",
           "content": "Add daikon to the broth first as it takes longest. Simmer for 15 minutes, then add fishcakes, tofu, konnyaku, and boiled eggs. Simmer everything together gently.",
           "timer_seconds": 1800,
@@ -3450,13 +3526,15 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
-          "content": "Rinse rice and cook in a pot with water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080,
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
           "step_type": "prep"
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_japanese_mustard_karashi"],
           "title": "Portion and freeze",
           "content": "Divide rice across containers. Ladle oden ingredients and broth over each — one egg, one piece of each ingredient, and a generous pour of broth per container. Cool completely, seal and freeze up to 2 months. Serve with a small dab of karashi mustard on the side.",
           "timer_seconds": null,
@@ -3601,6 +3679,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_dried_hijiki_seaweed"],
           "title": "Rehydrate the hijiki",
           "content": "Soak dried hijiki in cold water for 20 minutes until rehydrated. Drain and squeeze out excess water.",
           "timer_seconds": 1200,
@@ -3608,6 +3687,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_sesame_oil","ing_chicken_thigh_fillets_diced","ing_medium_carrots_julienned"],
           "title": "Cook chicken and vegetables",
           "content": "Heat sesame oil in a pan over medium heat. Add chicken thigh and cook until just done, about 5 minutes. Add carrots and rehydrated hijiki and stir fry for 2 minutes.",
           "timer_seconds": 420,
@@ -3615,6 +3695,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_firm_tofu_crumbled","ing_soy_sauce","ing_mirin","ing_sake","ing_sugar","ing_dashi_stock","ing_frozen_edamame"],
           "title": "Season and simmer",
           "content": "Add crumbled tofu, soy sauce, mirin, sake, sugar, and dashi stock to the pan. Stir and simmer until most of the liquid is absorbed, about 5 minutes. Add edamame and cook 1 more minute.",
           "timer_seconds": 360,
@@ -3622,13 +3703,15 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
-          "content": "Rinse rice and cook in a pot with water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080,
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
           "step_type": "prep"
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_sesame_seeds"],
           "title": "Combine and portion",
           "content": "Fold the hijiki and chicken mixture through the cooked rice gently until evenly combined. Sprinkle sesame seeds over the top. Divide across containers. Cool completely, seal and freeze up to 3 months.",
           "timer_seconds": null,
@@ -3767,6 +3850,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar","ing_honey"],
           "title": "Make the tare sauce",
           "content": "Combine soy sauce, mirin, sake, sugar, and honey in a small saucepan over medium heat. Simmer until reduced by one third and slightly syrupy, about 8 minutes. This is your tare sauce. Set aside.",
           "timer_seconds": 480,
@@ -3774,6 +3858,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_chicken_thigh_fillets_cut_into_3cm_chunks","ing_sesame_oil"],
           "title": "Prep the chicken",
           "content": "Thread chicken thigh chunks onto skewers if using, or leave as chunks for pan cooking. Brush lightly with sesame oil.",
           "timer_seconds": null,
@@ -3781,6 +3866,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_asparagus_spears_or_shishito_peppers"],
           "title": "Grill the chicken",
           "content": "Heat a grill pan or regular pan over high heat. Cook chicken in batches, turning every 2 minutes, until cooked through and charred at the edges, about 8–10 minutes total. In the last few minutes add asparagus or shishito peppers to the pan with a brush of sesame oil and a pinch of salt — they char quickly alongside the chicken.",
           "timer_seconds": 600,
@@ -3788,6 +3874,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": [],
           "title": "Glaze with tare",
           "content": "Brush cooked chicken generously with tare sauce and return to heat for 1 minute per side until the glaze caramelises. Repeat brushing once more off heat.",
           "timer_seconds": 120,
@@ -3795,13 +3882,15 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
-          "content": "Rinse rice and cook in a pot with water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080,
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000,
           "step_type": "prep"
         },
         {
           "id": "s6",
+          "ingredient_ids": ["ing_sesame_seeds","ing_spring_onions_sliced","ing_shichimi_togarashi_japanese_7_spice"],
           "title": "Portion and freeze",
           "content": "Divide rice across containers. Arrange glazed chicken and grilled asparagus or shishito peppers over each. Drizzle remaining tare sauce on top. Sprinkle with sesame seeds, spring onions, and a pinch of shichimi togarashi. Cool completely, seal and freeze up to 3 months.",
           "timer_seconds": null,
@@ -3946,6 +4035,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_garlic_cloves_minced","ing_fresh_ginger_grated","ing_sesame_oil","ing_lamb_shoulder_or_leg_thinly_sliced"],
           "title": "Marinate the lamb",
           "step_type": "prep",
           "content": "Combine soy sauce, mirin, sake, garlic, ginger, and sesame oil in a bowl. Add sliced lamb and toss to coat. Marinate for at least 20 minutes.",
@@ -3953,13 +4043,15 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_medium_onions_sliced_into_rings","ing_medium_capsicum_sliced","ing_bean_sprouts"],
           "title": "Cook the vegetables",
           "step_type": "cook",
           "content": "Heat a wok or pan over high heat. Stir-fry onion rings and capsicum for 3–4 minutes until slightly charred. Add bean sprouts and toss for 1 more minute. Remove and set aside.",
@@ -3967,6 +4059,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": [],
           "title": "Grill the lamb",
           "step_type": "cook",
           "content": "In the same pan over high heat, cook marinated lamb in batches — don't overcrowd. 2–3 minutes per batch, turning once. Lamb should be just cooked with a little char.",
@@ -3974,6 +4067,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_sesame_seeds"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Top with lamb and vegetables. Sprinkle sesame seeds over each. Cool completely, seal and freeze up to 3 months. Reheat with a splash of water.",
@@ -4108,6 +4202,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_fresh_yakisoba_or_ramen_noodles","ing_yakisoba_sauce_or_worcestershire_sauce","ing_soy_sauce","ing_oyster_sauce"],
           "title": "Prep noodles and sauce",
           "step_type": "prep",
           "content": "If using fresh noodles, loosen them by hand or briefly blanch in boiling water for 30 seconds. Drain. Combine yakisoba sauce, soy sauce, and oyster sauce in a small bowl.",
@@ -4115,6 +4210,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_vegetable_oil","ing_pork_loin_or_shoulder_thinly_sliced"],
           "title": "Cook the pork",
           "step_type": "cook",
           "content": "Heat oil in a wok over high heat. Add pork and stir-fry until just cooked through, about 3–4 minutes. Push to one side.",
@@ -4122,6 +4218,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_medium_carrots_julienned","ing_green_cabbage_shredded","ing_bean_sprouts"],
           "title": "Add vegetables",
           "step_type": "cook",
           "content": "Add carrots and cabbage to the wok and stir-fry for 2 minutes. Add bean sprouts and toss everything together for 1 more minute.",
@@ -4129,6 +4226,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": [],
           "title": "Add noodles and sauce",
           "step_type": "cook",
           "content": "Add noodles to the wok and pour sauce over everything. Toss vigorously over high heat until noodles are evenly coated and slightly caramelised, about 2–3 minutes.",
@@ -4136,6 +4234,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_benishoga_red_pickled_ginger","ing_aonori_dried_green_seaweed_flakes","ing_spring_onions_sliced"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide across 7 containers. Top each with benishoga and a sprinkle of aonori. Cool completely, seal and freeze up to 3 months. Reheat covered with a splash of water — noodles reheat better in a pan than microwave if possible.",
@@ -4274,6 +4373,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_chicken_thigh_fillets_cut_into_chunks","ing_soy_sauce","ing_sake_or_dry_sherry","ing_fresh_ginger_grated","ing_garlic_cloves_minced","ing_sesame_oil"],
           "title": "Marinate the chicken",
           "step_type": "prep",
           "content": "Cut chicken thigh into 4cm chunks. Combine soy sauce, sake, ginger, garlic, and sesame oil. Add chicken, toss well and marinate for at least 30 minutes — longer is better.",
@@ -4281,13 +4381,15 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_frozen_edamame"],
           "title": "Cook edamame",
           "step_type": "prep",
           "content": "Cook frozen edamame according to packet instructions. Drain and set aside.",
@@ -4295,6 +4397,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_potato_starch_or_cornstarch","ing_vegetable_oil_for_frying"],
           "title": "Coat and first fry",
           "step_type": "cook",
           "content": "Remove chicken from marinade and coat thoroughly in potato starch. Heat oil to 170°C. Fry in batches for 3–4 minutes until pale golden. Remove and rest on a rack for 5 minutes.",
@@ -4302,6 +4405,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": [],
           "title": "Second fry",
           "step_type": "cook",
           "content": "Increase oil to 190°C. Return chicken in batches for 1–2 minutes until deep golden and very crispy. The double fry is what makes karaage special — don't skip it.",
@@ -4309,6 +4413,7 @@
         },
         {
           "id": "s6",
+          "ingredient_ids": ["ing_kewpie_mayonnaise_for_serving","ing_lemon_wedges"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Add karaage pieces and edamame to each. Cool completely before sealing — do not cover while hot or the crust will steam and go soggy. Freeze up to 3 months. Reheat in oven at 200°C for 12–15 minutes to restore crispiness.",
@@ -4431,6 +4536,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar","ing_fresh_ginger_grated"],
           "title": "Make the ginger sauce",
           "step_type": "prep",
           "content": "Combine soy sauce, mirin, sake, sugar, and grated ginger in a bowl. Set aside.",
@@ -4438,6 +4544,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_green_cabbage_finely_shredded"],
           "title": "Prepare the cabbage",
           "step_type": "prep",
           "content": "Finely shred cabbage and toss with a pinch of salt. Set aside — it will soften slightly and serve as a fresh contrast to the rich pork.",
@@ -4445,13 +4552,15 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_vegetable_oil","ing_pork_loin_or_shoulder_thinly_sliced"],
           "title": "Cook the pork",
           "step_type": "cook",
           "content": "Heat oil in a pan over high heat. Cook pork slices in batches, 1–2 minutes per side until just cooked. Don't overcrowd — the pork should sear, not steam.",
@@ -4459,6 +4568,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": [],
           "title": "Add the sauce",
           "step_type": "cook",
           "content": "Return all pork to the pan. Pour sauce over and toss over high heat for 1–2 minutes until sauce coats the pork and reduces to a sticky glaze.",
@@ -4466,6 +4576,7 @@
         },
         {
           "id": "s6",
+          "ingredient_ids": ["ing_spring_onions_sliced"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Add glazed pork alongside a portion of shredded cabbage. Garnish with spring onions. Cool completely, seal and freeze up to 3 months.",
@@ -4572,6 +4683,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_pacific_saury_sanma_fillets_or_whole","ing_salt"],
           "title": "Salt the fish",
           "step_type": "prep",
           "content": "Pat sanma dry. Score the skin 2–3 times on each side. Salt generously on both sides and leave uncovered in the fridge for 30 minutes to draw out moisture.",
@@ -4579,13 +4691,15 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_frozen_edamame"],
           "title": "Cook edamame",
           "step_type": "prep",
           "content": "Cook frozen edamame according to packet instructions. Drain and set aside.",
@@ -4593,6 +4707,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": [],
           "title": "Grill the sanma",
           "step_type": "cook",
           "content": "Pat fish dry again. Heat a grill pan or heavy pan over high heat. Grill skin side down for 4 minutes until skin is crispy and charred, then flip and grill 3 more minutes until cooked through.",
@@ -4600,6 +4715,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_daikon_radish_grated","ing_tsukemono_japanese_pickled_vegetables","ing_lemon_or_sudachi_halved","ing_soy_sauce_for_serving"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Add a sanma fillet, a portion of edamame, and a mound of grated daikon to each. Add tsukemono alongside. Cool completely, seal and freeze up to 2 months. Reheat gently at medium microwave power. Squeeze lemon and a dash of soy over after reheating.",
@@ -4742,6 +4858,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_firm_tofu_cubed"],
           "title": "Press the tofu",
           "step_type": "prep",
           "content": "Wrap tofu in a clean towel and press for 15 minutes to remove excess moisture. Cut into 2cm cubes.",
@@ -4749,13 +4866,15 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_sesame_oil","ing_garlic_cloves_minced","ing_fresh_ginger_grated","ing_ground_pork_mince"],
           "title": "Cook the pork",
           "step_type": "cook",
           "content": "Heat sesame oil in a wok over medium-high heat. Add garlic and ginger, stir-fry 30 seconds. Add pork mince and cook until no longer pink, breaking up with a spatula, about 4 minutes.",
@@ -4763,6 +4882,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_toban_djan_chilli_bean_paste","ing_soy_sauce","ing_sake_or_dry_sherry","ing_chicken_stock","ing_white_miso_paste"],
           "title": "Build the sauce",
           "step_type": "cook",
           "content": "Add toban djan and stir-fry 1 minute. Add soy sauce, sake, and chicken stock. Bring to a simmer. Dissolve miso in a ladleful of the broth and stir back in.",
@@ -4770,6 +4890,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_cornstarch_mixed_with_3_tbsp_water"],
           "title": "Add tofu and thicken",
           "step_type": "cook",
           "content": "Gently add tofu cubes. Simmer 5 minutes. Stir in cornstarch slurry and cook until sauce thickens, about 2 minutes. Taste and adjust seasoning.",
@@ -4777,6 +4898,7 @@
         },
         {
           "id": "s6",
+          "ingredient_ids": ["ing_spring_onions_sliced"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Ladle mapo tofu over each and garnish with spring onions. Cool completely, seal and freeze up to 3 months. Reheat gently — avoid high microwave heat which can make the tofu rubbery.",
@@ -4907,6 +5029,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_dashi_stock","ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar"],
           "title": "Make the broth",
           "step_type": "prep",
           "content": "Combine dashi stock, soy sauce, mirin, sake, and sugar in a large pot. Bring to a gentle simmer.",
@@ -4914,6 +5037,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_beef_chuck_or_sirloin_thinly_sliced"],
           "title": "Cook the beef topping",
           "step_type": "cook",
           "content": "In a separate small pan, combine 3 tbsp soy sauce, 2 tbsp mirin, 1 tbsp sugar. Add sliced beef and simmer over medium heat until beef is cooked and sauce is absorbed, about 5 minutes. Set aside.",
@@ -4921,6 +5045,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_frozen_udon_noodles"],
           "title": "Cook the udon",
           "step_type": "cook",
           "content": "Cook frozen udon noodles in boiling water for 2–3 minutes until just tender. Drain and divide across 7 containers immediately — do not let them sit or they will clump.",
@@ -4928,6 +5053,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_baby_spinach","ing_fish_cake_narutomaki_sliced","ing_spring_onions_sliced"],
           "title": "Assemble and finish",
           "step_type": "cook",
           "content": "Wilt baby spinach into the hot broth for 30 seconds. Ladle broth and spinach over each noodle container. Top with sweetened beef, narutomaki slices, and spring onions.",
@@ -4935,6 +5061,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_shichimi_togarashi_japanese_7_spice"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Sprinkle shichimi togarashi over each container. Cool completely with lids off — udon broth retains heat. Seal and freeze up to 3 months. Freeze noodles and broth together. Reheat in microwave covered with a splash of extra dashi or water.",
@@ -5079,6 +5206,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_rice_vinegar","ing_soy_sauce","ing_sugar"],
           "title": "Make nanban sauce",
           "step_type": "prep",
           "content": "Combine rice vinegar, soy sauce, and sugar in a small saucepan over low heat. Stir until sugar dissolves. Set aside in a wide shallow dish — the chicken will be soaked in this.",
@@ -5086,6 +5214,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_kewpie_mayonnaise","ing_hard_boiled_eggs_finely_chopped","ing_pickles_or_cornichons_finely_chopped"],
           "title": "Make tartar sauce",
           "step_type": "prep",
           "content": "Combine Kewpie mayo, finely chopped boiled eggs, and chopped pickles. Mix well. Refrigerate until needed.",
@@ -5093,13 +5222,15 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_chicken_thigh_fillets","ing_salt","ing_plain_flour","ing_eggs","ing_vegetable_oil_for_frying"],
           "title": "Coat and fry the chicken",
           "step_type": "cook",
           "content": "Season chicken thighs with salt. Dust in flour then dip in beaten egg. Heat oil to 170°C and fry in batches for 5–6 minutes until golden and cooked through.",
@@ -5107,6 +5238,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": [],
           "title": "Soak in nanban sauce",
           "step_type": "cook",
           "content": "Immediately transfer hot fried chicken to the nanban sauce dish. Turn to coat and let soak for 2–3 minutes. The hot chicken absorbs the sauce as it sits.",
@@ -5114,6 +5246,7 @@
         },
         {
           "id": "s6",
+          "ingredient_ids": ["ing_baby_spinach_or_cabbage"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Add baby spinach or cabbage to each. Place nanban-soaked chicken on top and spoon tartar sauce generously over. Cool completely, seal and freeze up to 3 months. Reheat in oven at 180°C for 15 minutes to restore texture.",
@@ -5237,13 +5370,15 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_frozen_edamame"],
           "title": "Cook edamame",
           "step_type": "prep",
           "content": "Cook frozen edamame according to packet instructions. Drain and set aside.",
@@ -5251,6 +5386,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_dashi_stock","ing_soy_sauce","ing_mirin","ing_sugar"],
           "title": "Make the broth",
           "step_type": "prep",
           "content": "Combine dashi stock, soy sauce, mirin, and sugar in a wide pan over medium heat. Bring to a gentle simmer.",
@@ -5258,6 +5394,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_kanikama_imitation_crab_sticks_shredded"],
           "title": "Cook the kanikama",
           "step_type": "cook",
           "content": "Add shredded kanikama to the simmering broth. Cook for 2 minutes until heated through and the sauce has reduced slightly.",
@@ -5265,6 +5402,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_eggs","ing_sesame_oil"],
           "title": "Add the egg",
           "step_type": "cook",
           "content": "Lightly beat eggs and pour two thirds over the kanikama. Cover and cook on low for 90 seconds until just setting. Pour remaining egg over the top, cover and turn off heat. Residual heat finishes the egg — it should be just set, not rubbery. Drizzle sesame oil over.",
@@ -5272,6 +5410,7 @@
         },
         {
           "id": "s6",
+          "ingredient_ids": ["ing_spring_onions_sliced"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Spoon kanikama and egg mixture over each. Add a portion of edamame alongside. Top with spring onions. Cool completely, seal and freeze up to 3 months. Reheat with a splash of water.",
@@ -5392,6 +5531,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar"],
           "title": "Make teriyaki sauce",
           "step_type": "prep",
           "content": "Combine soy sauce, mirin, sake, and sugar in a small saucepan over medium heat. Simmer until slightly thickened, about 3 minutes. Set aside.",
@@ -5399,13 +5539,15 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_broccolini_or_broccoli_florets"],
           "title": "Steam the broccolini",
           "step_type": "prep",
           "content": "Steam broccolini for 3–4 minutes until bright green and just tender. Set aside.",
@@ -5413,6 +5555,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_yellowtail_kingfish_fillets_buri","ing_vegetable_oil"],
           "title": "Cook the kingfish",
           "step_type": "cook",
           "content": "Pat fish dry. Heat oil in a pan over medium-high heat. Cook skin side down for 3–4 minutes until skin is golden and crispy. Flip and cook 2 more minutes until just cooked through.",
@@ -5420,6 +5563,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": [],
           "title": "Glaze the fish",
           "step_type": "cook",
           "content": "Pour teriyaki sauce over fish in the pan. Spoon sauce over repeatedly for 1–2 minutes until fish is glazed and sauce is sticky.",
@@ -5427,6 +5571,7 @@
         },
         {
           "id": "s6",
+          "ingredient_ids": ["ing_sesame_seeds","ing_spring_onions_sliced"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Add glazed kingfish fillet and broccolini to each. Sprinkle sesame seeds and spring onions over. Cool completely, seal and freeze up to 2 months. Reheat gently at medium microwave power.",
@@ -5556,13 +5701,15 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_sushi_rice_or_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed. For a more authentic result, season cooked rice with 2 tbsp rice vinegar, 1 tbsp sugar, and 1 tsp salt while still hot.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else. For a more authentic result, season the cooked rice with 2 tbsp rice vinegar, 1 tbsp sugar, and 1 tsp salt while still hot.",
+          "timer_seconds": 3000
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sesame_oil","ing_sashimi_grade_tuna_sliced"],
           "title": "Make the tuna marinade",
           "step_type": "prep",
           "content": "Combine soy sauce, mirin, and sesame oil in a bowl. Slice tuna into 1cm thick pieces. Toss gently to coat and marinate for 5 minutes — no longer or the fish will cure.",
@@ -5570,6 +5717,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_cucumber_thinly_sliced"],
           "title": "Slice the cucumber",
           "step_type": "prep",
           "content": "Thinly slice cucumber and set aside. This adds freshness and crunch to each bowl.",
@@ -5577,6 +5725,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_pickled_ginger_gari","ing_nori_sheets_cut_into_strips","ing_spring_onions_sliced","ing_sesame_seeds","ing_wasabi_paste"],
           "title": "Portion and serve",
           "step_type": "portion",
           "content": "Divide rice across containers. Arrange tuna slices over rice. Add cucumber, pickled ginger, and nori strips. Sprinkle spring onions and sesame seeds over. Add a small dab of wasabi on the side. This dish is best eaten fresh — if meal prepping, keep tuna separate and add to rice just before eating. Do not freeze.",
@@ -5708,6 +5857,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_whiting_or_flathead_fillets","ing_salt","ing_plain_flour","ing_eggs","ing_panko_breadcrumbs"],
           "title": "Prep the fish",
           "step_type": "prep",
           "content": "Pat fillets dry and season with salt. Set up a crumbing station — three shallow bowls with flour, beaten egg, and panko breadcrumbs.",
@@ -5715,13 +5865,15 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s3",
+          "ingredient_ids": [],
           "title": "Crumb the fish",
           "step_type": "prep",
           "content": "Coat each fillet in flour, shake off excess. Dip in egg, then press firmly into panko on both sides. The panko crust should be even and thick.",
@@ -5729,6 +5881,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_vegetable_oil_for_frying"],
           "title": "Fry the fish",
           "step_type": "cook",
           "content": "Heat oil to 170°C in a deep pan. Fry fillets in batches for 3–4 minutes until deep golden. Drain on a rack — not paper towel which makes the base soggy.",
@@ -5736,6 +5889,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_green_cabbage_finely_shredded","ing_tonkatsu_sauce_or_worcestershire_sauce","ing_kewpie_mayonnaise","ing_lemon_wedges"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Add fried whiting and a portion of shredded cabbage to each. Add a small tub of tonkatsu sauce and Kewpie mayo on the side. Cool completely with lids off. Seal and freeze up to 3 months. Reheat in oven at 200°C for 12 minutes to restore crispiness.",
@@ -5867,6 +6021,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_large_frozen_prawns_peeled_and_deveined_tails_on","ing_salt"],
           "title": "Prep the prawns",
           "step_type": "prep",
           "content": "Thaw prawns completely and pat very dry. Make 3–4 shallow cuts along the belly of each prawn and press flat — this stops them curling during frying. Season lightly with salt.",
@@ -5874,13 +6029,15 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_plain_flour","ing_eggs","ing_panko_breadcrumbs"],
           "title": "Crumb the prawns",
           "step_type": "prep",
           "content": "Set up crumbing station — flour, beaten egg, panko in three separate bowls. Coat each prawn in flour, dip in egg, then press firmly into panko. Hold by the tail while crumbing.",
@@ -5888,6 +6045,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_vegetable_oil_for_frying"],
           "title": "Fry the prawns",
           "step_type": "cook",
           "content": "Heat oil to 170°C. Fry prawns in batches for 2–3 minutes until golden. They cook faster than fish — watch closely. Drain on a rack.",
@@ -5895,6 +6053,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_green_cabbage_finely_shredded","ing_tonkatsu_sauce","ing_kewpie_mayonnaise","ing_lemon_wedges"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Add ebi fry and a portion of shredded cabbage. Add tonkatsu sauce and Kewpie mayo. Cool completely with lids off before sealing. Freeze up to 3 months. Reheat in oven at 200°C for 10 minutes.",
@@ -6030,6 +6189,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_rice_vinegar","ing_soy_sauce","ing_sugar","ing_dashi_stock","ing_medium_onion_thinly_sliced","ing_medium_carrot_julienned","ing_red_chilli_thinly_sliced"],
           "title": "Make the nanban marinade",
           "step_type": "prep",
           "content": "Combine rice vinegar, soy sauce, sugar, and dashi stock in a saucepan over low heat. Stir until sugar dissolves. Pour into a wide dish. Add sliced onion, carrot, and chilli.",
@@ -6037,13 +6197,15 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_salmon_fillets_cut_into_chunks","ing_plain_flour","ing_vegetable_oil_for_frying"],
           "title": "Coat and fry the salmon",
           "step_type": "cook",
           "content": "Cut salmon into large chunks. Pat dry, season with salt, and dust in flour. Heat oil in a pan over medium-high heat. Fry salmon pieces for 2–3 minutes per side until golden and just cooked through.",
@@ -6051,6 +6213,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": [],
           "title": "Marinate the salmon",
           "step_type": "cook",
           "content": "Transfer hot salmon immediately to the nanban marinade dish. Turn to coat and spoon marinade over. The hot fish absorbs the marinade as it cools. Rest for at least 15 minutes — overnight in the fridge is even better.",
@@ -6058,6 +6221,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_spring_onions_sliced"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Add marinated salmon and a spoonful of the vegetable marinade over each. Garnish with spring onions. Cool completely, seal and freeze up to 2 months. The flavour intensifies after freezing and reheating.",
@@ -6197,6 +6361,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_firm_tofu_cubed","ing_potato_starch_or_cornstarch"],
           "title": "Press and prep the tofu",
           "step_type": "prep",
           "content": "Press firm tofu for 20 minutes to remove excess moisture. Cut into large 4cm cubes. Dust thoroughly in potato starch on all sides.",
@@ -6204,13 +6369,15 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_frozen_edamame"],
           "title": "Cook edamame",
           "step_type": "prep",
           "content": "Cook frozen edamame according to packet instructions. Drain and set aside.",
@@ -6218,6 +6385,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_dashi_stock_or_chicken_stock","ing_soy_sauce","ing_mirin","ing_sugar"],
           "title": "Make the dashi broth",
           "step_type": "cook",
           "content": "Combine dashi stock, soy sauce, mirin, and sugar in a small saucepan. Bring to a gentle simmer and keep warm.",
@@ -6225,6 +6393,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_vegetable_oil"],
           "title": "Fry the tofu",
           "step_type": "cook",
           "content": "Heat oil in a pan over medium-high heat. Fry tofu cubes in batches for 2–3 minutes per side until golden and crispy. Drain on a rack.",
@@ -6232,6 +6401,7 @@
         },
         {
           "id": "s6",
+          "ingredient_ids": ["ing_spring_onions_sliced","ing_fresh_ginger_grated","ing_sesame_seeds"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Place fried tofu over rice and ladle warm dashi broth over each. Add edamame alongside. Top with spring onions, grated ginger, and sesame seeds. Cool completely, seal and freeze up to 2 months. Reheat gently — the tofu softens in the broth after freezing which is still delicious.",
@@ -6376,6 +6546,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_shiitake_mushrooms_sliced","ing_enoki_mushrooms","ing_shimeji_mushrooms","ing_firm_tofu_cubed","ing_frozen_edamame"],
           "title": "Prep the mushrooms",
           "step_type": "prep",
           "content": "Slice shiitake into strips. Trim enoki and shimeji into small clusters. Cube tofu. Cook edamame according to packet instructions and drain.",
@@ -6383,6 +6554,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_dashi_stock_or_chicken_stock","ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry"],
           "title": "Make the seasoning broth",
           "step_type": "prep",
           "content": "Combine dashi stock, soy sauce, mirin, and sake in a bowl. This will be used to cook the rice and mushrooms together.",
@@ -6390,6 +6562,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_sesame_oil"],
           "title": "Cook mushrooms briefly",
           "step_type": "cook",
           "content": "Heat sesame oil in a pan over medium-high heat. Stir-fry all mushrooms and tofu for 3–4 minutes until mushrooms are wilted and slightly golden.",
@@ -6397,6 +6570,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice with mushrooms",
           "step_type": "cook",
           "content": "Rinse rice and place in a pot. Add the seasoning broth plus enough water to total 900ml liquid. Add mushrooms and tofu on top — do not stir. Bring to boil, reduce to low, cover and cook until absorbed.",
@@ -6404,6 +6578,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_spring_onions_sliced","ing_sesame_seeds"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Fold edamame gently through the cooked mushroom rice. Divide across 7 containers. Top with spring onions and sesame seeds. Cool completely, seal and freeze up to 3 months.",
@@ -6541,6 +6716,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_firm_tofu_cubed"],
           "title": "Press and slice the tofu",
           "step_type": "prep",
           "content": "Press firm tofu for 20 minutes to remove excess moisture. Cut into thick 2cm slabs — not cubes. Pressing and slicing thick gives the best surface area for charring.",
@@ -6548,6 +6724,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar","ing_garlic_cloves_minced","ing_fresh_ginger_grated"],
           "title": "Make teriyaki glaze",
           "step_type": "prep",
           "content": "Combine soy sauce, mirin, sake, and sugar in a small pan over medium heat. Simmer until slightly thickened, about 3 minutes. Set aside.",
@@ -6555,13 +6732,15 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_broccolini_or_broccoli_florets"],
           "title": "Steam the broccolini",
           "step_type": "prep",
           "content": "Steam broccolini for 3–4 minutes until bright green and just tender. Set aside.",
@@ -6569,6 +6748,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_sesame_oil"],
           "title": "Grill the tofu",
           "step_type": "cook",
           "content": "Heat sesame oil in a pan or grill pan over high heat. Add tofu slabs in a single layer. Cook without moving for 3–4 minutes until deeply golden and charred. Flip and repeat on the other side.",
@@ -6576,6 +6756,7 @@
         },
         {
           "id": "s6",
+          "ingredient_ids": ["ing_spring_onions_sliced","ing_sesame_seeds"],
           "title": "Glaze and portion",
           "step_type": "portion",
           "content": "Pour teriyaki glaze over grilled tofu and toss to coat. Divide rice across 7 containers. Add glazed tofu slabs and broccolini to each. Top with spring onions and sesame seeds. Cool completely, seal and freeze up to 2 months.",
@@ -6706,13 +6887,15 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_frozen_edamame"],
           "title": "Cook the edamame",
           "step_type": "prep",
           "content": "Cook frozen edamame according to packet instructions. If in pods, shell them after cooking. Drain and set aside.",
@@ -6720,6 +6903,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_dashi_stock_or_chicken_stock","ing_soy_sauce","ing_mirin","ing_sugar","ing_firm_tofu_cubed"],
           "title": "Make the broth and add tofu",
           "step_type": "cook",
           "content": "Combine dashi stock, soy sauce, mirin, and sugar in a wide pan. Bring to a simmer. Add tofu cubes and edamame and cook for 2 minutes.",
@@ -6727,6 +6911,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_eggs","ing_sesame_oil"],
           "title": "Add the egg",
           "step_type": "cook",
           "content": "Beat eggs and pour two thirds over the edamame and tofu. Cover and cook on low for 90 seconds until just setting. Pour remaining egg over the top, cover and turn off heat. Rest 1 minute. Drizzle sesame oil over.",
@@ -6734,6 +6919,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_spring_onions_sliced","ing_nori_sheets_cut_into_strips"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Spoon edamame, tofu, and egg mixture over each. Top with spring onions. Add nori strips to each container. Cool completely, seal and freeze up to 3 months.",
@@ -6884,6 +7070,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_medium_sweet_potato_sliced","ing_zucchini_sliced","ing_firm_tofu_cubed"],
           "title": "Prep vegetables and tofu",
           "step_type": "prep",
           "content": "Slice sweet potato into 5mm rounds, zucchini into diagonal slices, cut tofu into thick rectangles. Pat everything very dry — moisture is the enemy of tempura batter.",
@@ -6891,13 +7078,15 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_frozen_edamame"],
           "title": "Cook edamame",
           "step_type": "prep",
           "content": "Cook frozen edamame according to packet instructions. Drain and set aside.",
@@ -6905,6 +7094,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_dashi_stock_or_chicken_stock","ing_soy_sauce","ing_mirin","ing_sugar"],
           "title": "Make tsuyu sauce",
           "step_type": "prep",
           "content": "Combine dashi stock, soy sauce, mirin, and sugar in a small saucepan. Bring to a simmer, stir until sugar dissolves. Keep warm.",
@@ -6912,6 +7102,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_tempura_flour_or_plain_flour","ing_ice_cold_water"],
           "title": "Make tempura batter",
           "step_type": "cook",
           "content": "Combine tempura flour and ice cold water in a bowl. Mix very briefly with chopsticks — lumps are fine and desirable. Do not overmix or the gluten will develop and the batter will be heavy. Use immediately.",
@@ -6919,6 +7110,7 @@
         },
         {
           "id": "s6",
+          "ingredient_ids": ["ing_vegetable_oil","ing_broccolini_or_broccoli_florets"],
           "title": "Fry the tempura",
           "step_type": "cook",
           "content": "Heat oil to 170°C. Dip vegetables and tofu in batter one piece at a time and fry in batches for 2–3 minutes until pale golden and crispy. Sweet potato takes slightly longer. Drain on a rack.",
@@ -6926,6 +7118,7 @@
         },
         {
           "id": "s7",
+          "ingredient_ids": ["ing_spring_onions_sliced"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Add tempura pieces and edamame to each. Drizzle tsuyu sauce over the tempura. Top with spring onions. Cool completely with lids off before sealing. Freeze up to 2 months. Reheat in oven at 200°C for 12 minutes to restore crispiness.",
@@ -7066,6 +7259,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_dashi_stock_or_chicken_stock","ing_soy_sauce","ing_mirin","ing_sugar","ing_large_onions_sliced"],
           "title": "Make the katsu sauce",
           "step_type": "prep",
           "content": "Combine dashi stock, soy sauce, mirin, and sugar in a wide pan over medium heat. Add thinly sliced onion and simmer until translucent, about 5 minutes. Keep warm.",
@@ -7073,13 +7267,15 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_pork_loin_or_shoulder_thinly_sliced","ing_plain_flour","ing_eggs","ing_panko_breadcrumbs","ing_vegetable_oil"],
           "title": "Crumb and fry the pork",
           "step_type": "cook",
           "content": "Pound pork loin to 1cm thickness. Season, coat in flour, dip in beaten egg, press into panko. Fry in oil at 170°C for 3–4 minutes per side until golden. Drain on a rack and slice into strips.",
@@ -7087,6 +7283,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": [],
           "title": "Simmer katsu in sauce and add egg",
           "step_type": "cook",
           "content": "Place sliced tonkatsu into the simmering sauce. Beat remaining eggs and pour two thirds over the pork. Cover and cook on low 90 seconds. Pour remaining egg over, cover and turn off heat.",
@@ -7094,6 +7291,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_spring_onions_sliced"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Spoon katsu, egg, and sauce over each. Garnish with spring onions. Cool completely, seal and freeze up to 3 months.",
@@ -7237,6 +7435,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_pork_belly_sliced_into_2cm_pieces"],
           "title": "Blanch the pork",
           "step_type": "prep",
           "content": "Cut pork belly into large 5cm blocks. Place in cold water, bring to a boil and cook 10 minutes. Drain and rinse — removes impurities and excess fat.",
@@ -7244,6 +7443,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_eggs"],
           "title": "Boil eggs",
           "step_type": "prep",
           "content": "Hard boil eggs for 8 minutes. Peel and set aside — they will be added to the braise to absorb the sauce.",
@@ -7251,6 +7451,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar","ing_honey","ing_fresh_ginger_grated","ing_garlic_cloves_minced"],
           "title": "Braise the pork",
           "step_type": "cook",
           "content": "Return pork to the pot. Add soy sauce, mirin, sake, sugar, honey, ginger, and garlic. Add water to just cover. Bring to a boil, reduce to lowest heat, cover and braise for 90 minutes.",
@@ -7258,6 +7459,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": [],
           "title": "Add eggs and reduce",
           "step_type": "cook",
           "content": "Add peeled boiled eggs. Braise another 30 minutes. Remove lid and simmer until sauce reduces to a sticky glaze, about 15 minutes.",
@@ -7265,13 +7467,15 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice and cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s6",
+          "ingredient_ids": ["ing_baby_spinach_or_mizuna","ing_sesame_seeds","ing_spring_onions_sliced"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Wilt spinach in remaining braising liquid. Divide rice across 7 containers. Add pork belly, a halved braised egg, and spinach to each. Spoon sauce over. Sprinkle sesame seeds. Freeze up to 3 months.",
@@ -7417,6 +7621,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_pork_belly_sliced_into_2cm_pieces"],
           "title": "Roll and tie the pork",
           "step_type": "prep",
           "content": "Lay pork belly flat, roll tightly into a log and tie with kitchen twine at 3cm intervals. This gives the classic chashu slice shape.",
@@ -7424,6 +7629,7 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar","ing_honey","ing_garlic_cloves_minced","ing_fresh_ginger_grated"],
           "title": "Make the braising liquid",
           "step_type": "prep",
           "content": "Combine soy sauce, mirin, sake, sugar, honey, garlic, and ginger in a pot just large enough to hold the pork roll. Bring to a simmer.",
@@ -7431,6 +7637,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": [],
           "title": "Braise the chashu",
           "step_type": "cook",
           "content": "Add pork roll to the braising liquid. Cover and braise on low heat, turning every 30 minutes to colour evenly, for 90 minutes total.",
@@ -7438,6 +7645,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_eggs"],
           "title": "Marinate the eggs",
           "step_type": "cook",
           "content": "Soft boil eggs for 6.5 minutes, peel and add to the braising liquid for the last 30 minutes. They turn golden and absorb the sauce.",
@@ -7445,13 +7653,15 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice and cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s6",
+          "ingredient_ids": ["ing_spring_onions_sliced","ing_sesame_seeds","ing_nori_sheets_cut_into_strips"],
           "title": "Slice and portion",
           "step_type": "portion",
           "content": "Remove twine and slice chashu into 1cm rounds. Reduce braising liquid over high heat until syrupy. Divide rice across 7 containers. Add chashu slices and halved egg. Drizzle reduced sauce over. Top with spring onions, sesame seeds, and nori. Freeze up to 3 months.",
@@ -7589,13 +7799,15 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_sesame_oil","ing_pork_loin_or_shoulder_thinly_sliced"],
           "title": "Cook the pork",
           "step_type": "cook",
           "content": "Heat sesame oil in a wok over high heat. Add pork slices in batches, 2 minutes per side. Push to one side.",
@@ -7603,6 +7815,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_garlic_cloves_minced","ing_fresh_ginger_grated","ing_kimchi","ing_soy_sauce","ing_sake_or_dry_sherry","ing_sugar"],
           "title": "Add kimchi and sauce",
           "step_type": "cook",
           "content": "Add garlic and ginger, stir 30 seconds. Add kimchi and stir fry with pork for 2–3 minutes until kimchi caramelises slightly. Add soy sauce, sake, and sugar. Toss everything together.",
@@ -7610,6 +7823,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_baby_spinach_or_mizuna"],
           "title": "Add spinach",
           "step_type": "cook",
           "content": "Add spinach and toss for 30 seconds until just wilted.",
@@ -7617,6 +7831,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_spring_onions_sliced","ing_sesame_seeds"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Spoon buta kimchi over each. Top with spring onions and sesame seeds. Cool completely, seal and freeze up to 3 months. The kimchi flavour deepens after freezing.",
@@ -7784,6 +7999,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_white_miso_paste","ing_mirin","ing_sake_or_dry_sherry","ing_soy_sauce","ing_sugar"],
           "title": "Make the miso sauce",
           "step_type": "prep",
           "content": "Whisk together miso paste, mirin, sake, soy sauce, and sugar in a small bowl until smooth. Set aside.",
@@ -7791,13 +8007,15 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_vegetable_oil","ing_pork_loin_or_shoulder_thinly_sliced"],
           "title": "Cook the pork",
           "step_type": "cook",
           "content": "Heat vegetable oil in a wok over high heat. Add pork slices in batches, 1–2 minutes per side. Remove and set aside.",
@@ -7805,6 +8023,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_sesame_oil","ing_garlic_cloves_minced","ing_fresh_ginger_grated","ing_medium_carrots_julienned","ing_red_capsicum_sliced","ing_green_cabbage_finely_shredded"],
           "title": "Stir fry vegetables",
           "step_type": "cook",
           "content": "Add sesame oil, garlic, and ginger. Stir 30 seconds. Add carrot and capsicum, stir fry 2 minutes. Add cabbage, stir fry 1 more minute.",
@@ -7812,6 +8031,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": [],
           "title": "Add pork and sauce",
           "step_type": "cook",
           "content": "Return pork to the wok. Pour miso sauce over and toss over high heat for 1–2 minutes until evenly coated.",
@@ -7819,6 +8039,7 @@
         },
         {
           "id": "s6",
+          "ingredient_ids": ["ing_spring_onions_sliced","ing_sesame_seeds"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Spoon buta miso itame over each. Top with spring onions and sesame seeds. Cool completely, seal and freeze up to 3 months.",
@@ -7953,13 +8174,15 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_frozen_edamame"],
           "title": "Cook edamame",
           "step_type": "prep",
           "content": "Cook frozen edamame according to packet instructions. Drain and shell if in pods.",
@@ -7967,6 +8190,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_dashi_stock_or_chicken_stock","ing_soy_sauce","ing_mirin","ing_sugar","ing_large_onions_sliced"],
           "title": "Simmer onion in broth",
           "step_type": "cook",
           "content": "Combine dashi stock, soy sauce, mirin, and sugar in a wide pan. Add sliced onion and simmer until translucent, about 8 minutes.",
@@ -7974,6 +8198,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_eggs","ing_sesame_oil"],
           "title": "Add the egg",
           "step_type": "cook",
           "content": "Beat eggs and pour two thirds over the onion. Cover and cook on low 90 seconds until just setting. Pour remaining egg over, cover and turn off heat. Drizzle sesame oil over. Rest 1 minute.",
@@ -7981,6 +8206,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": ["ing_spring_onions_sliced","ing_nori_sheets_cut_into_strips"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Divide rice across 7 containers. Spoon egg and onion over each. Add edamame alongside. Top with spring onions and nori strips. Cool completely, seal and freeze up to 3 months.",
@@ -8102,6 +8328,7 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_white_fish_fillets__snapper__bream_or_flathead_"],
           "title": "Score and prep the fish",
           "step_type": "prep",
           "content": "Score the skin of each fillet with 2–3 shallow cuts. Prevents curling and lets the sauce penetrate.",
@@ -8109,13 +8336,15 @@
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_frozen_edamame"],
           "title": "Cook edamame",
           "step_type": "prep",
           "content": "Cook frozen edamame according to packet instructions. Drain and set aside.",
@@ -8123,6 +8352,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_soy_sauce","ing_mirin","ing_sake_or_dry_sherry","ing_sugar","ing_fresh_ginger_grated"],
           "title": "Make the simmering broth",
           "step_type": "cook",
           "content": "Combine soy sauce, mirin, sake, sugar, and sliced ginger in a wide pan. Add 200ml water. Bring to a simmer.",
@@ -8130,6 +8360,7 @@
         },
         {
           "id": "s5",
+          "ingredient_ids": [],
           "title": "Simmer the fish",
           "step_type": "cook",
           "content": "Place fish skin side up in the simmering broth. Cover with foil pressed directly onto the fish. Simmer gently for 8–10 minutes until just cooked. Spoon broth over occasionally.",
@@ -8137,6 +8368,7 @@
         },
         {
           "id": "s6",
+          "ingredient_ids": ["ing_baby_spinach_or_mizuna","ing_spring_onions_sliced"],
           "title": "Portion and freeze",
           "step_type": "portion",
           "content": "Wilt spinach in remaining broth. Divide rice across 7 containers. Add fish, spinach, and edamame. Spoon broth generously over. Top with spring onions. Cool completely, seal and freeze up to 2 months.",
@@ -8273,13 +8505,15 @@
       "steps": [
         {
           "id": "s1",
+          "ingredient_ids": ["ing_white_rice_raw_weight"],
           "title": "Cook the rice",
           "step_type": "prep",
-          "content": "Rinse rice until water runs clear. Cook in a pot with 1 litre of water — bring to boil, reduce to low, cover until absorbed.",
-          "timer_seconds": 1080
+          "content": "Rinse the rice until the water runs clear, then cook it in a rice cooker (about 1:1.2 rice:water) — this takes ~50 minutes including resting, so start it before anything else.",
+          "timer_seconds": 3000
         },
         {
           "id": "s2",
+          "ingredient_ids": ["ing_salmon_fillets_raw_weight","ing_salt"],
           "title": "Grill the salmon",
           "step_type": "cook",
           "content": "Season salmon with salt. Grill or pan fry over high heat for 3–4 minutes per side until just cooked. Flake into large pieces.",
@@ -8287,6 +8521,7 @@
         },
         {
           "id": "s3",
+          "ingredient_ids": ["ing_genmaicha_or_green_tea_bags","ing_dashi_stock_or_chicken_stock","ing_soy_sauce","ing_sake_or_dry_sherry"],
           "title": "Make the dashi tea broth",
           "step_type": "cook",
           "content": "Steep genmaicha tea bags in 500ml hot water for 2 minutes. Combine with dashi stock, soy sauce, and sake. Keep warm.",
@@ -8294,6 +8529,7 @@
         },
         {
           "id": "s4",
+          "ingredient_ids": ["ing_tsukemono_japanese_pickled_vegetables_assorted","ing_pickled_ginger_gari","ing_nori_sheets_cut_into_strips","ing_spring_onions_sliced","ing_sesame_seeds"],
           "title": "Portion and serve fresh",
           "step_type": "portion",
           "content": "Divide rice across 7 bowls. Top with flaked salmon, tsukemono, pickled ginger, nori strips, spring onions, and sesame seeds. Pour warm dashi-tea broth over just before eating. Do not freeze — keep salmon and broth separate until serving.",
