@@ -4,14 +4,15 @@ A Japanese-inspired meal prep planner built for batch cooking, freezer-friendly 
 
 ## Features
 
-- **43 Japanese recipes** — authentic home-cooking staples from teriyaki chicken to chicken nanban, covering a wide range of proteins, techniques, and regional dishes. All freezer-friendly except Maguro Don (raw tuna).
-- **Smart meal scheduling** — pick your own meals each week from a searchable, filterable recipe list. Meal B is auto-suggested based on compatibility ranking (protein variety, fat balance, recent history).
+- **63 Japanese recipes** — authentic everyday home-cooking staples covering rice bowls, noodles, yōshoku, simmered dishes, stir-fries, and hot pots. Almost all freezer-friendly; a few (raw-fish or last-minute-fresh dishes like Maguro Don and Ochazuke) aren't, and are flagged accordingly.
+- **Smart meal scheduling** — pick your own meals each week from a searchable, filterable recipe list. Meal B is auto-suggested based on compatibility ranking (protein variety, fat balance, recent history). Recipes can be marked `auto_pairing_eligible: false` to keep them in the recipe list without the algorithm ever auto-suggesting them — used for dishes that don't batch-cook well (hot pots, Omurice) or aren't freezer-friendly (Maguro Don). They're still fully searchable and selectable by hand in the meal picker.
 - **Relative week rotation, not calendar dates** — weeks are tracked purely as "this week" / "next week" / "in N weeks" relative to your current position. You advance to the next week yourself (whenever you actually cook, not on a fixed schedule), so cooking early or late never desyncs the app from reality.
 - **Cook mode** — unified step-by-step cook session for both weekly meals. Rice is cooked first in its own rice-cooker phase (sized from both meals' combined servings, water at 1.2× the rice weight), then prep for both meals runs in parallel (marinating, chopping), then each meal is cooked sequentially. Every step shows a "You'll need" block with the exact scaled quantity of each ingredient it introduces — no more leaving cook mode to check the Ingredients tab. Built-in timers per step, session persistence across page reloads, and a screen wake lock so the phone doesn't sleep mid-session.
 - **Grocery lists** — weekly lists aggregated by store (Woolworths, Asian aisle, Genki Mart, Fishmonger) with serving adjusters and persistent check-off state saved to Supabase.
 - **Grocery readiness check** — home screen warning card showing unchecked items before a cook session, with a cook button guard if shopping isn't done.
 - **Schedule locking** — current week locks once grocery shopping starts or a cook session begins. Future weeks always remain editable.
 - **Live macro calculation** — protein, fat, carbs, and kcal calculated dynamically from a normalised ingredient database. All values scale with serving count using per-ingredient scale factors reflecting real cooking logic.
+- **Consistent units** — small seasoning amounts (soy sauce, mirin, sake, oils, vinegar, miso paste, sugar) are always recorded in tbsp/tsp, matching how you'd actually measure them at home. Bulk liquids (stock, water, frying oil) stay in mL/L regardless of quantity — see [Adding new recipes](#adding-new-recipes).
 - **Multi-user** — Supabase Auth with per-user schedule, grocery state, cook session, and meal pairings.
 - **Three themes** — Sumi (dark ink), Sakura (pink), Ai (indigo gold) with dark/light mode toggle.
 - **Mobile-first** — designed for one-handed use in the kitchen. Installable as a home screen app on iOS and Android.
@@ -114,7 +115,27 @@ create policy "user_pairings_select" on user_pairings for select to authenticate
 create policy "user_pairings_insert" on user_pairings for insert to authenticated with check (auth.uid() = user_id);
 create policy "user_pairings_update" on user_pairings for update to authenticated using (auth.uid() = user_id);
 create policy "user_pairings_delete" on user_pairings for delete to authenticated using (auth.uid() = user_id);
+
+-- Recipe preferences — per-user personal settings for a recipe (rating, favourite, auto-pairing override, notes)
+create table recipe_preferences (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users(id) on delete cascade,
+  recipe_id text not null,
+  auto_pairing_eligible boolean,
+  rating int,
+  favourite boolean not null default false,
+  notes text,
+  updated_at timestamptz default now(),
+  unique(user_id, recipe_id)
+);
+alter table recipe_preferences enable row level security;
+create policy "recipe_preferences_select" on recipe_preferences for select to authenticated using (auth.uid() = user_id);
+create policy "recipe_preferences_insert" on recipe_preferences for insert to authenticated with check (auth.uid() = user_id);
+create policy "recipe_preferences_update" on recipe_preferences for update to authenticated using (auth.uid() = user_id);
+create policy "recipe_preferences_delete" on recipe_preferences for delete to authenticated using (auth.uid() = user_id);
 ```
+
+`recipe_preferences.auto_pairing_eligible` is `null` by default, meaning "inherit the recipe's own `auto_pairing_eligible` from `data.json`" — set it explicitly to override that default per-recipe from the app (e.g. deciding you actually do want Sukiyaki in your weekly rotation after all, without editing `data.json`). `rating` is a personal 1-5 score; `notes` is your own tweaks/substitutions, kept separate from the recipe's shared, cookbook-level `notes` field.
 
 **Existing installs:** the `schedule` table used to have a `cook_day` column (a fixed weekday preference) that's no longer used now that weeks are tracked purely relatively. It's safe to leave in place, or drop it with `alter table schedule drop column cook_day;`.
 
@@ -199,6 +220,7 @@ Users are added via the Supabase Dashboard under Authentication → Users → Ad
 
 **Recipe ingredients:**
 - `amount` — batch total for 7 servings. All amounts are pre-scaled to a base of 7.
+- `unit` — keep this consistent by ingredient type, not just per-recipe: small seasoning amounts (soy sauce, mirin, sake, rice vinegar, sesame/vegetable oil as a seasoning, oyster sauce, honey, miso paste, mayo, sugar) should always be `tbsp` or `tsp`, matching how they're actually measured at home — never `ml`/`g` for these, even if that means a slightly unusual-looking amount like `5.5`. Bulk liquids (dashi/chicken/beef stock, water, frying oil) stay in `ml`/`l` regardless of quantity. Weight-based solids (meat, rice, vegetables) stay in `g`. Countable items (eggs, garlic cloves, onions) use `null`.
 - `scale_factor` — controls how aggressively the ingredient scales when serving count changes. `1.0` = full linear (proteins, rice, vegetables), `0.75` = moderate (sauces, stock), `0.6` = light (sugar, honey), `0.5` = minimal (aromatics, oil), `0.3` = barely changes (salt, spices).
 - `is_batch` — marks ingredients whose stored amount is a batch total (most sauce/condiment amounts).
 - `step_type` — `prep` (phase 1, runs in parallel across both meals), `cook` (phase 2/3, sequential per meal), `portion` (end of each meal).
@@ -210,6 +232,9 @@ Users are added via the Supabase Dashboard under Authentication → Users → Ad
 - `fat_level` — `low`, `medium`, or `high` — used to balance weekly fat intake
 - `has_veg` — whether the meal contains substantial vegetables
 - `carb_heavy` — whether the meal is potato or noodle based (avoids two carb-heavy meals in one week)
+
+**Other recipe-level fields:**
+- `auto_pairing_eligible` — omit for normal recipes (defaults to eligible). Set to `false` for recipes that shouldn't ever be auto-suggested by the pairing algorithm — not freezer-friendly, or don't batch-cook into weekly containers well (hot pots, Omurice's per-portion omelette). These recipes stay fully visible and searchable in the meal picker, just heavily deprioritised in ranking and excluded from the fully-automated `autoFillWeek`/`autoFillSchedule` flow.
 
 ### Meal compatibility ranking
 
@@ -223,9 +248,10 @@ When a user picks Meal A, compatible Meal B options are ranked by score:
 ### Adding new recipes
 
 1. Add any new ingredients to the `ingredients` array with their nutritional data
-2. Add the recipe to the `recipes` array referencing ingredient IDs
+2. Add the recipe to the `recipes` array referencing ingredient IDs, using `tbsp`/`tsp` for seasoning amounts and `ml`/`l` for bulk liquids (see Key fields above)
 3. Tag each step's `ingredient_ids` (see above) so cook mode can show per-step quantities
-4. Re-upload `data.json` to Supabase Storage — no code changes needed
+4. If the recipe isn't freezer-friendly or doesn't batch-cook well, set `auto_pairing_eligible: false`
+5. Re-upload `data.json` to Supabase Storage — no code changes needed
 
 ## Nutrition data
 
@@ -265,7 +291,7 @@ Open in Safari → Share → Add to Home Screen. The app runs full-screen withou
 | Chicken Nanban | 55.3g | 35.1g | 97.9g | 929 |
 | Kani Tamago Don | 27.7g | 11.5g | 97.7g | 605 |
 | Buri Teriyaki | 42.1g | 17.2g | 92.2g | 692 |
-| Maguro Don 🌿 | 53.9g | 6.5g | 85.5g | 616 |
+| Maguro Don 🌿⛔ | 53.9g | 6.5g | 85.5g | 616 |
 | Whiting Fry | 44.4g | 17.5g | 110.5g | 777 |
 | Ebi Fry | 44.4g | 16.0g | 110.5g | 764 |
 | Salmon Nanbanzuke | 39.3g | 24.6g | 99.9g | 778 |
@@ -281,6 +307,27 @@ Open in Safari → Share → Add to Home Screen. The app runs full-screen withou
 | Buta Miso Itame | 40.6g | 21.0g | 95.9g | 735 |
 | Tamago Don | 29.0g | 17.8g | 95.0g | 656 |
 | Karei Nitsuke | 43.5g | 5.9g | 92.5g | 597 |
-| Ochazuke 🌿 | 38.8g | 22.3g | 83.1g | 688 |
+| Ochazuke 🌿⛔ | 38.8g | 22.3g | 83.1g | 688 |
+| Miso Ramen | 42.5g | 24.8g | 88.4g | 764 |
+| Curry Udon | 33.8g | 14.2g | 92.6g | 636 |
+| Yaki Udon | 36.4g | 18.6g | 89.0g | 700 |
+| Tsukimi Udon | 28.4g | 12.6g | 84.2g | 573 |
+| Zaru Soba | 26.8g | 8.4g | 92.5g | 548 |
+| Yakimeshi | 38.6g | 20.4g | 94.8g | 762 |
+| Omurice ⛔ | 32.4g | 22.6g | 86.0g | 706 |
+| Chicken Katsu Curry | 50.4g | 26.8g | 98.2g | 900 |
+| Hambāgu | 44.2g | 28.4g | 90.5g | 828 |
+| Korokke | 33.6g | 24.5g | 92.4g | 758 |
+| Buri Daikon | 40.8g | 15.6g | 90.2g | 674 |
+| Chikuzenni | 37.4g | 13.8g | 89.6g | 636 |
+| Sukiyaki ⛔ | 41.6g | 30.2g | 88.4g | 838 |
+| Chinjao Rosu | 39.2g | 16.4g | 88.8g | 668 |
+| Yasai Itame Don | 30.5g | 16.8g | 92.4g | 654 |
+| Gyoza to Gohan | 36.8g | 22.4g | 90.6g | 730 |
+| Naporitan | 29.8g | 21.6g | 95.4g | 716 |
+| Ebi to Kinoko Wafu Pasta | 38.2g | 17.4g | 90.8g | 692 |
+| Hayashi Rice | 37.6g | 18.2g | 93.4g | 704 |
+| Mizutaki ⛔ | 44.8g | 14.6g | 82.4g | 654 |
 
 🌿 Fresh only — do not freeze.
+⛔ Not included in auto-pairing suggestions by default (`auto_pairing_eligible: false`) — still fully browsable and manually selectable. Maguro Don and Ochazuke are also excluded for this reason, in addition to being fresh-only.
