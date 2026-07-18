@@ -93,9 +93,6 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
 .week-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
 .week-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--text3);}
 .week-number{font-size:1.1rem;font-weight:700;color:var(--accent);}
-.cook-day-badge{background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent);border-radius:20px;padding:4px 12px;font-size:0.78rem;font-weight:600;}
-.cook-day-badge.cook-today{background:var(--accent);color:white;animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.75;}}
 .meal-pair{display:flex;flex-direction:column;gap:10px;margin-bottom:14px;}
 .meal-pair-card{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:13px;cursor:pointer;transition:all 0.15s;}
 .meal-pair-card:hover{border-color:var(--accent);background:var(--surface3);}
@@ -112,10 +109,6 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
 .quick-btn .qb-icon{font-size:1.4rem;margin-bottom:5px;}
 .quick-btn .qb-title{font-size:0.875rem;font-weight:600;}
 .quick-btn .qb-sub{font-size:0.75rem;color:var(--text2);margin-top:2px;}
-.cook-day-picker{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:8px;}
-.day-btn{padding:8px 2px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--surface2);color:var(--text2);cursor:pointer;font-size:0.72rem;text-align:center;transition:all 0.15s;}
-.day-btn.selected{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:700;}
-.day-btn:hover:not(.selected){background:var(--surface3);color:var(--text);}
 
 /* MEALS VIEW */
 .meals-search{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;color:var(--text);font-size:0.95rem;outline:none;margin-bottom:12px;transition:border-color 0.15s;}
@@ -221,6 +214,10 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
 .step-title{font-size:0.875rem;font-weight:600;}
 .step-timer{margin-left:auto;font-size:0.72rem;color:var(--text2);white-space:nowrap;}
 .step-content{font-size:0.82rem;color:var(--text2);line-height:1.5;}
+.step-need-block{background:var(--surface3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:9px 11px;margin-bottom:8px;}
+.step-need-title{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--text3);margin-bottom:5px;}
+.step-need-item{display:flex;align-items:center;justify-content:space-between;font-size:0.78rem;padding:2px 0;}
+.step-need-amt{font-weight:600;color:var(--accent);white-space:nowrap;margin-left:10px;}
 .notes-box{margin-top:14px;padding:12px;background:var(--accent-soft);border:1px solid var(--accent);border-radius:var(--radius-sm);}
 .notes-box p{font-size:0.82rem;color:var(--text);line-height:1.5;}
 
@@ -429,7 +426,6 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
           <div class="nav-menu-item" onclick="toggleMode()" id="menu-mode-btn">🌙 Dark mode</div>
           <div class="nav-menu-divider"></div>
           <div class="nav-menu-item" onclick="showView('settings');toggleNavMenu(true)">⚙️ Settings</div>
-          <div class="nav-menu-item" onclick="showCookDayModal()">📅 Cook day</div>
           <div class="nav-menu-item danger" onclick="signOut()">🚪 Sign out</div>
         </div>
       </div>
@@ -523,11 +519,6 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
     <div class="settings-msg" id="settings-pw-msg"></div>
   </div>
   <div class="settings-section">
-    <h3>Cook Day</h3>
-    <div class="cook-day-picker" id="settings-cook-day-picker"></div>
-    <button class="settings-btn" onclick="saveCookDay()" style="margin-top:12px">Save Cook Day</button>
-  </div>
-  <div class="settings-section">
     <h3>Account</h3>
     <button class="settings-btn danger" onclick="signOut()">Sign Out</button>
   </div>
@@ -604,37 +595,20 @@ nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0;dis
   </div>
 </div>
 
-<!-- COOK DAY MODAL -->
-<div class="modal-overlay" id="cookday-modal" onclick="closeCookDayModal(event)">
-  <div class="modal" id="cookday-modal-inner" style="max-width:360px;">
-    <button class="modal-close" onclick="closeCookDayModalBtn()">✕</button>
-    <div class="modal-header">
-      <div class="modal-title" style="margin-bottom:6px;">Cook Day</div>
-      <div class="modal-desc">Which day do you prefer to cook each week?</div>
-      <div class="cook-day-picker" id="cook-day-picker"></div>
-      <div style="margin-top:14px;margin-bottom:4px;">
-        <button class="btn btn-primary btn-full" onclick="saveCookDay()">Save</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <script>
 // ── CONFIG ──
 const SUPABASE_URL = 'https://nitchusgmixyrbqswdhe.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5pdGNodXNnbWl4eXJicXN3ZGhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEyNjEyMDIsImV4cCI6MjA5NjgzNzIwMn0.2HLpCwSAQ2n-Vr3pkKH7HgKeNhfa-l0a_tlSonwSO10';
-const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // ── STATE ──
 let recipes = [], pairings = [], stores = {};
 let currentUser = null;
-let userSchedule = { cook_day: 6, current_week: 1 };
+let userSchedule = { current_week: 1 };
 let checkedItems = {};
 let modalServings = 7;
 let currentRecipe = null;
 let activeTag = '';
-let cookDayTemp = 6;
 let groceryServings = {};
 
 // ── MACRO CALCULATION ──
@@ -716,7 +690,7 @@ async function loadUserSchedule() {
   if (data) {
     userSchedule = data;
   } else {
-    const { data: created } = await sb.from('schedule').insert({ user_id: currentUser.id, cook_day: 6, current_week: 1 }).select().single();
+    const { data: created } = await sb.from('schedule').insert({ user_id: currentUser.id, current_week: 1 }).select().single();
     if (created) userSchedule = created;
   }
 }
@@ -839,7 +813,6 @@ function populateSettings() {
   const emailInput = document.getElementById('settings-email');
   if (nameInput) nameInput.value = currentUser?.user_metadata?.display_name || '';
   if (emailInput) emailInput.value = currentUser?.email || '';
-  populateCookDayPicker('settings-cook-day-picker');
 }
 
 async function saveDisplayName() {
@@ -893,7 +866,6 @@ function renderHome() {
   const pairing = getPairing(userSchedule.current_week);
   const mealA = recipes.find(r => r.id === pairing?.meal_a_id);
   const mealB = recipes.find(r => r.id === pairing?.meal_b_id);
-  const cookDayInfo = getNextCookDay();
   const macrosA = mealA ? calcMacros(mealA) : {protein:0, fat:0, carbs:0, calories:0};
   const macrosB = mealB ? calcMacros(mealB) : {protein:0, fat:0, carbs:0, calories:0};
   const totalProtein = macrosA.protein + macrosB.protein;
@@ -909,7 +881,6 @@ function renderHome() {
           <div class="week-label">${getWeekLabel(userSchedule.current_week).secondary}</div>
           <div class="week-number">This week</div>
         </div>
-        <div class="cook-day-badge ${cookDayInfo.status === 'today' ? 'cook-today' : ''}">${cookDayInfo.label}</div>
       </div>
       ${!pairing ? `
         <div style="text-align:center;padding:20px;color:var(--text2);font-size:0.875rem;">
@@ -963,18 +934,6 @@ function renderMealPairCard(meal) {
     <div class="meal-macro-row-inline" style="margin-top:4px">${(() => { const m = calcMacros(meal); return `<span>${m.protein}g P</span><span class="macro-dot">·</span><span>${m.fat}g F</span><span class="macro-dot">·</span><span>${m.carbs}g C</span><span class="macro-dot">·</span><span>${m.calories}kcal</span>`; })()}</div>
   </div>`;
 }
-
-function getNextCookDay() {
-  const today = new Date();
-  const cd = userSchedule.cook_day;
-  let diff = cd - today.getDay();
-  if (diff < 0) diff += 7;
-  if (diff === 0) return { label: `🍳 Cook day — let's get prepping!`, status: 'today', diff: 0 };
-  if (diff === 1) return { label: '🥡 Prep tomorrow — enjoy leftovers today', status: 'tomorrow', diff: 1 };
-  if (diff === 2) return { label: `🗓️ Cook day in 2 days (${DAYS[cd]})`, status: 'soon', diff: 2 };
-  return { label: `🗓️ Next cook day: ${DAYS[cd]} (${diff} days away)`, status: 'away', diff };
-}
-
 
 
 async function advanceWeek() {
@@ -1468,6 +1427,21 @@ function scaleAmount(rawIng, servings) {
   return ing.amount * scaledRatio;
 }
 
+function stepIngredientsHTML(recipe, step, servings) {
+  const ids = step.ingredient_ids || [];
+  const items = ids.map(id => recipe.ingredients.find(ri => ri.ingredient_id === id)).filter(Boolean);
+  if (!items.length) return '';
+  return `<div class="step-need-block">
+    <div class="step-need-title">You'll need</div>
+    ${items.map(rawIng => {
+      const ing = resolveIngredient(rawIng);
+      const amount = scaleAmount(rawIng, servings);
+      const amtStr = ing.unit ? `${formatAmount(amount)} ${ing.unit}` : formatAmount(amount);
+      return `<div class="step-need-item"><span>${ing.name}</span><span class="step-need-amt">${amtStr}</span></div>`;
+    }).join('')}
+  </div>`;
+}
+
 function renderRecipeIngredients() {
   if (!currentRecipe) return;
   document.getElementById('rm-servings-num').textContent = modalServings;
@@ -1519,6 +1493,7 @@ function renderRecipeSteps() {
         <div class="step-title">${s.title}</div>
         ${timerStr ? `<div class="step-timer">⏱ ${timerStr}</div>` : ''}
       </div>
+      ${stepIngredientsHTML(currentRecipe, s, modalServings)}
       <div class="step-content">${s.content}</div>
     </div>`;
   }).join('');
@@ -1538,6 +1513,7 @@ function formatTimer(s) {
 function adjServings(d) {
   modalServings = Math.max(1, modalServings + d);
   renderRecipeIngredients();
+  renderRecipeSteps();
   if (currentRecipe) {
     const macros = calcMacros(currentRecipe, modalServings);
     document.getElementById('rm-protein').textContent = macros.protein + 'g';
@@ -1584,36 +1560,14 @@ function renderProteinTip() {
 }
 
 // ── DATE HELPERS ──
-function getWeekCookDate(weekNum) {
-  // Calculate the actual date of cook day for a given week number
-  // Week 1 = the first upcoming cook day from today (or today if it's cook day)
-  const today = new Date();
-  const cd = userSchedule.cook_day;
-  // Find the date of the current week's cook day
-  let diff = cd - today.getDay();
-  if (diff < 0) diff += 7;
-  const currentCookDate = new Date(today);
-  currentCookDate.setDate(today.getDate() + diff);
-  currentCookDate.setHours(0, 0, 0, 0);
-  // Add (weekNum - currentWeek) * 7 days
-  const targetDate = new Date(currentCookDate);
-  targetDate.setDate(currentCookDate.getDate() + (weekNum - userSchedule.current_week) * 7);
-  return targetDate;
-}
-
-function formatWeekDate(date) {
-  return date.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
-}
-
 function getWeekLabel(weekNum) {
   const diff = weekNum - userSchedule.current_week;
-  const date = getWeekCookDate(weekNum);
-  const dateStr = formatWeekDate(date);
-  if (diff === 0) return { primary: 'This week', secondary: `Cook ${dateStr}` };
-  if (diff === 1) return { primary: 'Next week', secondary: `Cook ${dateStr}` };
-  if (diff === -1) return { primary: 'Last week', secondary: dateStr };
-  if (diff < 0) return { primary: `${Math.abs(diff)} weeks ago`, secondary: dateStr };
-  return { primary: `In ${diff} weeks`, secondary: `Cook ${dateStr}` };
+  const secondary = `Week ${weekNum}`;
+  if (diff === 0) return { primary: 'This week', secondary };
+  if (diff === 1) return { primary: 'Next week', secondary };
+  if (diff === -1) return { primary: 'Last week', secondary };
+  if (diff < 0) return { primary: `${Math.abs(diff)} weeks ago`, secondary };
+  return { primary: `In ${diff} weeks`, secondary };
 }
 
 // ── WEEK LOCK ──
@@ -1776,6 +1730,27 @@ let cookPhase = 'prep';
 let cookMeal1 = null, cookMeal2 = null;
 let cookTimers = {};
 let cookSessionActive = false;
+let wakeLockSentinel = null;
+
+async function requestWakeLock() {
+  if (!('wakeLock' in navigator)) return;
+  try {
+    wakeLockSentinel = await navigator.wakeLock.request('screen');
+  } catch (e) { /* e.g. low battery — cook mode still works, screen just may sleep */ }
+}
+
+async function releaseWakeLock() {
+  if (wakeLockSentinel) {
+    try { await wakeLockSentinel.release(); } catch (e) {}
+    wakeLockSentinel = null;
+  }
+}
+
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && document.getElementById('cook-overlay')?.classList.contains('open')) {
+    requestWakeLock();
+  }
+});
 
 function checkAndStartCook() {
   const status = getGroceryStatus();
@@ -1819,6 +1794,7 @@ function showCookMealSelector(mealA, mealB) {
     </div>
     <button class="cook-next-btn" onclick="startCookSession()">Start Cooking →</button>`;
   document.getElementById('cook-overlay').classList.add('open');
+  requestWakeLock();
 }
 
 function selectCookOrder(which) {
@@ -1860,7 +1836,7 @@ function getPhaseStart(phaseIdx) {
 function renderCookMode() {
   const total = cookSteps.reduce((a, p) => a + p.steps.length, 0);
   const currentPhaseIdx = getPhaseForStep(Math.min(cookCurrentStep, total - 1));
-  const phaseLabels = ['🥄 Prep', `🔥 ${cookMeal1?.title}`, `🔥 ${cookMeal2?.title}`];
+  const phaseLabels = cookSteps.map(p => p.phase === 'rice' ? '🍚 Cook Rice' : p.phase === 'prep' ? '🥄 Prep' : `🔥 ${p.label}`);
 
   // Phase bar — clickable, only allow navigating to completed or current phase
   document.getElementById('cook-phase-bar').innerHTML = phaseLabels.map((l, i) => {
@@ -1911,6 +1887,12 @@ function renderCookMode() {
             <div class="cook-step-title">${step.title}</div>
             ${step.mealLabel ? `<span class="cook-step-meal ${mealClass}">${step.mealLabel}</span>` : ''}
           </div>
+          ${(() => {
+            if (!(isCurrent || !isDone)) return '';
+            const stepRecipe = step.meal === cookMeal1?.id ? cookMeal1 : step.meal === cookMeal2?.id ? cookMeal2 : null;
+            const servings = step.meal ? (groceryServings[step.meal] || 7) : 7;
+            return stepRecipe ? stepIngredientsHTML(stepRecipe, step, servings) : '';
+          })()}
           ${isCurrent || !isDone ? `<div class="cook-step-content">${step.content}</div>` : ''}
           ${timerHtml}
           ${isCurrent ? `<div style="margin-top:8px"><button class="cook-done-btn" onclick="cookNextStep()">✓ Done</button></div>` : ''}
@@ -1994,6 +1976,7 @@ function toggleTimer(stepIdx, totalSeconds) {
 function closeCookMode() {
   Object.values(cookTimers).forEach(t => { if (t.interval) clearInterval(t.interval); });
   cookTimers = {};
+  releaseWakeLock();
   document.getElementById('cook-overlay').classList.remove('open');
 }
 
@@ -2291,20 +2274,54 @@ async function loadCookSession() {
   );
 }
 
+const RICE_INGREDIENT_IDS = ['ing_white_rice_raw_weight', 'ing_sushi_rice_or_white_rice_raw_weight'];
+
+function buildRicePhase() {
+  const participants = [cookMeal1, cookMeal2].filter(meal =>
+    meal.steps.some(s => s.title === 'Cook the rice')
+  );
+  if (!participants.length) return null;
+
+  let riceGrams = 0;
+  const seasoningNotes = [];
+  for (const meal of participants) {
+    const servings = groceryServings[meal.id] || 7;
+    const riceIng = meal.ingredients.find(ri => RICE_INGREDIENT_IDS.includes(ri.ingredient_id));
+    if (riceIng) riceGrams += scaleAmount(riceIng, servings);
+    const riceStep = meal.steps.find(s => s.title === 'Cook the rice');
+    if (riceStep && riceStep.content.toLowerCase().includes('season')) {
+      const sentence = riceStep.content.split('. ').map(s => s.trim()).find(s => s.toLowerCase().includes('season'));
+      if (sentence) seasoningNotes.push(`${meal.title}: ${sentence.replace(/\.$/, '')}.`);
+    }
+  }
+  riceGrams = Math.round(riceGrams);
+  const waterMl = Math.round(riceGrams * 1.2);
+  let content = `Rinse ${riceGrams}g rice until the water runs clear. Add to the rice cooker with ${waterMl}ml water and start it now — takes about 50 minutes including resting, so do this before anything else.`;
+  if (seasoningNotes.length) content += ' ' + seasoningNotes.join(' ');
+
+  return {
+    phase: 'rice',
+    label: 'Cook Rice',
+    steps: [{
+      id: 'rice-cooker',
+      title: 'Cook the rice',
+      content,
+      timer_seconds: 3000,
+      step_type: 'prep',
+      meal: null,
+      mealLabel: participants.length === 2 ? 'Both meals' : participants[0].title
+    }]
+  };
+}
+
 function buildCookSteps() {
   const prepSteps = [];
   const cook1Steps = [];
   const cook2Steps = [];
-  let riceAdded = false;
   for (const meal of [cookMeal1, cookMeal2]) {
     for (const step of meal.steps) {
-      if (step.step_type === 'prep') {
-        const isRice = step.title.toLowerCase().includes('rice');
-        if (isRice) {
-          if (!riceAdded) { prepSteps.push({ ...step, meal: null, mealLabel: 'Both meals' }); riceAdded = true; }
-        } else {
-          prepSteps.push({ ...step, meal: meal.id, mealLabel: meal.title });
-        }
+      if (step.step_type === 'prep' && step.title !== 'Cook the rice') {
+        prepSteps.push({ ...step, meal: meal.id, mealLabel: meal.title });
       }
     }
   }
@@ -2316,7 +2333,9 @@ function buildCookSteps() {
     if (step.step_type === 'cook' || step.step_type === 'portion')
       cook2Steps.push({ ...step, meal: cookMeal2.id, mealLabel: cookMeal2.title });
   }
+  const ricePhase = buildRicePhase();
   cookSteps = [
+    ...(ricePhase ? [ricePhase] : []),
     { phase: 'prep', steps: prepSteps },
     { phase: 'cook1', label: cookMeal1.title, steps: cook1Steps },
     { phase: 'cook2', label: cookMeal2.title, steps: cook2Steps }
@@ -2374,52 +2393,6 @@ function showConfirm(title, sub, onConfirm) {
 function closeConfirm() {
   document.getElementById('confirm-overlay').classList.remove('open');
 }
-
-// ── COOK DAY MODAL ──
-function showCookDayModal() {
-  cookDayTemp = userSchedule.cook_day;
-  const html = DAYS.map((d,i) =>
-    `<button class="day-btn${i===cookDayTemp?' selected':''}" onclick="selectCookDay(${i},this)">${d}</button>`).join('');
-  document.getElementById('cook-day-picker').innerHTML = html;
-  document.getElementById('cookday-modal').classList.add('open');
-  toggleNavMenu(true);
-}
-
-function populateCookDayPicker(pickerId) {
-  cookDayTemp = userSchedule.cook_day;
-  const el = document.getElementById(pickerId);
-  if (el) el.innerHTML = DAYS.map((d,i) =>
-    `<button class="day-btn${i===cookDayTemp?' selected':''}" onclick="selectCookDayById(${i},this,'${pickerId}')">${d}</button>`).join('');
-}
-
-function selectCookDayById(i, el, pickerId) {
-  cookDayTemp = i;
-  document.querySelectorAll('#' + pickerId + ' .day-btn').forEach(b => b.classList.remove('selected'));
-  el.classList.add('selected');
-  // Keep both pickers in sync
-  ['cook-day-picker','settings-cook-day-picker'].forEach(id => {
-    if (id !== pickerId) {
-      document.querySelectorAll('#' + id + ' .day-btn').forEach((b,idx) => b.classList.toggle('selected', idx===i));
-    }
-  });
-}
-
-function selectCookDay(i, el) {
-  cookDayTemp = i;
-  document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('selected'));
-  el.classList.add('selected');
-}
-
-async function saveCookDay() {
-  await saveScheduleField({ cook_day: cookDayTemp });
-  closeCookDayModalBtn();
-  renderHome();
-  showSync('Cook day saved', 'success');
-  setTimeout(() => showSync('',''), 2000);
-}
-
-function closeCookDayModal(e) { if (e.target === document.getElementById('cookday-modal')) closeCookDayModalBtn(); }
-function closeCookDayModalBtn() { document.getElementById('cookday-modal').classList.remove('open'); }
 
 // ── NAV MENU ──
 function toggleNavMenu(forceClose) {

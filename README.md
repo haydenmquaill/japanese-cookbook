@@ -4,15 +4,14 @@ A Japanese-inspired meal prep planner built for batch cooking, freezer-friendly 
 
 ## Features
 
-- **30 Japanese recipes** — authentic home-cooking staples from teriyaki chicken to chicken nanban, covering a wide range of proteins, techniques, and regional dishes. All freezer-friendly except Maguro Don (raw tuna).
+- **43 Japanese recipes** — authentic home-cooking staples from teriyaki chicken to chicken nanban, covering a wide range of proteins, techniques, and regional dishes. All freezer-friendly except Maguro Don (raw tuna).
 - **Smart meal scheduling** — pick your own meals each week from a searchable, filterable recipe list. Meal B is auto-suggested based on compatibility ranking (protein variety, fat balance, recent history).
-- **15-week rotation** — enough unique pairings before anything repeats.
-- **Cook mode** — unified step-by-step cook session for both weekly meals. Phase 1 runs all prep steps from both meals in parallel (rice, marinating, chopping). Phase 2 and 3 cook each meal sequentially on the wok. Built-in timers per step, session persistence across page reloads.
+- **Relative week rotation, not calendar dates** — weeks are tracked purely as "this week" / "next week" / "in N weeks" relative to your current position. You advance to the next week yourself (whenever you actually cook, not on a fixed schedule), so cooking early or late never desyncs the app from reality.
+- **Cook mode** — unified step-by-step cook session for both weekly meals. Rice is cooked first in its own rice-cooker phase (sized from both meals' combined servings, water at 1.2× the rice weight), then prep for both meals runs in parallel (marinating, chopping), then each meal is cooked sequentially. Every step shows a "You'll need" block with the exact scaled quantity of each ingredient it introduces — no more leaving cook mode to check the Ingredients tab. Built-in timers per step, session persistence across page reloads, and a screen wake lock so the phone doesn't sleep mid-session.
 - **Grocery lists** — weekly lists aggregated by store (Woolworths, Asian aisle, Genki Mart, Fishmonger) with serving adjusters and persistent check-off state saved to Supabase.
 - **Grocery readiness check** — home screen warning card showing unchecked items before a cook session, with a cook button guard if shopping isn't done.
 - **Schedule locking** — current week locks once grocery shopping starts or a cook session begins. Future weeks always remain editable.
 - **Live macro calculation** — protein, fat, carbs, and kcal calculated dynamically from a normalised ingredient database. All values scale with serving count using per-ingredient scale factors reflecting real cooking logic.
-- **Cook day flavour text** — contextual home screen messaging based on how far away your next cook day is.
 - **Multi-user** — Supabase Auth with per-user schedule, grocery state, cook session, and meal pairings.
 - **Three themes** — Sumi (dark ink), Sakura (pink), Ai (indigo gold) with dark/light mode toggle.
 - **Mobile-first** — designed for one-handed use in the kitchen. Installable as a home screen app on iOS and Android.
@@ -54,11 +53,10 @@ create policy "storage_select" on storage.objects
 Run the following in the Supabase SQL Editor:
 
 ```sql
--- Schedule — tracks cook day preference and current week per user
+-- Schedule — tracks current week rotation per user (purely relative, no calendar dates)
 create table schedule (
   id uuid primary key default gen_random_uuid(),
   user_id uuid references auth.users(id) on delete cascade,
-  cook_day int not null default 6,
   current_week int not null default 1,
   last_cooked_at timestamptz,
   updated_at timestamptz default now(),
@@ -118,6 +116,8 @@ create policy "user_pairings_update" on user_pairings for update to authenticate
 create policy "user_pairings_delete" on user_pairings for delete to authenticated using (auth.uid() = user_id);
 ```
 
+**Existing installs:** the `schedule` table used to have a `cook_day` column (a fixed weekday preference) that's no longer used now that weeks are tracked purely relatively. It's safe to leave in place, or drop it with `alter table schedule drop column cook_day;`.
+
 ### Adding Users
 
 Users are added via the Supabase Dashboard under Authentication → Users → Add user. Public signups are disabled by default.
@@ -173,6 +173,7 @@ Users are added via the Supabase Dashboard under Authentication → Users → Ad
         {
           "id": "s1",
           "title": "Make teriyaki sauce",
+          "ingredient_ids": ["ing_soy_sauce", "ing_mirin", "ing_sake_or_dry_sherry"],
           "step_type": "prep",
           "content": "...",
           "timer_seconds": 240
@@ -201,6 +202,8 @@ Users are added via the Supabase Dashboard under Authentication → Users → Ad
 - `scale_factor` — controls how aggressively the ingredient scales when serving count changes. `1.0` = full linear (proteins, rice, vegetables), `0.75` = moderate (sauces, stock), `0.6` = light (sugar, honey), `0.5` = minimal (aromatics, oil), `0.3` = barely changes (salt, spices).
 - `is_batch` — marks ingredients whose stored amount is a batch total (most sauce/condiment amounts).
 - `step_type` — `prep` (phase 1, runs in parallel across both meals), `cook` (phase 2/3, sequential per meal), `portion` (end of each meal).
+- `ingredient_ids` — the ingredient IDs (from this recipe's own `ingredients` array) first introduced/combined in this step. Drives the "You'll need" quantity block shown above each step, both in the standalone Steps tab and in cook mode. Don't re-list an ingredient in a later step once it's already part of a sauce/mixture made earlier — only tag the step where a home cook actually needs to go grab it.
+- A step titled exactly `"Cook the rice"` is treated specially in cook mode: it's pulled out of the per-recipe prep flow and replaced with a single combined rice-cooker step (sized from both meals' servings, water at 1.2× the rice weight, run before anything else). Its own `content` in `data.json` is just generic rice-cooker instructions — the actual amount is computed live in cook mode from `ingredient_ids`.
 
 **Recipe compatibility:**
 - `protein_source` — used to avoid pairing two meals with the same protein
@@ -221,7 +224,8 @@ When a user picks Meal A, compatible Meal B options are ranked by score:
 
 1. Add any new ingredients to the `ingredients` array with their nutritional data
 2. Add the recipe to the `recipes` array referencing ingredient IDs
-3. Re-upload `data.json` to Supabase Storage — no code changes needed
+3. Tag each step's `ingredient_ids` (see above) so cook mode can show per-step quantities
+4. Re-upload `data.json` to Supabase Storage — no code changes needed
 
 ## Nutrition data
 
@@ -265,5 +269,18 @@ Open in Safari → Share → Add to Home Screen. The app runs full-screen withou
 | Whiting Fry | 44.4g | 17.5g | 110.5g | 777 |
 | Ebi Fry | 44.4g | 16.0g | 110.5g | 764 |
 | Salmon Nanbanzuke | 39.3g | 24.6g | 99.9g | 778 |
+| Agedashi Tofu Don | 23.0g | 14.6g | 101.3g | 629 |
+| Kinoko Gohan | 18.1g | 9.2g | 91.4g | 521 |
+| Yaki Tofu Don | 22.8g | 14.1g | 96.3g | 603 |
+| Edamame and Egg Donburi | 30.7g | 16.4g | 95.0g | 650 |
+| Vegetable Tempura Don | 21.1g | 9.7g | 127.0g | 680 |
+| Tonkatsu Don | 49.2g | 25.0g | 116.9g | 889 |
+| Kakuni | 38.4g | 54.0g | 97.4g | 1029 |
+| Chashu Don | 37.3g | 53.8g | 92.8g | 1005 |
+| Buta Kimchi | 40.1g | 21.0g | 87.0g | 697 |
+| Buta Miso Itame | 40.6g | 21.0g | 95.9g | 735 |
+| Tamago Don | 29.0g | 17.8g | 95.0g | 656 |
+| Karei Nitsuke | 43.5g | 5.9g | 92.5g | 597 |
+| Ochazuke 🌿 | 38.8g | 22.3g | 83.1g | 688 |
 
 🌿 Fresh only — do not freeze.
